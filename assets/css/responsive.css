@@ -1,1 +1,284 @@
-@media(max-width:700px){header .wrap{flex-direction:column}nav a{display:inline-block;margin:6px}}
+/* ==========================================
+   Large Devices (1200px)
+========================================== */
+
+@media (max-width:1200px){
+
+.hero h1{
+
+    font-size:54px;
+
+}
+
+}
+
+
+/* ==========================================
+   Laptops
+========================================== */
+
+@media (max-width:992px){
+
+.navbar{
+
+    background:#0B4EA2;
+
+}
+
+.hero{
+
+    text-align:center;
+
+    padding-top:130px;
+
+}
+
+.hero h1{
+
+    font-size:48px;
+
+}
+
+.hero p{
+
+    margin:auto;
+
+}
+
+.hero-buttons{
+
+    justify-content:center;
+
+}
+
+.hero-card{
+
+    margin-top:50px;
+
+}
+
+.about-home{
+
+    text-align:center;
+
+}
+
+.about-home img{
+
+    margin-bottom:40px;
+
+}
+
+.statistics .stat-box{
+
+    margin-bottom:25px;
+
+}
+
+.footer{
+
+    text-align:center;
+
+}
+
+.footer .col-lg-2,
+.footer .col-lg-3,
+.footer .col-lg-4{
+
+    margin-bottom:40px;
+
+}
+
+}
+
+
+/* ==========================================
+   Tablets
+========================================== */
+
+@media (max-width:768px){
+
+.hero{
+
+    min-height:auto;
+
+    padding:120px 0 80px;
+
+}
+
+.hero h1{
+
+    font-size:38px;
+
+}
+
+.hero p{
+
+    font-size:16px;
+
+}
+
+.hero-buttons .btn{
+
+    display:block;
+
+    width:100%;
+
+    margin-bottom:15px;
+
+}
+
+.section-title{
+
+    font-size:13px;
+
+}
+
+h2{
+
+    font-size:30px !important;
+
+}
+
+.service-card{
+
+    padding:35px 25px;
+
+}
+
+.feature-box{
+
+    margin-bottom:25px;
+
+}
+
+.process-item{
+
+    margin-bottom:30px;
+
+}
+
+.partner-logo{
+
+    max-height:70px;
+
+}
+
+.cta{
+
+    text-align:center;
+
+}
+
+.footer{
+
+    padding-top:60px;
+
+}
+
+}
+
+
+/* ==========================================
+   Mobile
+========================================== */
+
+@media (max-width:576px){
+
+.navbar-brand img{
+
+    height:45px;
+
+}
+
+.hero h1{
+
+    font-size:30px;
+
+}
+
+.hero-small{
+
+    font-size:13px;
+
+}
+
+.hero p{
+
+    font-size:15px;
+
+}
+
+.hero-card{
+
+    padding:25px;
+
+}
+
+.hero-card h4{
+
+    font-size:22px;
+
+}
+
+.stat-box{
+
+    padding:25px 15px;
+
+}
+
+.stat-box h2{
+
+    font-size:30px;
+
+}
+
+.service-card i{
+
+    font-size:42px;
+
+}
+
+.feature-box i{
+
+    font-size:42px;
+
+}
+
+.process-item i{
+
+    font-size:38px;
+
+}
+
+.process-number{
+
+    width:45px;
+
+    height:45px;
+
+    line-height:45px;
+
+    font-size:18px;
+
+}
+
+.cta h2{
+
+    font-size:30px;
+
+}
+
+.btn{
+
+    width:100%;
+
+}
+
+.footer{
+
+    text-align:center;
+
+}
+
+}
