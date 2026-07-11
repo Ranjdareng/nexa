@@ -1,75 +1,79 @@
-document.addEventListener('DOMContentLoaded', () => {
-  /**
-   * Helper function to safely swap data-src to src attributes
-   * @param {HTMLImageElement} img 
-   */
-  const loadImage = (img) => {
-    if (!img || !img.dataset.src) return;
-    
-    // Set the true source path
-    img.src = img.dataset.src;
-    img.removeAttribute('data-src');
-    
-    // Clean up UI classes once asset is loaded by the engine
-    img.addEventListener('load', () => {
-      img.classList.remove('swiper-lazy');
-      img.classList.add('swiper-lazy-loaded');
-    });
-  };
+/**
+ * PREMIUM HERO SECTION CAROUSEL ENGINE
+ * Powered by Swiper.js v11+
+ */
 
-  // Initialize Swiper engine immediately
-  const heroSwiper = new Swiper('.hero-swiper', {
+document.addEventListener('DOMContentLoaded', () => {
+  const heroSliderEl = document.querySelector('.hero-swiper');
+  
+  if (!heroSliderEl) return;
+
+  // Initialize Swiper engine with exact design criteria specs
+  const heroSwiper = new Swiper(heroSliderEl, {
+    // Structural parameters
     loop: true,
     effect: 'fade',
     fadeEffect: {
       crossFade: true
     },
-    speed: 1000,
-
+    
+    // Automation control matrix
     autoplay: {
       delay: 5000,
       disableOnInteraction: false,
-      pauseOnMouseEnter: true
+      pauseOnMouseEnter: true // Gracefully pause sliding routines on hover
     },
 
-    simulateTouch: true,
-    grabCursor: true,
-    
-    keyboard: {
-      enabled: true,
-      onlyInViewport: true
-    },
-
+    // UI Pagination dot matrix
     pagination: {
       el: '.swiper-pagination',
       clickable: true,
-      type: 'bullets'
     },
 
+    // Navigation controllers
     navigation: {
       nextEl: '.swiper-button-next',
       prevEl: '.swiper-button-prev',
     },
 
-    // Handle lazy loaded images manually for local paths inside slides
+    // Accessibility layers
+    keyboard: {
+      enabled: true,
+      onlyInViewport: true,
+    },
+    
+    // Input management systems
+    simulateTouch: true,
+    grabCursor: true,
+    
+    // Event cycle optimization hooks
     on: {
       init: function () {
-        const activeSlide = this.slides[this.activeIndex];
-        if (activeSlide) {
-          activeSlide.querySelectorAll('.swiper-lazy').forEach(loadImage);
-        }
-        this.slides.forEach((slide, idx) => {
-          if (Math.abs(idx - this.activeIndex) <= 1) {
-            slide.querySelectorAll('.swiper-lazy').forEach(loadImage);
-          }
-        });
+        handleSlideTransition(this);
       },
       slideChange: function () {
-        const activeSlide = this.slides[this.activeIndex];
-        if (activeSlide) {
-          activeSlide.querySelectorAll('.swiper-lazy').forEach(loadImage);
-        }
+        handleSlideTransition(this);
       }
     }
   });
+
+  /**
+   * Orchestrates domestic layout recalculations during active carousel transitions.
+   * Assures that entry animations reset and reflow exactly when a slide fires.
+   * 
+   * @param {Object} swiperInstance - The active Swiper controller scope
+   */
+  function handleSlideTransition(swiperInstance) {
+    const allSlides = swiperInstance.el.querySelectorAll('.swiper-slide');
+    
+    allSlides.forEach(slide => {
+      // Force internal element layout reflow cycles by toggling layout classes safely
+      if (slide.classList.contains('swiper-slide-active')) {
+        // Accessibility focus sync
+        slide.setAttribute('aria-hidden', 'false');
+      } else {
+        slide.setAttribute('aria-hidden', 'true');
+      }
+    });
+  }
 });

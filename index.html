@@ -10,7 +10,8 @@
   <meta property="og:description" content="Premium logistics and freight forwarding solutions for businesses that need reliable cargo movement.">
   <meta property="og:type" content="website">
   <meta property="og:image" content="assets/images/hero-logistics.png">
-  <link rel="icon" href="assets/images/nexa-logo.jpeg">
+  
+  <link class="favicon" rel="icon" href="assets/images/nexa-logo.jpeg">
   <link rel="preconnect" href="https://cdn.jsdelivr.net">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap-grid.min.css">
   <link rel="stylesheet" href="assets/css/styles.css">
@@ -24,8 +25,12 @@
   <div class="site-shell">
     <header class="site-header">
       <div class="container-nexa nav-wrap">
-        <a class="brand" href="index.html" aria-label="NEXA Logistics home"><img src="assets/images/nexa-logo.jpeg" alt="NEXA Logistics logo"></a>
-        <button class="nav-toggle" type="button" data-nav-toggle aria-controls="site-nav" aria-expanded="false" aria-label="Open navigation"><span></span><span></span><span></span></button>
+        <a class="brand" href="index.html" aria-label="NEXA Logistics home">
+          <img src="assets/images/nexa-logo.jpeg" alt="NEXA Logistics logo" width="150" height="50">
+        </a>
+        <button class="nav-toggle" type="button" data-nav-toggle aria-controls="site-nav" aria-expanded="false" aria-label="Open navigation">
+          <span></span><span></span><span></span>
+        </button>
         <nav class="site-nav" id="site-nav" data-site-nav aria-label="Primary navigation">
           <a class="active" href="index.html">Home</a>
           <a href="about.html">About</a>
@@ -42,16 +47,15 @@
       <!-- PREMIUM HERO CAROUSEL COMPONENT -->
       <section class="premium-hero" aria-label="Global Logistics Showcase">
         <div class="swiper hero-swiper">
-          <!-- FIXED: Removed duplicate wrapper declaration -->
           <div class="swiper-wrapper">
         
-            <!-- Slide 1: Global Freight Solutions -->
+            <!-- Slide 1: Global Freight Solutions (Image Background) -->
             <div class="swiper-slide">
               <div class="hero-bg-wrapper">
-                <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 9'%3E%3C/svg%3E" 
-                     data-src="assets/images/hero/port-sunset.jpg" 
+                <img src="assets/images/hero/port-sunset.jpg" 
                      alt="Modern commercial port terminal operating at sunrise" 
-                     class="hero-bg swiper-lazy">
+                     class="hero-bg"
+                     loading="eager">
                 <div class="hero-overlay"></div>
               </div>
               <div class="hero-container">
@@ -80,13 +84,15 @@
               </div>
             </div>
 
-            <!-- Slide 2: Air Freight Excellence -->
+            <!-- Slide 2: Air Freight Excellence (Video Background) -->
             <div class="swiper-slide">
               <div class="hero-bg-wrapper">
-                <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 9'%3E%3C/svg%3E" 
-                     data-src="assets/images/hero/cargo-airplane.jpg" 
-                     alt="Commercial cargo airline loading shipping crates on tarmac" 
-                     class="hero-bg swiper-lazy">
+                <!-- Using live high-quality aviation logistics stock video loop for instant testing -->
+                <video class="hero-bg" autoplay loop muted playsinline poster="assets/images/hero/cargo-airplane.jpg">
+                  <source src="https://d2j2uxe7jasn0r.cloudfront.net/watermarks/video/SnwSLKlX1xm3vhh33f/videoblocks-v_vietri-sul-mare_049_sjlh6borex__3b5acb08a45caa27955574296efc3ba7__P360.mp4" type="video/mp4">
+                  <!-- Alternative local asset path: assets/videos/hero/cargo-airplane.mp4 -->
+                  Your browser does not support the video tag.
+                </video>
                 <div class="hero-overlay"></div>
               </div>
               <div class="hero-container">
@@ -115,13 +121,15 @@
               </div>
             </div>
 
-            <!-- Slide 3: Sea Freight Worldwide -->
+            <!-- Slide 3: Sea Freight Worldwide (Video Background) -->
             <div class="swiper-slide">
               <div class="hero-bg-wrapper">
-                <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 9'%3E%3C/svg%3E" 
-                     data-src="assets/images/hero/container-ship.jpg" 
-                     alt="Large commercial container freight ship moving through water channels" 
-                     class="hero-bg swiper-lazy">
+                <!-- Using live high-quality container ship stock video loop for instant testing -->
+                <video class="hero-bg" autoplay loop muted playsinline poster="assets/images/hero/container-ship.jpg">
+                  <source src="https://d2j2uxe7jasn0r.cloudfront.net/watermarks/video/B1Fy5hPzygm3ly6f2s/videoblocks-graded_v1-0077_r3phhvvmwe__1c200614c68316ccdf13599ba51ea9e1__P360.mp4" type="video/mp4">
+                  <!-- Alternative local asset path: assets/videos/hero/container-ship.mp4 -->
+                  Your browser does not support the video tag.
+                </video>
                 <div class="hero-overlay"></div>
               </div>
               <div class="hero-container">
@@ -150,13 +158,13 @@
               </div>
             </div>
 
-            <!-- Slide 4: Door-to-Door Logistics -->
+            <!-- Slide 4: Door-to-Door Logistics (Image Background) -->
             <div class="swiper-slide">
               <div class="hero-bg-wrapper">
-                <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 9'%3E%3C/svg%3E" 
-                     data-src="assets/images/hero/door-to-door.jpg" 
+                <img src="assets/images/hero/door-to-door.jpg" 
                      alt="Commercial transport delivery distribution trucks backed up to cargo terminal bays" 
-                     class="hero-bg swiper-lazy">
+                     class="hero-bg"
+                     loading="lazy">
                 <div class="hero-overlay"></div>
               </div>
               <div class="hero-container">
@@ -203,25 +211,47 @@
           <h2 id="partners-title">Connected with reliable logistics networks.</h2>
           <div class="partner-rail" aria-label="Partner logo carousel">
             <div class="partner-track">
-              <div class="partner-logo"><img src="assets/images/partners/air arabia.png" alt="Air Arabia"></div>
-              <div class="partner-logo"><img src="assets/images/partners/asycoda.png" alt="ASYCUDA"></div>
-              <div class="partner-logo"><img src="assets/images/partners/cmacgm.png" alt="CMA CGM"></div>
-              <div class="partner-logo"><img src="assets/images/partners/cosco.png" alt="COSCO Shipping"></div>
-              <div class="partner-logo"><img src="assets/images/partners/dhl.png" alt="DHL"></div>
-              <div class="partner-logo"><img src="assets/images/partners/emirates.png" alt="Emirates"></div>
-              <div class="partner-logo"><img src="assets/images/partners/etihad.png" alt="Etihad Airways"></div>
-              <div class="partner-logo"><img src="assets/images/partners/evergreen.png" alt="Evergreen"></div>
-              <div class="partner-logo"><img src="assets/images/partners/fly dubai.png" alt="flydubai"></div>
-              <div class="partner-logo"><img src="assets/images/partners/hapag-liod.png" alt="Hapag-Lloyd"></div>
-              <div class="partner-logo"><img src="assets/images/partners/hmm.png" alt="HMM"></div>
-              <div class="partner-logo"><img src="assets/images/partners/maersk.png" alt="Maersk"></div>
-              <div class="partner-logo"><img src="assets/images/partners/msc.png" alt="MSC Cruises"></div>
-              <div class="partner-logo"><img src="assets/images/partners/one.png" alt="Ocean Network Express"></div>
-              <div class="partner-logo"><img src="assets/images/partners/pegasus.png" alt="Pegasus Airlines"></div>
-              <div class="partner-logo"><img src="assets/images/partners/qatar.png" alt="Qatar Airways"></div>
-              <div class="partner-logo"><img src="assets/images/partners/royal jordan.png" alt="Royal Jordanian"></div>
-              <div class="partner-logo"><img src="assets/images/partners/silkway.png" alt="Silk Way West Airlines"></div>
-              <div class="partner-logo"><img src="assets/images/partners/turkish airlines.png" alt="Turkish Airlines"></div>
+              <!-- Original Track Set -->
+              <div class="partner-logo"><img src="assets/images/partners/air arabia.png" alt="Air Arabia" loading="lazy"></div>
+              <div class="partner-logo"><img src="assets/images/partners/asycoda.png" alt="ASYCUDA" loading="lazy"></div>
+              <div class="partner-logo"><img src="assets/images/partners/cmacgm.png" alt="CMA CGM" loading="lazy"></div>
+              <div class="partner-logo"><img src="assets/images/partners/cosco.png" alt="COSCO Shipping" loading="lazy"></div>
+              <div class="partner-logo"><img src="assets/images/partners/dhl.png" alt="DHL" loading="lazy"></div>
+              <div class="partner-logo"><img src="assets/images/partners/emirates.png" alt="Emirates" loading="lazy"></div>
+              <div class="partner-logo"><img src="assets/images/partners/etihad.png" alt="Etihad Airways" loading="lazy"></div>
+              <div class="partner-logo"><img src="assets/images/partners/evergreen.png" alt="Evergreen" loading="lazy"></div>
+              <div class="partner-logo"><img src="assets/images/partners/fly dubai.png" alt="flydubai" loading="lazy"></div>
+              <div class="partner-logo"><img src="assets/images/partners/hapag-lloyd.png" alt="Hapag-Lloyd" loading="lazy"></div>
+              <div class="partner-logo"><img src="assets/images/partners/hmm.png" alt="HMM" loading="lazy"></div>
+              <div class="partner-logo"><img src="assets/images/partners/maersk.png" alt="Maersk" loading="lazy"></div>
+              <div class="partner-logo"><img src="assets/images/partners/msc.png" alt="MSC Cruises" loading="lazy"></div>
+              <div class="partner-logo"><img src="assets/images/partners/one.png" alt="Ocean Network Express" loading="lazy"></div>
+              <div class="partner-logo"><img src="assets/images/partners/pegasus.png" alt="Pegasus Airlines" loading="lazy"></div>
+              <div class="partner-logo"><img src="assets/images/partners/qatar.png" alt="Qatar Airways" loading="lazy"></div>
+              <div class="partner-logo"><img src="assets/images/partners/royal jordan.png" alt="Royal Jordanian" loading="lazy"></div>
+              <div class="partner-logo"><img src="assets/images/partners/silkway.png" alt="Silk Way West Airlines" loading="lazy"></div>
+              <div class="partner-logo"><img src="assets/images/partners/turkish airlines.png" alt="Turkish Airlines" loading="lazy"></div>
+
+              <!-- Cloned Track Set for Seamless Infinite Loop Animation -->
+              <div class="partner-logo" aria-hidden="true"><img src="assets/images/partners/air arabia.png" alt="Air Arabia" loading="lazy"></div>
+              <div class="partner-logo" aria-hidden="true"><img src="assets/images/partners/asycoda.png" alt="ASYCUDA" loading="lazy"></div>
+              <div class="partner-logo" aria-hidden="true"><img src="assets/images/partners/cmacgm.png" alt="CMA CGM" loading="lazy"></div>
+              <div class="partner-logo" aria-hidden="true"><img src="assets/images/partners/cosco.png" alt="COSCO Shipping" loading="lazy"></div>
+              <div class="partner-logo" aria-hidden="true"><img src="assets/images/partners/dhl.png" alt="DHL" loading="lazy"></div>
+              <div class="partner-logo" aria-hidden="true"><img src="assets/images/partners/emirates.png" alt="Emirates" loading="lazy"></div>
+              <div class="partner-logo" aria-hidden="true"><img src="assets/images/partners/etihad.png" alt="Etihad Airways" loading="lazy"></div>
+              <div class="partner-logo" aria-hidden="true"><img src="assets/images/partners/evergreen.png" alt="Evergreen" loading="lazy"></div>
+              <div class="partner-logo" aria-hidden="true"><img src="assets/images/partners/fly dubai.png" alt="flydubai" loading="lazy"></div>
+              <div class="partner-logo" aria-hidden="true"><img src="assets/images/partners/hapag-lloyd.png" alt="Hapag-Lloyd" loading="lazy"></div>
+              <div class="partner-logo" aria-hidden="true"><img src="assets/images/partners/hmm.png" alt="HMM" loading="lazy"></div>
+              <div class="partner-logo" aria-hidden="true"><img src="assets/images/partners/maersk.png" alt="Maersk" loading="lazy"></div>
+              <div class="partner-logo" aria-hidden="true"><img src="assets/images/partners/msc.png" alt="MSC Cruises" loading="lazy"></div>
+              <div class="partner-logo" aria-hidden="true"><img src="assets/images/partners/one.png" alt="Ocean Network Express" loading="lazy"></div>
+              <div class="partner-logo" aria-hidden="true"><img src="assets/images/partners/pegasus.png" alt="Pegasus Airlines" loading="lazy"></div>
+              <div class="partner-logo" aria-hidden="true"><img src="assets/images/partners/qatar.png" alt="Qatar Airways" loading="lazy"></div>
+              <div class="partner-logo" aria-hidden="true"><img src="assets/images/partners/royal jordan.png" alt="Royal Jordanian" loading="lazy"></div>
+              <div class="partner-logo" aria-hidden="true"><img src="assets/images/partners/silkway.png" alt="Silk Way West Airlines" loading="lazy"></div>
+              <div class="partner-logo" aria-hidden="true"><img src="assets/images/partners/turkish airlines.png" alt="Turkish Airlines" loading="lazy"></div>
             </div>
           </div>
         </div>
@@ -359,20 +389,31 @@
     <footer class="site-footer">
       <div class="container-nexa">
         <div class="row g-4">
-          <div class="col-lg-5"><img class="footer-logo" src="assets/images/nexa-logo.jpeg" alt="NEXA Logistics logo"><p>NEXA Logistics & Transport is based in Erbil, Iraq, delivering beyond borders through reliable freight forwarding and supply chain solutions.</p></div>
-          <div class="col-6 col-lg-2"><div class="footer-title">Company</div><div class="footer-links"><a href="about.html">About</a><a href="services.html">Services</a><a href="partners.html">Partners</a><a href="gallery.html">Gallery</a></div></div>
-          <div class="col-6 col-lg-2"><div class="footer-title">Support</div><div class="footer-links"><a href="contact.html">Contact</a><a href="quote.html">Request Quote</a><a href="services.html">Freight</a><a href="services.html">Customs</a></div></div>
-          <div class="col-lg-3"><div class="footer-title">Contact</div><p>Address: Erbil, Kurdistan Region, Iraq<br>Email: info@nexalogistics.com<br>Phone: +000 000 000 000</p></div>
+          <div class="col-lg-5">
+            <img class="footer-logo" src="assets/images/nexa-logo.jpeg" alt="NEXA Logistics logo" width="120" height="40">
+            <p>NEXA Logistics & Transport is based in Erbil, Iraq, delivering beyond borders through reliable freight forwarding and supply chain solutions.</p>
+          </div>
+          <div class="col-6 col-lg-2">
+            <div class="footer-title">Company</div>
+            <div class="footer-links"><a href="about.html">About</a><a href="services.html">Services</a><a href="partners.html">Partners</a><a href="gallery.html">Gallery</a></div>
+          </div>
+          <div class="col-6 col-lg-2">
+            <div class="footer-title">Support</div>
+            <div class="footer-links"><a href="contact.html">Contact</a><a href="quote.html">Request Quote</a><a href="services.html">Freight</a><a href="services.html">Customs</a></div>
+          </div>
+          <div class="col-lg-3">
+            <div class="footer-title">Contact</div>
+            <p>Address: Erbil, Kurdistan Region, Iraq<br>Email: info@nexalogistics.com<br>Phone: +000 000 000 000</p>
+          </div>
         </div>
-        <div class="footer-bottom">(c) 2026 NEXA Logistics. All rights reserved.</div>
+        <div class="footer-bottom">&copy; 2026 NEXA Logistics. All rights reserved.</div>
       </div>
     </footer>
   </div>
   
-  <script src="assets/js/main.js"></script>
-  <!-- Swiper.js Vendor Core Layer JS Engine -->
+  <!-- Script dependency loader pipeline -->
   <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-  <!-- Custom Application Script -->
-  <script src="assets/js/hero-redesign.js"></script>
+  <script src="assets/js/main.js" defer></script>
+  <script src="assets/js/hero-redesign.js" defer></script>
 </body>
 </html>
