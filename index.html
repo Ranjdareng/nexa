@@ -14,6 +14,11 @@
   <link rel="preconnect" href="https://cdn.jsdelivr.net">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap-grid.min.css">
   <link rel="stylesheet" href="assets/css/styles.css">
+  
+  <!-- Swiper.js Vendor Core Layer CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+  <!-- Custom Redesigned Stylesheet -->
+  <link rel="stylesheet" href="assets/css/hero-redesign.css" />
 </head>
 <body>
   <div class="site-shell">
@@ -34,25 +39,164 @@
     </header>
 
     <main>
-      <section class="hero">
-        <div class="container-nexa hero-content">
-          <span class="section-kicker">Delivering Beyond Borders</span>
-          <h1>Fast, reliable logistics from Erbil to the world.</h1>
-          <p>NEXA is a modern logistics and freight forwarding company based in Erbil, Iraq, built to connect businesses across borders through efficient, transparent, and dependable supply chain solutions.</p>
-          <div class="hero-actions">
-            <a class="btn-nexa" href="quote.html">Request a Quote</a>
-            <a class="btn-nexa btn-ghost" href="services.html">Explore Services</a>
-          </div>
-          <div class="hero-panel" data-animate>
-            <div class="hero-panel-grid">
-              <div class="hero-panel-item"><strong>Air</strong><span>Express global cargo</span></div>
-              <div class="hero-panel-item"><strong>Sea</strong><span>FCL, LCL and special cargo</span></div>
-              <div class="hero-panel-item"><strong>Road</strong><span>Local and cross-border transport</span></div>
+      <!-- PREMIUM HERO CAROUSEL COMPONENT -->
+      <section class="premium-hero" aria-label="Global Logistics Showcase">
+        <div class="swiper hero-swiper">
+          <!-- FIXED: Removed duplicate wrapper declaration -->
+          <div class="swiper-wrapper">
+        
+            <!-- Slide 1: Global Freight Solutions -->
+            <div class="swiper-slide">
+              <div class="hero-bg-wrapper">
+                <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 9'%3E%3C/svg%3E" 
+                     data-src="assets/images/hero/port-sunset.jpg" 
+                     alt="Modern commercial port terminal operating at sunrise" 
+                     class="hero-bg swiper-lazy">
+                <div class="hero-overlay"></div>
+              </div>
+              <div class="hero-container">
+                <div class="hero-grid">
+                  <div class="hero-content">
+                    <span class="hero-badge">Global Freight Solutions</span>
+                    <h1 class="hero-title">Global Freight<br>Solutions</h1>
+                    <p class="hero-description">Connecting businesses worldwide through reliable Air, Sea and Land logistics.</p>
+                    <div class="hero-actions">
+                      <a href="#quote" class="hero-btn hero-btn-primary">Request Quote</a>
+                      <a href="#services" class="hero-btn hero-btn-secondary">Explore Services</a>
+                    </div>
+                  </div>
+                  <div class="hero-side">
+                    <div class="info-card-glass">
+                      <ul class="info-card-list">
+                        <li><span class="icon">✓</span> 24/7 Customer Support</li>
+                        <li><span class="icon">✓</span> 50+ Countries</li>
+                        <li><span class="icon">✓</span> 9000+ Shipments</li>
+                        <li><span class="icon">✓</span> Customs Clearance</li>
+                        <li><span class="icon">✓</span> Air / Sea / Land</li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
+
+            <!-- Slide 2: Air Freight Excellence -->
+            <div class="swiper-slide">
+              <div class="hero-bg-wrapper">
+                <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 9'%3E%3C/svg%3E" 
+                     data-src="assets/images/hero/cargo-airplane.jpg" 
+                     alt="Commercial cargo airline loading shipping crates on tarmac" 
+                     class="hero-bg swiper-lazy">
+                <div class="hero-overlay"></div>
+              </div>
+              <div class="hero-container">
+                <div class="hero-grid">
+                  <div class="hero-content">
+                    <span class="hero-badge">Air Freight Excellence</span>
+                    <h1 class="hero-title">Air Freight<br>Excellence</h1>
+                    <p class="hero-description">Fast international air cargo through trusted airline partners.</p>
+                    <div class="hero-actions">
+                      <a href="#quote" class="hero-btn hero-btn-primary">Request Quote</a>
+                      <a href="#services" class="hero-btn hero-btn-secondary">Explore Services</a>
+                    </div>
+                  </div>
+                  <div class="hero-side">
+                    <div class="info-card-glass">
+                      <ul class="info-card-list">
+                        <li><span class="icon">✓</span> 24/7 Customer Support</li>
+                        <li><span class="icon">✓</span> 50+ Countries</li>
+                        <li><span class="icon">✓</span> 9000+ Shipments</li>
+                        <li><span class="icon">✓</span> Customs Clearance</li>
+                        <li><span class="icon">✓</span> Air / Sea / Land</li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Slide 3: Sea Freight Worldwide -->
+            <div class="swiper-slide">
+              <div class="hero-bg-wrapper">
+                <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 9'%3E%3C/svg%3E" 
+                     data-src="assets/images/hero/container-ship.jpg" 
+                     alt="Large commercial container freight ship moving through water channels" 
+                     class="hero-bg swiper-lazy">
+                <div class="hero-overlay"></div>
+              </div>
+              <div class="hero-container">
+                <div class="hero-grid">
+                  <div class="hero-content">
+                    <span class="hero-badge">Sea Freight Worldwide</span>
+                    <h1 class="hero-title">Sea Freight<br>Worldwide</h1>
+                    <p class="hero-description">Reliable ocean freight with global coverage and competitive rates.</p>
+                    <div class="hero-actions">
+                      <a href="#quote" class="hero-btn hero-btn-primary">Request Quote</a>
+                      <a href="#services" class="hero-btn hero-btn-secondary">Explore Services</a>
+                    </div>
+                  </div>
+                  <div class="hero-side">
+                    <div class="info-card-glass">
+                      <ul class="info-card-list">
+                        <li><span class="icon">✓</span> 24/7 Customer Support</li>
+                        <li><span class="icon">✓</span> 50+ Countries</li>
+                        <li><span class="icon">✓</span> 9000+ Shipments</li>
+                        <li><span class="icon">✓</span> Customs Clearance</li>
+                        <li><span class="icon">✓</span> Air / Sea / Land</li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Slide 4: Door-to-Door Logistics -->
+            <div class="swiper-slide">
+              <div class="hero-bg-wrapper">
+                <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 9'%3E%3C/svg%3E" 
+                     data-src="assets/images/hero/door-to-door.jpg" 
+                     alt="Commercial transport delivery distribution trucks backed up to cargo terminal bays" 
+                     class="hero-bg swiper-lazy">
+                <div class="hero-overlay"></div>
+              </div>
+              <div class="hero-container">
+                <div class="hero-grid">
+                  <div class="hero-content">
+                    <span class="hero-badge">Door-to-Door Logistics</span>
+                    <h1 class="hero-title">Door-to-Door<br>Logistics</h1>
+                    <p class="hero-description">Complete supply chain solutions from pickup to final delivery.</p>
+                    <div class="hero-actions">
+                      <a href="#quote" class="hero-btn hero-btn-primary">Request Quote</a>
+                      <a href="#services" class="hero-btn hero-btn-secondary">Explore Services</a>
+                    </div>
+                  </div>
+                  <div class="hero-side">
+                    <div class="info-card-glass">
+                      <ul class="info-card-list">
+                        <li><span class="icon">✓</span> 24/7 Customer Support</li>
+                        <li><span class="icon">✓</span> 50+ Countries</li>
+                        <li><span class="icon">✓</span> 9000+ Shipments</li>
+                        <li><span class="icon">✓</span> Customs Clearance</li>
+                        <li><span class="icon">✓</span> Air / Sea / Land</li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
           </div>
+
+          <!-- Interface Pagination Bullets -->
+          <div class="swiper-pagination"></div>
+          
+          <!-- Navigation UI Elements -->
+          <div class="swiper-button-prev"></div>
+          <div class="swiper-button-next"></div>
         </div>
       </section>
 
+      <!-- Partners Rail Section -->
       <section class="section compact" aria-labelledby="partners-title">
         <div class="container-nexa">
           <span class="section-kicker">Trusted partners</span>
@@ -78,30 +222,12 @@
               <div class="partner-logo"><img src="assets/images/partners/royal jordan.png" alt="Royal Jordanian"></div>
               <div class="partner-logo"><img src="assets/images/partners/silkway.png" alt="Silk Way West Airlines"></div>
               <div class="partner-logo"><img src="assets/images/partners/turkish airlines.png" alt="Turkish Airlines"></div>
-              <div class="partner-logo"><img src="assets/images/partners/air arabia.png" alt="Air Arabia"></div>
-              <div class="partner-logo"><img src="assets/images/partners/asycoda.png" alt="ASYCUDA"></div>
-              <div class="partner-logo"><img src="assets/images/partners/cmacgm.png" alt="CMA CGM"></div>
-              <div class="partner-logo"><img src="assets/images/partners/cosco.png" alt="COSCO Shipping"></div>
-              <div class="partner-logo"><img src="assets/images/partners/dhl.png" alt="DHL"></div>
-              <div class="partner-logo"><img src="assets/images/partners/emirates.png" alt="Emirates"></div>
-              <div class="partner-logo"><img src="assets/images/partners/etihad.png" alt="Etihad Airways"></div>
-              <div class="partner-logo"><img src="assets/images/partners/evergreen.png" alt="Evergreen"></div>
-              <div class="partner-logo"><img src="assets/images/partners/fly dubai.png" alt="flydubai"></div>
-              <div class="partner-logo"><img src="assets/images/partners/hapag-liod.png" alt="Hapag-Lloyd"></div>
-              <div class="partner-logo"><img src="assets/images/partners/hmm.png" alt="HMM"></div>
-              <div class="partner-logo"><img src="assets/images/partners/maersk.png" alt="Maersk"></div>
-              <div class="partner-logo"><img src="assets/images/partners/msc.png" alt="MSC Cruises"></div>
-              <div class="partner-logo"><img src="assets/images/partners/one.png" alt="Ocean Network Express"></div>
-              <div class="partner-logo"><img src="assets/images/partners/pegasus.png" alt="Pegasus Airlines"></div>
-              <div class="partner-logo"><img src="assets/images/partners/qatar.png" alt="Qatar Airways"></div>
-              <div class="partner-logo"><img src="assets/images/partners/royal jordan.png" alt="Royal Jordanian"></div>
-              <div class="partner-logo"><img src="assets/images/partners/silkway.png" alt="Silk Way West Airlines"></div>
-              <div class="partner-logo"><img src="assets/images/partners/turkish airlines.png" alt="Turkish Airlines"></div>
             </div>
           </div>
         </div>
       </section>
 
+      <!-- Stats Section -->
       <section class="section mist" aria-labelledby="stats-title">
         <div class="container-nexa">
           <span class="section-kicker">Performance</span>
@@ -115,6 +241,7 @@
         </div>
       </section>
 
+      <!-- About Section -->
       <section class="section" aria-labelledby="about-title">
         <div class="container-nexa">
           <div class="row g-5 align-items-center">
@@ -130,6 +257,7 @@
         </div>
       </section>
 
+      <!-- Core Services Section -->
       <section class="section mist" aria-labelledby="services-title">
         <div class="container-nexa">
           <span class="section-kicker">Services</span>
@@ -145,6 +273,7 @@
         </div>
       </section>
 
+      <!-- Industries Section -->
       <section class="section dark" aria-labelledby="industries-title">
         <div class="container-nexa">
           <span class="section-kicker">Industries</span>
@@ -162,6 +291,7 @@
         </div>
       </section>
 
+      <!-- Process Workflow Section -->
       <section class="section" aria-labelledby="process-title">
         <div class="container-nexa">
           <span class="section-kicker">Process</span>
@@ -175,6 +305,7 @@
         </div>
       </section>
 
+      <!-- Value Proposition Section -->
       <section class="section mist" aria-labelledby="why-title">
         <div class="container-nexa">
           <div class="row g-4 align-items-stretch">
@@ -195,6 +326,7 @@
         </div>
       </section>
 
+      <!-- Testimonials Section -->
       <section class="section" aria-labelledby="testimonials-title">
         <div class="container-nexa">
           <span class="section-kicker">Testimonials</span>
@@ -207,6 +339,7 @@
         </div>
       </section>
 
+      <!-- Call to Action Band -->
       <section class="section compact">
         <div class="container-nexa">
           <div class="cta-band" data-animate>
@@ -235,6 +368,11 @@
       </div>
     </footer>
   </div>
+  
   <script src="assets/js/main.js"></script>
+  <!-- Swiper.js Vendor Core Layer JS Engine -->
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <!-- Custom Application Script -->
+  <script src="assets/js/hero-redesign.js"></script>
 </body>
 </html>
