@@ -1,4 +1,4 @@
-/* ======================================================
+﻿/* ======================================================
    NEXA Logistics
    Main Stylesheet
    Version 1.0
@@ -13,14 +13,23 @@
 
 :root{
 
-    --primary:#0B4EA2;
-    --secondary:#D71920;
-    --accent:#F4B400;
-
-    --dark:#1E293B;
-    --light:#F8FAFC;
-    --gray:#64748B;
-    --white:#ffffff;
+    --primary:#1E3470;
+    --primary-dark:#162955;
+    --secondary:#B11F2A;
+    --secondary-dark:#8D1821;
+    --background:#F8FAFC;
+    --text:#1F2937;
+    --white:#FFFFFF;
+    --border:#E5E7EB;
+    --primary-rgb:30,52,112;
+    --primary-dark-rgb:22,41,85;
+    --secondary-rgb:177,31,42;
+    --text-rgb:31,41,55;
+    --white-rgb:255,255,255;
+    --accent:var(--secondary);
+    --dark:var(--text);
+    --light:var(--background);
+    --gray:rgba(var(--text-rgb),.72);
 
 }
 
@@ -48,7 +57,7 @@ body{
 
     color:var(--dark);
 
-    background:#fff;
+    background:var(--white);
 
     line-height:1.8;
 
@@ -90,7 +99,7 @@ h1,h2,h3,h4,h5{
 
 p{
 
-    color:#666;
+    color:rgba(var(--text-rgb),.72);
 
 }
 
@@ -120,7 +129,7 @@ p{
 
 .btn-danger:hover{
 
-    background:#b71419;
+    background:var(--secondary-dark);
 
     transform:translateY(-3px);
 
@@ -136,7 +145,7 @@ p{
 
 .btn-primary:hover{
 
-    background:#083b7d;
+    background:var(--primary-dark);
 
 }
 
@@ -156,7 +165,7 @@ p{
 
     padding:18px 0;
 
-    background:rgba(10,25,50,.25);
+    background:rgba(var(--primary-rgb),.25);
 
     backdrop-filter:blur(8px);
 
@@ -170,7 +179,7 @@ p{
 
 .navbar-nav .nav-link{
 
-    color:#fff !important;
+    color:var(--white) !important;
 
     margin-left:18px;
 
@@ -210,7 +219,7 @@ p{
 
     inset:0;
 
-    background:rgba(5,15,35,.75);
+    background:rgba(var(--primary-dark-rgb),.75);
 
 }
 
@@ -234,7 +243,7 @@ p{
 
 .hero h1{
 
-    color:#fff;
+    color:var(--white);
 
     font-size:64px;
 
@@ -250,7 +259,7 @@ p{
 
 .hero p{
 
-    color:#ddd;
+    color:rgba(var(--white-rgb),.82);
 
     font-size:18px;
 
@@ -266,13 +275,13 @@ p{
 
 .hero-card{
 
-    background:#fff;
+    background:var(--white);
 
     border-radius:20px;
 
     padding:35px;
 
-    box-shadow:0 15px 50px rgba(0,0,0,.2);
+    box-shadow:0 15px 50px rgba(var(--primary-dark-rgb),.2);
 
 }
 
@@ -310,7 +319,7 @@ p{
 
 .statistics{
 
-    background:#fff;
+    background:var(--white);
 
 }
 
@@ -320,11 +329,11 @@ p{
 
     border-radius:15px;
 
-    background:#fff;
+    background:var(--white);
 
     transition:.35s;
 
-    box-shadow:0 8px 25px rgba(0,0,0,.05);
+    box-shadow:0 8px 25px rgba(var(--primary-dark-rgb),.05);
 
 }
 
@@ -363,7 +372,7 @@ p{
 
 .about-home{
 
-    background:#ffffff;
+    background:var(--white);
 
 }
 
@@ -373,7 +382,7 @@ p{
 
     transition:.4s;
 
-    box-shadow:0 20px 45px rgba(0,0,0,.08);
+    box-shadow:0 20px 45px rgba(var(--primary-dark-rgb),.08);
 
 }
 
@@ -413,7 +422,7 @@ p{
 
 .about-list i{
 
-    color:#18b45b;
+    color:var(--secondary);
 
     margin-right:12px;
 
@@ -425,13 +434,13 @@ p{
 
 .services-home{
 
-    background:#f8fafc;
+    background:var(--background);
 
 }
 
 .service-card{
 
-    background:#fff;
+    background:var(--white);
 
     border-radius:20px;
 
@@ -443,7 +452,7 @@ p{
 
     height:100%;
 
-    box-shadow:0 10px 30px rgba(0,0,0,.05);
+    box-shadow:0 10px 30px rgba(var(--primary-dark-rgb),.05);
 
 }
 
@@ -451,7 +460,7 @@ p{
 
     transform:translateY(-12px);
 
-    box-shadow:0 20px 40px rgba(0,0,0,.12);
+    box-shadow:0 20px 40px rgba(var(--primary-dark-rgb),.12);
 
 }
 
@@ -473,7 +482,7 @@ p{
 
 .service-card p{
 
-    color:#777;
+    color:rgba(var(--text-rgb),.66);
 
 }
 
@@ -483,13 +492,13 @@ p{
 
 .why-us{
 
-    background:#fff;
+    background:var(--white);
 
 }
 
 .feature-box{
 
-    background:#fff;
+    background:var(--white);
 
     border-radius:20px;
 
@@ -499,7 +508,7 @@ p{
 
     transition:.35s;
 
-    box-shadow:0 10px 30px rgba(0,0,0,.06);
+    box-shadow:0 10px 30px rgba(var(--primary-dark-rgb),.06);
 
 }
 
@@ -507,7 +516,7 @@ p{
 
     background:var(--primary);
 
-    color:#fff;
+    color:var(--white);
 
     transform:translateY(-10px);
 
@@ -515,7 +524,7 @@ p{
 
 .feature-box:hover p{
 
-    color:#eee;
+    color:rgba(var(--white-rgb),.88);
 
 }
 
@@ -541,7 +550,7 @@ p{
 
 .process{
 
-    background:#f5f7fb;
+    background:var(--background);
 
 }
 
@@ -549,7 +558,7 @@ p{
 
     position:relative;
 
-    background:#fff;
+    background:var(--white);
 
     border-radius:20px;
 
@@ -557,7 +566,7 @@ p{
 
     transition:.35s;
 
-    box-shadow:0 10px 30px rgba(0,0,0,.06);
+    box-shadow:0 10px 30px rgba(var(--primary-dark-rgb),.06);
 
 }
 
@@ -581,7 +590,7 @@ p{
 
     background:var(--secondary);
 
-    color:#fff;
+    color:var(--white);
 
     font-size:22px;
 
@@ -605,7 +614,7 @@ p{
 
 .partners{
 
-    background:#ffffff;
+    background:var(--white);
 
 }
 
@@ -643,9 +652,9 @@ p{
 
 .cta{
 
-    background:linear-gradient(135deg,#0B4EA2,#153B74);
+    background:linear-gradient(135deg,var(--primary),var(--primary-dark));
 
-    color:#fff;
+    color:var(--white);
 
 }
 
@@ -659,7 +668,7 @@ p{
 
 .cta p{
 
-    color:#ddd;
+    color:rgba(var(--white-rgb),.82);
 
     max-width:700px;
 
@@ -673,9 +682,9 @@ p{
 
 .footer{
 
-    background:#101828;
+    background:var(--primary-dark);
 
-    color:#fff;
+    color:var(--white);
 
     padding:80px 0 30px;
 
@@ -689,7 +698,7 @@ p{
 
 .footer p{
 
-    color:#b8c1cc;
+    color:rgba(var(--white-rgb),.75);
 
 }
 
@@ -709,7 +718,7 @@ p{
 
 .footer-links a{
 
-    color:#b8c1cc;
+    color:rgba(var(--white-rgb),.75);
 
     text-decoration:none;
 
@@ -719,7 +728,7 @@ p{
 
 .footer-links a:hover{
 
-    color:#fff;
+    color:var(--white);
 
     padding-left:8px;
 
@@ -727,7 +736,7 @@ p{
 
 .footer hr{
 
-    border-color:#2d3748;
+    border-color:rgba(var(--white-rgb),.18);
 
     margin:40px 0 25px;
 

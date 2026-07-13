@@ -14,6 +14,7 @@
   <link class="favicon" rel="icon" href="assets/images/nexa-logo.jpeg">
   <link rel="preconnect" href="https://cdn.jsdelivr.net">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap-grid.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
   <link rel="stylesheet" href="assets/css/styles.css">
   
   <!-- Swiper.js Vendor Core Layer CSS -->
@@ -49,13 +50,20 @@
         <div class="swiper hero-swiper">
           <div class="swiper-wrapper">
         
-            <!-- Slide 1: Global Freight Solutions (Image Background) -->
+            <!-- Slide 1: Global Freight Solutions (Video Background) -->
             <div class="swiper-slide">
               <div class="hero-bg-wrapper">
-                <img src="assets/images/hero/port-sunset.jpg" 
-                     alt="Modern commercial port terminal operating at sunrise" 
-                     class="hero-bg"
-                     loading="eager">
+                <video class="hero-bg hero-video"
+                       autoplay
+                       loop
+                       muted
+                       playsinline
+                       preload="metadata"
+                       poster="assets/images/hero/port-sunset.jpg"
+                       aria-label="Modern container port with cargo operations">
+                  <source src="assets/video/video-slide1.mp4" type="video/mp4">
+                  Your browser does not support HTML5 video.
+                </video>
                 <div class="hero-overlay"></div>
               </div>
               <div class="hero-container">
@@ -65,19 +73,32 @@
                     <h1 class="hero-title">Global Freight<br>Solutions</h1>
                     <p class="hero-description">Connecting businesses worldwide through reliable Air, Sea and Land logistics.</p>
                     <div class="hero-actions">
-                      <a href="#quote" class="hero-btn hero-btn-primary">Request Quote</a>
-                      <a href="#services" class="hero-btn hero-btn-secondary">Explore Services</a>
+                      <a href="quote.html" class="hero-btn hero-btn-primary">Request Quote <span aria-hidden="true">-></span></a>
+                      <a href="services.html" class="hero-btn hero-btn-secondary">Explore Services <span aria-hidden="true">-></span></a>
+                    </div>
+                    <div class="hero-trust-bar" aria-label="NEXA trust indicators">
+                      <span class="trust-item"><span class="trust-icon" aria-hidden="true">✓</span>10+ Years Experience</span>
+                      <span class="trust-item"><span class="trust-icon" aria-hidden="true">◎</span>120+ Countries</span>
+                      <span class="trust-item"><span class="trust-icon" aria-hidden="true">□</span>5000+ Shipments</span>
+                      <span class="trust-item"><span class="trust-icon" aria-hidden="true">◇</span>Global Partners</span>
+                      <span class="trust-item"><span class="trust-icon" aria-hidden="true">★</span>97% Satisfaction</span>
                     </div>
                   </div>
                   <div class="hero-side">
-                    <div class="info-card-glass">
-                      <ul class="info-card-list">
-                        <li><span class="icon">✓</span> 24/7 Customer Support</li>
-                        <li><span class="icon">✓</span> 50+ Countries</li>
-                        <li><span class="icon">✓</span> 9000+ Shipments</li>
-                        <li><span class="icon">✓</span> Customs Clearance</li>
-                        <li><span class="icon">✓</span> Air / Sea / Land</li>
-                      </ul>
+                    <div class="info-card-glass premium-dashboard-card">
+                      <h2 class="dashboard-title">Operational Performance</h2>
+                      <div class="dashboard-stats-grid" aria-label="NEXA logistics performance indicators">
+                        <div class="stat-mini-card"><span class="stat-icon" aria-hidden="true">24</span><strong class="stat-value">24/7</strong><span class="stat-label">Customer Support</span></div>
+                        <div class="stat-mini-card"><span class="stat-icon" aria-hidden="true">120</span><strong class="stat-value">120+</strong><span class="stat-label">Countries</span></div>
+                        <div class="stat-mini-card"><span class="stat-icon" aria-hidden="true">9K</span><strong class="stat-value">5000+</strong><span class="stat-label">Shipments</span></div>
+                        <div class="stat-mini-card"><span class="stat-icon" aria-hidden="true">97</span><strong class="stat-value">97%</strong><span class="stat-label">Satisfaction</span></div>
+                      </div>
+                      <div class="dashboard-footer-features" aria-label="Core logistics capabilities">
+                        <span class="footer-feat-badge"><span class="feat-icon" aria-hidden="true">✓</span>Air Freight</span>
+                        <span class="footer-feat-badge"><span class="feat-icon" aria-hidden="true">✓</span>Sea Freight</span>
+                        <span class="footer-feat-badge"><span class="feat-icon" aria-hidden="true">✓</span>Road Transport</span>
+                        <span class="footer-feat-badge"><span class="feat-icon" aria-hidden="true">✓</span>Customs Clearance</span>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -87,11 +108,16 @@
             <!-- Slide 2: Air Freight Excellence (Video Background) -->
             <div class="swiper-slide">
               <div class="hero-bg-wrapper">
-                <!-- Using live high-quality aviation logistics stock video loop for instant testing -->
-                <video class="hero-bg" autoplay loop muted playsinline poster="assets/images/hero/cargo-airplane.jpg">
-                  <source src="https://d2j2uxe7jasn0r.cloudfront.net/watermarks/video/SnwSLKlX1xm3vhh33f/videoblocks-v_vietri-sul-mare_049_sjlh6borex__3b5acb08a45caa27955574296efc3ba7__P360.mp4" type="video/mp4">
-                  <!-- Alternative local asset path: assets/videos/hero/cargo-airplane.mp4 -->
-                  Your browser does not support the video tag.
+                <video class="hero-bg hero-video"
+                       autoplay
+                       loop
+                       muted
+                       playsinline
+                       preload="metadata"
+                       poster="assets/images/hero/cargo-airplane.jpg"
+                       aria-label="Cargo aircraft loading freight for international air cargo">
+                  <source src="assets/video/video-slide2.mp4" type="video/mp4">
+                  Your browser does not support HTML5 video.
                 </video>
                 <div class="hero-overlay"></div>
               </div>
@@ -100,36 +126,47 @@
                   <div class="hero-content">
                     <span class="hero-badge">Air Freight Excellence</span>
                     <h1 class="hero-title">Air Freight<br>Excellence</h1>
-                    <p class="hero-description">Fast international air cargo through trusted airline partners.</p>
+                    <p class="hero-description">Fast international air cargo solutions through trusted airline partners.</p>
                     <div class="hero-actions">
-                      <a href="#quote" class="hero-btn hero-btn-primary">Request Quote</a>
-                      <a href="#services" class="hero-btn hero-btn-secondary">Explore Services</a>
+                      <a href="quote.html" class="hero-btn hero-btn-primary">Request Quote <span aria-hidden="true">-></span></a>
+                      <a href="services.html" class="hero-btn hero-btn-secondary">Explore Services <span aria-hidden="true">-></span></a>
+                    </div>
+                    <div class="hero-trust-bar" aria-label="NEXA trust indicators">
+                      <span class="trust-item"><span class="trust-icon" aria-hidden="true">✓</span>10+ Years Experience</span>
+                      <span class="trust-item"><span class="trust-icon" aria-hidden="true">◎</span>120+ Countries</span>
+                      <span class="trust-item"><span class="trust-icon" aria-hidden="true">□</span>5000+ Shipments</span>
+                      <span class="trust-item"><span class="trust-icon" aria-hidden="true">◇</span>Global Partners</span>
+                      <span class="trust-item"><span class="trust-icon" aria-hidden="true">★</span>97% Satisfaction</span>
                     </div>
                   </div>
                   <div class="hero-side">
-                    <div class="info-card-glass">
-                      <ul class="info-card-list">
-                        <li><span class="icon">✓</span> 24/7 Customer Support</li>
-                        <li><span class="icon">✓</span> 50+ Countries</li>
-                        <li><span class="icon">✓</span> 9000+ Shipments</li>
-                        <li><span class="icon">✓</span> Customs Clearance</li>
-                        <li><span class="icon">✓</span> Air / Sea / Land</li>
-                      </ul>
+                    <div class="info-card-glass premium-dashboard-card">
+                      <h2 class="dashboard-title">Air Cargo Readiness</h2>
+                      <div class="dashboard-stats-grid" aria-label="NEXA air freight performance indicators">
+                        <div class="stat-mini-card"><span class="stat-icon" aria-hidden="true">24</span><strong class="stat-value">24/7</strong><span class="stat-label">Flight Support</span></div>
+                        <div class="stat-mini-card"><span class="stat-icon" aria-hidden="true">120</span><strong class="stat-value">120+</strong><span class="stat-label">Countries</span></div>
+                        <div class="stat-mini-card"><span class="stat-icon" aria-hidden="true">EX</span><strong class="stat-value">Express</strong><span class="stat-label">Priority Cargo</span></div>
+                        <div class="stat-mini-card"><span class="stat-icon" aria-hidden="true">RT</span><strong class="stat-value">Live</strong><span class="stat-label">Tracking</span></div>
+                      </div>
+                      <div class="dashboard-footer-features" aria-label="Core logistics capabilities">
+                        <span class="footer-feat-badge"><span class="feat-icon" aria-hidden="true">✓</span>Air Freight</span>
+                        <span class="footer-feat-badge"><span class="feat-icon" aria-hidden="true">✓</span>Customs Clearance</span>
+                        <span class="footer-feat-badge"><span class="feat-icon" aria-hidden="true">✓</span>Road Transport</span>
+                        <span class="footer-feat-badge"><span class="feat-icon" aria-hidden="true">✓</span>Door to Door</span>
+                      </div>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
 
-            <!-- Slide 3: Sea Freight Worldwide (Video Background) -->
+            <!-- Slide 3: Sea Freight Worldwide (Image Background) -->
             <div class="swiper-slide">
               <div class="hero-bg-wrapper">
-                <!-- Using live high-quality container ship stock video loop for instant testing -->
-                <video class="hero-bg" autoplay loop muted playsinline poster="assets/images/hero/container-ship.jpg">
-                  <source src="https://d2j2uxe7jasn0r.cloudfront.net/watermarks/video/B1Fy5hPzygm3ly6f2s/videoblocks-graded_v1-0077_r3phhvvmwe__1c200614c68316ccdf13599ba51ea9e1__P360.mp4" type="video/mp4">
-                  <!-- Alternative local asset path: assets/videos/hero/container-ship.mp4 -->
-                  Your browser does not support the video tag.
-                </video>
+                <img src="assets/images/hero/container-ship.jpg"
+                     alt="Large container ship carrying ocean freight worldwide"
+                     class="hero-bg"
+                     loading="lazy">
                 <div class="hero-overlay"></div>
               </div>
               <div class="hero-container">
@@ -137,21 +174,34 @@
                   <div class="hero-content">
                     <span class="hero-badge">Sea Freight Worldwide</span>
                     <h1 class="hero-title">Sea Freight<br>Worldwide</h1>
-                    <p class="hero-description">Reliable ocean freight with global coverage and competitive rates.</p>
+                    <p class="hero-description">Reliable ocean shipping with global coverage and competitive pricing.</p>
                     <div class="hero-actions">
-                      <a href="#quote" class="hero-btn hero-btn-primary">Request Quote</a>
-                      <a href="#services" class="hero-btn hero-btn-secondary">Explore Services</a>
+                      <a href="quote.html" class="hero-btn hero-btn-primary">Request Quote <span aria-hidden="true">-></span></a>
+                      <a href="services.html" class="hero-btn hero-btn-secondary">Explore Services <span aria-hidden="true">-></span></a>
+                    </div>
+                    <div class="hero-trust-bar" aria-label="NEXA trust indicators">
+                      <span class="trust-item"><span class="trust-icon" aria-hidden="true">✓</span>10+ Years Experience</span>
+                      <span class="trust-item"><span class="trust-icon" aria-hidden="true">◎</span>120+ Countries</span>
+                      <span class="trust-item"><span class="trust-icon" aria-hidden="true">□</span>5000+ Shipments</span>
+                      <span class="trust-item"><span class="trust-icon" aria-hidden="true">◇</span>Global Partners</span>
+                      <span class="trust-item"><span class="trust-icon" aria-hidden="true">★</span>97% Satisfaction</span>
                     </div>
                   </div>
                   <div class="hero-side">
-                    <div class="info-card-glass">
-                      <ul class="info-card-list">
-                        <li><span class="icon">✓</span> 24/7 Customer Support</li>
-                        <li><span class="icon">✓</span> 50+ Countries</li>
-                        <li><span class="icon">✓</span> 9000+ Shipments</li>
-                        <li><span class="icon">✓</span> Customs Clearance</li>
-                        <li><span class="icon">✓</span> Air / Sea / Land</li>
-                      </ul>
+                    <div class="info-card-glass premium-dashboard-card">
+                      <h2 class="dashboard-title">Ocean Freight Coverage</h2>
+                      <div class="dashboard-stats-grid" aria-label="NEXA sea freight performance indicators">
+                        <div class="stat-mini-card"><span class="stat-icon" aria-hidden="true">FCL</span><strong class="stat-value">FCL</strong><span class="stat-label">Full Containers</span></div>
+                        <div class="stat-mini-card"><span class="stat-icon" aria-hidden="true">LCL</span><strong class="stat-value">LCL</strong><span class="stat-label">Consolidation</span></div>
+                        <div class="stat-mini-card"><span class="stat-icon" aria-hidden="true">OOG</span><strong class="stat-value">OOG</strong><span class="stat-label">Special Cargo</span></div>
+                        <div class="stat-mini-card"><span class="stat-icon" aria-hidden="true">IN</span><strong class="stat-value">Insured</strong><span class="stat-label">Cargo Options</span></div>
+                      </div>
+                      <div class="dashboard-footer-features" aria-label="Core logistics capabilities">
+                        <span class="footer-feat-badge"><span class="feat-icon" aria-hidden="true">✓</span>Sea Freight</span>
+                        <span class="footer-feat-badge"><span class="feat-icon" aria-hidden="true">✓</span>Port Handling</span>
+                        <span class="footer-feat-badge"><span class="feat-icon" aria-hidden="true">✓</span>Warehousing</span>
+                        <span class="footer-feat-badge"><span class="feat-icon" aria-hidden="true">✓</span>Customs Clearance</span>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -174,19 +224,32 @@
                     <h1 class="hero-title">Door-to-Door<br>Logistics</h1>
                     <p class="hero-description">Complete supply chain solutions from pickup to final delivery.</p>
                     <div class="hero-actions">
-                      <a href="#quote" class="hero-btn hero-btn-primary">Request Quote</a>
-                      <a href="#services" class="hero-btn hero-btn-secondary">Explore Services</a>
+                      <a href="quote.html" class="hero-btn hero-btn-primary">Request Quote <span aria-hidden="true">-></span></a>
+                      <a href="services.html" class="hero-btn hero-btn-secondary">Explore Services <span aria-hidden="true">-></span></a>
+                    </div>
+                    <div class="hero-trust-bar" aria-label="NEXA trust indicators">
+                      <span class="trust-item"><span class="trust-icon" aria-hidden="true">✓</span>10+ Years Experience</span>
+                      <span class="trust-item"><span class="trust-icon" aria-hidden="true">◎</span>120+ Countries</span>
+                      <span class="trust-item"><span class="trust-icon" aria-hidden="true">□</span>5000+ Shipments</span>
+                      <span class="trust-item"><span class="trust-icon" aria-hidden="true">◇</span>Global Partners</span>
+                      <span class="trust-item"><span class="trust-icon" aria-hidden="true">★</span>97% Satisfaction</span>
                     </div>
                   </div>
                   <div class="hero-side">
-                    <div class="info-card-glass">
-                      <ul class="info-card-list">
-                        <li><span class="icon">✓</span> 24/7 Customer Support</li>
-                        <li><span class="icon">✓</span> 50+ Countries</li>
-                        <li><span class="icon">✓</span> 9000+ Shipments</li>
-                        <li><span class="icon">✓</span> Customs Clearance</li>
-                        <li><span class="icon">✓</span> Air / Sea / Land</li>
-                      </ul>
+                    <div class="info-card-glass premium-dashboard-card">
+                      <h2 class="dashboard-title">Door-to-Door Control</h2>
+                      <div class="dashboard-stats-grid" aria-label="NEXA door-to-door performance indicators">
+                        <div class="stat-mini-card"><span class="stat-icon" aria-hidden="true">PU</span><strong class="stat-value">Pickup</strong><span class="stat-label">Origin Collection</span></div>
+                        <div class="stat-mini-card"><span class="stat-icon" aria-hidden="true">CL</span><strong class="stat-value">Clear</strong><span class="stat-label">Customs Support</span></div>
+                        <div class="stat-mini-card"><span class="stat-icon" aria-hidden="true">WH</span><strong class="stat-value">Store</strong><span class="stat-label">Warehouse Options</span></div>
+                        <div class="stat-mini-card"><span class="stat-icon" aria-hidden="true">DL</span><strong class="stat-value">Deliver</strong><span class="stat-label">Final Mile</span></div>
+                      </div>
+                      <div class="dashboard-footer-features" aria-label="Core logistics capabilities">
+                        <span class="footer-feat-badge"><span class="feat-icon" aria-hidden="true">✓</span>Door to Door</span>
+                        <span class="footer-feat-badge"><span class="feat-icon" aria-hidden="true">✓</span>Road Transport</span>
+                        <span class="footer-feat-badge"><span class="feat-icon" aria-hidden="true">✓</span>Warehousing</span>
+                        <span class="footer-feat-badge"><span class="feat-icon" aria-hidden="true">✓</span>Real-time Updates</span>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -202,211 +265,341 @@
           <div class="swiper-button-prev"></div>
           <div class="swiper-button-next"></div>
         </div>
+        <a class="hero-scroll-indicator" href="#partners-title" aria-label="Scroll to trusted partners">
+          <span class="mouse" aria-hidden="true"><span></span></span>
+          <span class="scroll-label">Scroll</span>
+        </a>
+        <div class="hero-wave-divider" aria-hidden="true">
+          <svg viewBox="0 0 1440 110" preserveAspectRatio="none" focusable="false">
+            <path d="M0,52 C210,120 390,8 650,56 C880,98 1040,92 1248,38 C1338,15 1402,8 1440,18 L1440,110 L0,110 Z"></path>
+          </svg>
+        </div>
       </section>
 
-      <!-- Partners Rail Section -->
-      <section class="section compact" aria-labelledby="partners-title">
+      <!-- SECTION 1: Statistics -->
+      <section class="home-section home-stats" id="stats" aria-labelledby="stats-title">
         <div class="container-nexa">
-          <span class="section-kicker">Trusted partners</span>
-          <h2 id="partners-title">Connected with reliable logistics networks.</h2>
-          <div class="partner-rail" aria-label="Partner logo carousel">
-            <div class="partner-track">
-              <!-- Original Track Set -->
-              <div class="partner-logo"><img src="assets/images/partners/air arabia.png" alt="Air Arabia" loading="lazy"></div>
-              <div class="partner-logo"><img src="assets/images/partners/asycoda.png" alt="ASYCUDA" loading="lazy"></div>
-              <div class="partner-logo"><img src="assets/images/partners/cmacgm.png" alt="CMA CGM" loading="lazy"></div>
-              <div class="partner-logo"><img src="assets/images/partners/cosco.png" alt="COSCO Shipping" loading="lazy"></div>
-              <div class="partner-logo"><img src="assets/images/partners/dhl.png" alt="DHL" loading="lazy"></div>
-              <div class="partner-logo"><img src="assets/images/partners/emirates.png" alt="Emirates" loading="lazy"></div>
-              <div class="partner-logo"><img src="assets/images/partners/etihad.png" alt="Etihad Airways" loading="lazy"></div>
-              <div class="partner-logo"><img src="assets/images/partners/evergreen.png" alt="Evergreen" loading="lazy"></div>
-              <div class="partner-logo"><img src="assets/images/partners/fly dubai.png" alt="flydubai" loading="lazy"></div>
-              <div class="partner-logo"><img src="assets/images/partners/hapag-lloyd.png" alt="Hapag-Lloyd" loading="lazy"></div>
-              <div class="partner-logo"><img src="assets/images/partners/hmm.png" alt="HMM" loading="lazy"></div>
-              <div class="partner-logo"><img src="assets/images/partners/maersk.png" alt="Maersk" loading="lazy"></div>
-              <div class="partner-logo"><img src="assets/images/partners/msc.png" alt="MSC Cruises" loading="lazy"></div>
-              <div class="partner-logo"><img src="assets/images/partners/one.png" alt="Ocean Network Express" loading="lazy"></div>
-              <div class="partner-logo"><img src="assets/images/partners/pegasus.png" alt="Pegasus Airlines" loading="lazy"></div>
-              <div class="partner-logo"><img src="assets/images/partners/qatar.png" alt="Qatar Airways" loading="lazy"></div>
-              <div class="partner-logo"><img src="assets/images/partners/royal jordan.png" alt="Royal Jordanian" loading="lazy"></div>
-              <div class="partner-logo"><img src="assets/images/partners/silkway.png" alt="Silk Way West Airlines" loading="lazy"></div>
-              <div class="partner-logo"><img src="assets/images/partners/turkish airlines.png" alt="Turkish Airlines" loading="lazy"></div>
-
-              <!-- Cloned Track Set for Seamless Infinite Loop Animation -->
-              <div class="partner-logo" aria-hidden="true"><img src="assets/images/partners/air arabia.png" alt="Air Arabia" loading="lazy"></div>
-              <div class="partner-logo" aria-hidden="true"><img src="assets/images/partners/asycoda.png" alt="ASYCUDA" loading="lazy"></div>
-              <div class="partner-logo" aria-hidden="true"><img src="assets/images/partners/cmacgm.png" alt="CMA CGM" loading="lazy"></div>
-              <div class="partner-logo" aria-hidden="true"><img src="assets/images/partners/cosco.png" alt="COSCO Shipping" loading="lazy"></div>
-              <div class="partner-logo" aria-hidden="true"><img src="assets/images/partners/dhl.png" alt="DHL" loading="lazy"></div>
-              <div class="partner-logo" aria-hidden="true"><img src="assets/images/partners/emirates.png" alt="Emirates" loading="lazy"></div>
-              <div class="partner-logo" aria-hidden="true"><img src="assets/images/partners/etihad.png" alt="Etihad Airways" loading="lazy"></div>
-              <div class="partner-logo" aria-hidden="true"><img src="assets/images/partners/evergreen.png" alt="Evergreen" loading="lazy"></div>
-              <div class="partner-logo" aria-hidden="true"><img src="assets/images/partners/fly dubai.png" alt="flydubai" loading="lazy"></div>
-              <div class="partner-logo" aria-hidden="true"><img src="assets/images/partners/hapag-lloyd.png" alt="Hapag-Lloyd" loading="lazy"></div>
-              <div class="partner-logo" aria-hidden="true"><img src="assets/images/partners/hmm.png" alt="HMM" loading="lazy"></div>
-              <div class="partner-logo" aria-hidden="true"><img src="assets/images/partners/maersk.png" alt="Maersk" loading="lazy"></div>
-              <div class="partner-logo" aria-hidden="true"><img src="assets/images/partners/msc.png" alt="MSC Cruises" loading="lazy"></div>
-              <div class="partner-logo" aria-hidden="true"><img src="assets/images/partners/one.png" alt="Ocean Network Express" loading="lazy"></div>
-              <div class="partner-logo" aria-hidden="true"><img src="assets/images/partners/pegasus.png" alt="Pegasus Airlines" loading="lazy"></div>
-              <div class="partner-logo" aria-hidden="true"><img src="assets/images/partners/qatar.png" alt="Qatar Airways" loading="lazy"></div>
-              <div class="partner-logo" aria-hidden="true"><img src="assets/images/partners/royal jordan.png" alt="Royal Jordanian" loading="lazy"></div>
-              <div class="partner-logo" aria-hidden="true"><img src="assets/images/partners/silkway.png" alt="Silk Way West Airlines" loading="lazy"></div>
-              <div class="partner-logo" aria-hidden="true"><img src="assets/images/partners/turkish airlines.png" alt="Turkish Airlines" loading="lazy"></div>
-            </div>
+          <div class="section-head section-head--center" data-animate="fade-up">
+            <span class="section-badge">Performance</span>
+            <h2 id="stats-title">Built for demanding trade corridors.</h2>
+            <p class="section-lead">Measurable results that reflect our commitment to precision, reach, and client satisfaction.</p>
+          </div>
+          <div class="stats-grid" aria-label="NEXA performance statistics">
+            <article class="stat-card" data-animate="fade-up" data-animate-delay="1">
+              <div class="stat-icon" aria-hidden="true"><i class="fa-solid fa-award"></i></div>
+              <span class="stat-number" data-count="10" data-suffix="+">0</span>
+              <h3>Years Experience</h3>
+              <p>Proven logistics expertise across demanding trade corridors.</p>
+            </article>
+            <article class="stat-card" data-animate="fade-up" data-animate-delay="2">
+              <div class="stat-icon" aria-hidden="true"><i class="fa-solid fa-earth-americas"></i></div>
+              <span class="stat-number" data-count="120" data-suffix="+">0</span>
+              <h3>Countries Served</h3>
+              <p>International reach through reliable freight networks.</p>
+            </article>
+            <article class="stat-card" data-animate="fade-up" data-animate-delay="3">
+              <div class="stat-icon" aria-hidden="true"><i class="fa-solid fa-boxes-stacked"></i></div>
+              <span class="stat-number" data-count="5000" data-suffix="+">0</span>
+              <h3>Shipments</h3>
+              <p>Coordinated cargo movement with end-to-end visibility.</p>
+            </article>
+            <article class="stat-card" data-animate="fade-up" data-animate-delay="4">
+              <div class="stat-icon" aria-hidden="true"><i class="fa-solid fa-handshake-angle"></i></div>
+              <span class="stat-number" data-count="20" data-suffix="+">0</span>
+              <h3>Strategic Partners</h3>
+              <p>Trusted carrier and logistics relationships worldwide.</p>
+            </article>
+            <article class="stat-card" data-animate="fade-up" data-animate-delay="5">
+              <div class="stat-icon" aria-hidden="true"><i class="fa-solid fa-star"></i></div>
+              <span class="stat-number" data-count="97" data-suffix="%">0</span>
+              <h3>Customer Satisfaction</h3>
+              <p>Service built around clarity, speed, and accountability.</p>
+            </article>
           </div>
         </div>
       </section>
 
-      <!-- Stats Section -->
-      <section class="section mist" aria-labelledby="stats-title">
-        <div class="container-nexa">
-          <span class="section-kicker">Performance</span>
-          <h2 id="stats-title">Built for demanding trade corridors.</h2>
-          <div class="row g-4 mt-4">
-            <div class="col-6 col-lg-3"><div class="stat-card" data-animate><span class="stat-number" data-count="2026">0</span><span>Founded in Erbil, Iraq</span></div></div>
-            <div class="col-6 col-lg-3"><div class="stat-card" data-animate><span class="stat-number" data-count="98" data-suffix="%">0</span><span>Documentation accuracy target</span></div></div>
-            <div class="col-6 col-lg-3"><div class="stat-card" data-animate><span class="stat-number" data-count="24" data-suffix="/7">0</span><span>Shipment support</span></div></div>
-            <div class="col-6 col-lg-3"><div class="stat-card" data-animate><span class="stat-number" data-count="10" data-suffix="+">0</span><span>Years of logistics expertise</span></div></div>
-          </div>
-        </div>
-      </section>
-
-      <!-- About Section -->
-      <section class="section" aria-labelledby="about-title">
+      <!-- SECTION 2: About -->
+      <section class="home-section home-about" aria-labelledby="about-title">
         <div class="container-nexa">
           <div class="row g-5 align-items-center">
-            <div class="col-lg-6"><div class="image-frame" data-animate></div></div>
             <div class="col-lg-6">
-              <span class="section-kicker">About NEXA</span>
-              <h2 id="about-title">Modern freight forwarding with a global mindset.</h2>
-              <p class="lead mt-3">Founded in 2026, NEXA was built with a clear mission: to connect businesses across borders through fast, reliable, and efficient logistics solutions.</p>
-              <p>We handle every delivery with precision, speed, and transparency, giving clients real-time visibility, competitive pricing, and round-the-clock customer support.</p>
-              <a class="btn-nexa btn-lightline mt-3" href="about.html">Learn More</a>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- Core Services Section -->
-      <section class="section mist" aria-labelledby="services-title">
-        <div class="container-nexa">
-          <span class="section-kicker">Services</span>
-          <h2 id="services-title">Core services for complete supply chain support.</h2>
-          <div class="row g-4 mt-4">
-            <div class="col-md-6 col-lg-4"><article class="service-card" data-animate><div class="icon-mark">CB</div><h3>Customs Brokerage</h3><p>Fast, compliant customs clearance handled by experts to keep your supply chain moving without delays.</p></article></div>
-            <div class="col-md-6 col-lg-4"><article class="service-card" data-animate><div class="icon-mark">FF</div><h3>Freight Forwarding</h3><p>Air, sea, and land freight solutions connecting international trade hubs with local delivery.</p></article></div>
-            <div class="col-md-6 col-lg-4"><article class="service-card" data-animate><div class="icon-mark">SP</div><h3>Special & Perishable Cargo</h3><p>Customized logistics for hazardous materials, oversized machinery, project cargo, and sensitive freight.</p></article></div>
-            <div class="col-md-6 col-lg-4"><article class="service-card" data-animate><div class="icon-mark">LT</div><h3>Local Transportation</h3><p>Dependable inland freight across local, regional, and cross-border routes with professional handling.</p></article></div>
-            <div class="col-md-6 col-lg-4"><article class="service-card" data-animate><div class="icon-mark">WH</div><h3>Warehousing</h3><p>Secure storage, inventory visibility, order picking, dispatch, and fulfillment support.</p></article></div>
-            <div class="col-md-6 col-lg-4"><article class="service-card" data-animate><div class="icon-mark">DD</div><h3>Door to Door</h3><p>End-to-end pickup, clearance, transport, and delivery coordination from origin to final destination.</p></article></div>
-          </div>
-        </div>
-      </section>
-
-      <!-- Industries Section -->
-      <section class="section dark" aria-labelledby="industries-title">
-        <div class="container-nexa">
-          <span class="section-kicker">Industries</span>
-          <h2 id="industries-title">Serving trade-critical sectors.</h2>
-          <div class="industries-grid mt-4">
-            <div class="industry-tile"><strong>Retail</strong><span>Import programs and seasonal replenishment.</span></div>
-            <div class="industry-tile"><strong>Construction</strong><span>Materials, machinery, and project cargo.</span></div>
-            <div class="industry-tile"><strong>Manufacturing</strong><span>Components, equipment, and production supplies.</span></div>
-            <div class="industry-tile"><strong>Food & FMCG</strong><span>High-velocity movement for consumer goods.</span></div>
-            <div class="industry-tile"><strong>Oil & Gas</strong><span>Specialized equipment and controlled delivery.</span></div>
-            <div class="industry-tile"><strong>Healthcare</strong><span>Document-sensitive and time-sensitive cargo.</span></div>
-            <div class="industry-tile"><strong>Technology</strong><span>Secure transport for devices and components.</span></div>
-            <div class="industry-tile"><strong>Automotive</strong><span>Parts, accessories, and dealer supply chains.</span></div>
-          </div>
-        </div>
-      </section>
-
-      <!-- Process Workflow Section -->
-      <section class="section" aria-labelledby="process-title">
-        <div class="container-nexa">
-          <span class="section-kicker">Process</span>
-          <h2 id="process-title">A clear shipment workflow from quote to delivery.</h2>
-          <div class="row g-4 mt-4">
-            <div class="col-md-6 col-lg-3"><article class="process-card" data-animate><span class="process-step">1</span><h3>Request</h3><p>Share cargo details, origin, destination, documents, and timeline.</p></article></div>
-            <div class="col-md-6 col-lg-3"><article class="process-card" data-animate><span class="process-step">2</span><h3>Plan</h3><p>We compare practical routes, modes, carriers, and clearance needs.</p></article></div>
-            <div class="col-md-6 col-lg-3"><article class="process-card" data-animate><span class="process-step">3</span><h3>Move</h3><p>Shipment milestones are coordinated across pickup, transit, and handling.</p></article></div>
-            <div class="col-md-6 col-lg-3"><article class="process-card" data-animate><span class="process-step">4</span><h3>Deliver</h3><p>Final delivery is confirmed with documentation and shipment closure.</p></article></div>
-          </div>
-        </div>
-      </section>
-
-      <!-- Value Proposition Section -->
-      <section class="section mist" aria-labelledby="why-title">
-        <div class="container-nexa">
-          <div class="row g-4 align-items-stretch">
-            <div class="col-lg-5">
-              <span class="section-kicker">Why choose us</span>
-              <h2 id="why-title">We eliminate the complexity from logistics.</h2>
-              <p class="lead mt-3">Operating in rapidly changing environments requires a partner who acts with integrity, precision, and absolute reliability.</p>
-            </div>
-            <div class="col-lg-7">
-              <div class="row g-4">
-                <div class="col-md-6"><div class="feature-card" data-animate><h3>Proven expertise</h3><p>More than 10 years navigating international logistics and complex trade corridors.</p></div></div>
-                <div class="col-md-6"><div class="feature-card" data-animate><h3>Tailored operations</h3><p>Certified professionals design efficient supply chain solutions for each client.</p></div></div>
-                <div class="col-md-6"><div class="feature-card" data-animate><h3>Global reach, local power</h3><p>A worldwide network supports seamless door-to-door delivery.</p></div></div>
-                <div class="col-md-6"><div class="feature-card" data-animate><h3>Uncompromised security</h3><p>High-standard compliance, risk management, and secure cargo handling.</p></div></div>
+              <div class="about-visual" data-animate="slide-right">
+                <img src="assets/images/hero/container-ship.jpg" alt="Container ship representing global ocean freight logistics" loading="lazy">
+                <div class="about-glass-card" aria-label="NEXA operational highlights">
+                  <div class="about-glass-stat">
+                    <strong data-count="5000" data-suffix="+">0</strong>
+                    <span>Shipments Delivered</span>
+                  </div>
+                  <div class="about-glass-stat">
+                    <strong data-count="120" data-suffix="+">0</strong>
+                    <span>Countries Connected</span>
+                  </div>
+                </div>
               </div>
             </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- Testimonials Section -->
-      <section class="section" aria-labelledby="testimonials-title">
-        <div class="container-nexa">
-          <span class="section-kicker">Testimonials</span>
-          <h2 id="testimonials-title">Trusted by teams that depend on reliable movement.</h2>
-          <div class="row g-4 mt-4">
-            <div class="col-md-4"><article class="testimonial-card" data-animate><p class="quote">"NEXA gives us clear updates and practical routing options when timelines are tight."</p><div class="person">Operations Manager, Retail Importer</div></article></div>
-            <div class="col-md-4"><article class="testimonial-card" data-animate><p class="quote">"Their customs coordination reduced delays and made documentation easier for our team."</p><div class="person">Supply Chain Lead, Manufacturer</div></article></div>
-            <div class="col-md-4"><article class="testimonial-card" data-animate><p class="quote">"We rely on NEXA for freight planning because they stay close to every milestone."</p><div class="person">Procurement Director, Project Contractor</div></article></div>
-          </div>
-        </div>
-      </section>
-
-      <!-- Call to Action Band -->
-      <section class="section compact">
-        <div class="container-nexa">
-          <div class="cta-band" data-animate>
-            <div class="row g-4 align-items-center">
-              <div class="col-lg-8">
-                <span class="section-kicker">Ready to ship</span>
-                <h2>Partner with NEXA and experience logistics redefined.</h2>
-                <p class="lead mt-3">Contact us to optimize your supply chain with reliable, transparent, and efficient logistics solutions.</p>
+            <div class="col-lg-6">
+              <div class="about-content" data-animate="slide-left">
+                <span class="section-badge">About NEXA</span>
+                <h2 id="about-title">Moving Cargo.<br>Building Trust.</h2>
+                <p class="section-lead">Founded in 2026, NEXA was built with a clear mission: to connect businesses across borders through fast, reliable, and efficient logistics solutions.</p>
+                <p>We handle every delivery with precision, speed, and transparency — giving clients real-time visibility, competitive pricing, and round-the-clock customer support across air, sea, and land corridors.</p>
               </div>
-              <div class="col-lg-4 text-lg-end"><a class="btn-nexa" href="quote.html">Request Quote</a></div>
+              <div class="mvv-grid">
+                <article class="mvv-card" data-animate="fade-up" data-animate-delay="1">
+                  <div class="mvv-icon" aria-hidden="true"><i class="fa-solid fa-bullseye"></i></div>
+                  <h3>Mission</h3>
+                  <p>Deliver seamless, dependable supply chain solutions that consistently outperform client benchmarks.</p>
+                </article>
+                <article class="mvv-card" data-animate="fade-up" data-animate-delay="2">
+                  <div class="mvv-icon" aria-hidden="true"><i class="fa-solid fa-eye"></i></div>
+                  <h3>Vision</h3>
+                  <p>Establish NEXA as a premier global leader in freight forwarding through intelligent logistics strategies.</p>
+                </article>
+                <article class="mvv-card" data-animate="fade-up" data-animate-delay="3">
+                  <div class="mvv-icon" aria-hidden="true"><i class="fa-solid fa-gem"></i></div>
+                  <h3>Values</h3>
+                  <p>Client commitment, absolute integrity, progressive innovation, and empowered talent guide every shipment.</p>
+                </article>
+              </div>
+              <div class="about-features">
+                <article class="about-feature" data-animate="fade-up" data-animate-delay="1">
+                  <div class="about-feature-icon" aria-hidden="true"><i class="fa-solid fa-shield-halved"></i></div>
+                  <div><h4>Proven Expertise</h4><p>10+ years navigating international logistics corridors.</p></div>
+                </article>
+                <article class="about-feature" data-animate="fade-up" data-animate-delay="2">
+                  <div class="about-feature-icon" aria-hidden="true"><i class="fa-solid fa-sliders"></i></div>
+                  <div><h4>Tailored Operations</h4><p>Custom supply chain solutions designed for each client.</p></div>
+                </article>
+                <article class="about-feature" data-animate="fade-up" data-animate-delay="3">
+                  <div class="about-feature-icon" aria-hidden="true"><i class="fa-solid fa-globe"></i></div>
+                  <div><h4>Global Reach</h4><p>Worldwide network with seamless door-to-door delivery.</p></div>
+                </article>
+                <article class="about-feature" data-animate="fade-up" data-animate-delay="4">
+                  <div class="about-feature-icon" aria-hidden="true"><i class="fa-solid fa-lock"></i></div>
+                  <div><h4>Secure Handling</h4><p>High-standard compliance and risk-managed cargo movement.</p></div>
+                </article>
+              </div>
+              <a class="btn-nexa btn-nexa--outline mt-4" href="about.html" data-animate="fade-up">Learn More <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- SECTION 3: Services -->
+      <section class="home-section home-services home-section--alt" aria-labelledby="services-title">
+        <div class="container-nexa">
+          <div class="section-head section-head--center" data-animate="fade-up">
+            <span class="section-badge">Services</span>
+            <h2 id="services-title">Core services for complete supply chain support.</h2>
+            <p class="section-lead">End-to-end logistics capabilities designed to move your cargo with speed, clarity, and control.</p>
+          </div>
+          <div class="services-grid">
+            <article class="service-card-premium" data-animate="fade-up" data-animate-delay="1">
+              <div class="service-icon" aria-hidden="true"><i class="fa-solid fa-file-invoice"></i></div>
+              <h3>Customs Brokerage</h3>
+              <p>Fast, compliant customs clearance handled by experts to keep your supply chain moving without delays.</p>
+              <a class="service-link" href="services.html">Learn More <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
+            </article>
+            <article class="service-card-premium" data-animate="fade-up" data-animate-delay="2">
+              <div class="service-icon" aria-hidden="true"><i class="fa-solid fa-plane-departure"></i></div>
+              <h3>Freight Forwarding</h3>
+              <p>Air, sea, and land freight solutions connecting international trade hubs with local delivery.</p>
+              <a class="service-link" href="services.html">Learn More <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
+            </article>
+            <article class="service-card-premium" data-animate="fade-up" data-animate-delay="3">
+              <div class="service-icon" aria-hidden="true"><i class="fa-solid fa-temperature-low"></i></div>
+              <h3>Special &amp; Perishable Cargo</h3>
+              <p>Customized logistics for hazardous materials, oversized machinery, project cargo, and sensitive freight.</p>
+              <a class="service-link" href="services.html">Learn More <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
+            </article>
+            <article class="service-card-premium" data-animate="fade-up" data-animate-delay="4">
+              <div class="service-icon" aria-hidden="true"><i class="fa-solid fa-truck-fast"></i></div>
+              <h3>Local Transportation</h3>
+              <p>Dependable inland freight across local, regional, and cross-border routes with professional handling.</p>
+              <a class="service-link" href="services.html">Learn More <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
+            </article>
+            <article class="service-card-premium" data-animate="fade-up" data-animate-delay="5">
+              <div class="service-icon" aria-hidden="true"><i class="fa-solid fa-warehouse"></i></div>
+              <h3>Warehousing</h3>
+              <p>Secure storage, inventory visibility, order picking, dispatch, and fulfillment support.</p>
+              <a class="service-link" href="services.html">Learn More <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
+            </article>
+            <article class="service-card-premium" data-animate="fade-up" data-animate-delay="6">
+              <div class="service-icon" aria-hidden="true"><i class="fa-solid fa-door-open"></i></div>
+              <h3>Door to Door</h3>
+              <p>End-to-end pickup, clearance, transport, and delivery coordination from origin to final destination.</p>
+              <a class="service-link" href="services.html">Learn More <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- SECTION 4: Why Choose NEXA -->
+      <section class="home-section home-why" aria-labelledby="why-title">
+        <div class="container-nexa">
+          <div class="section-head section-head--center" data-animate="fade-up">
+            <span class="section-badge">Why Choose NEXA</span>
+            <h2 id="why-title">We eliminate the complexity from logistics.</h2>
+            <p class="section-lead">Operating in rapidly changing environments requires a partner who acts with integrity, precision, and absolute reliability.</p>
+          </div>
+          <div class="why-grid">
+            <article class="why-card" data-animate="fade-up" data-animate-delay="1">
+              <div class="why-icon" aria-hidden="true"><i class="fa-solid fa-medal"></i></div>
+              <h3>Proven Expertise</h3>
+              <p>More than 10 years navigating international logistics and complex trade corridors worldwide.</p>
+            </article>
+            <article class="why-card" data-animate="fade-up" data-animate-delay="2">
+              <div class="why-icon" aria-hidden="true"><i class="fa-solid fa-gears"></i></div>
+              <h3>Tailored Operations</h3>
+              <p>Certified professionals design efficient supply chain solutions customized for each client.</p>
+            </article>
+            <article class="why-card" data-animate="fade-up" data-animate-delay="3">
+              <div class="why-icon" aria-hidden="true"><i class="fa-solid fa-network-wired"></i></div>
+              <h3>Global Reach</h3>
+              <p>A worldwide partner network supports seamless door-to-door delivery across 120+ countries.</p>
+            </article>
+            <article class="why-card" data-animate="fade-up" data-animate-delay="4">
+              <div class="why-icon" aria-hidden="true"><i class="fa-solid fa-shield-virus"></i></div>
+              <h3>Secure Handling</h3>
+              <p>High-standard compliance, risk management, and secure cargo handling at every milestone.</p>
+            </article>
+            <article class="why-card" data-animate="fade-up" data-animate-delay="5">
+              <div class="why-icon" aria-hidden="true"><i class="fa-solid fa-clock"></i></div>
+              <h3>24/7 Support</h3>
+              <p>Round-the-clock customer support with real-time shipment visibility and proactive updates.</p>
+            </article>
+            <article class="why-card" data-animate="fade-up" data-animate-delay="6">
+              <div class="why-icon" aria-hidden="true"><i class="fa-solid fa-chart-line"></i></div>
+              <h3>Transparent Pricing</h3>
+              <p>Competitive rates with clear cost breakdowns — no hidden fees, no surprises on delivery.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- SECTION 5: Partners -->
+      <section class="home-section home-partners home-section--alt" aria-labelledby="partners-title">
+        <div class="container-nexa">
+          <div class="section-head section-head--center" data-animate="fade-up">
+            <span class="section-badge">Global Network</span>
+            <h2 id="partners-title">Trusted by Global Industry Leaders</h2>
+            <p class="section-lead">Connected with the world's most reliable carriers, airlines, and logistics networks.</p>
+          </div>
+        </div>
+        <div class="partner-rail" data-partner-rail aria-label="Partner logo carousel">
+          <div class="partner-track">
+            <div class="partner-logo"><img src="assets/images/partners/air arabia.png" alt="Air Arabia" loading="lazy"></div>
+            <div class="partner-logo"><img src="assets/images/partners/asycoda.png" alt="ASYCUDA" loading="lazy"></div>
+            <div class="partner-logo"><img src="assets/images/partners/cmacgm.png" alt="CMA CGM" loading="lazy"></div>
+            <div class="partner-logo"><img src="assets/images/partners/cosco.png" alt="COSCO Shipping" loading="lazy"></div>
+            <div class="partner-logo"><img src="assets/images/partners/dhl.png" alt="DHL" loading="lazy"></div>
+            <div class="partner-logo"><img src="assets/images/partners/emirates.png" alt="Emirates" loading="lazy"></div>
+            <div class="partner-logo"><img src="assets/images/partners/etihad.png" alt="Etihad Airways" loading="lazy"></div>
+            <div class="partner-logo"><img src="assets/images/partners/evergreen.png" alt="Evergreen" loading="lazy"></div>
+            <div class="partner-logo"><img src="assets/images/partners/fly dubai.png" alt="flydubai" loading="lazy"></div>
+            <div class="partner-logo"><img src="assets/images/partners/hapag-liod.png" alt="Hapag-Lloyd" loading="lazy"></div>
+            <div class="partner-logo"><img src="assets/images/partners/hmm.png" alt="HMM" loading="lazy"></div>
+            <div class="partner-logo"><img src="assets/images/partners/maersk.png" alt="Maersk" loading="lazy"></div>
+            <div class="partner-logo"><img src="assets/images/partners/msc.png" alt="MSC" loading="lazy"></div>
+            <div class="partner-logo"><img src="assets/images/partners/one.png" alt="Ocean Network Express" loading="lazy"></div>
+            <div class="partner-logo"><img src="assets/images/partners/pegasus.png" alt="Pegasus Airlines" loading="lazy"></div>
+            <div class="partner-logo"><img src="assets/images/partners/qatar.png" alt="Qatar Airways" loading="lazy"></div>
+            <div class="partner-logo"><img src="assets/images/partners/royal jordan.png" alt="Royal Jordanian" loading="lazy"></div>
+            <div class="partner-logo"><img src="assets/images/partners/silkway.png" alt="Silk Way West Airlines" loading="lazy"></div>
+            <div class="partner-logo"><img src="assets/images/partners/turkish airlines.png" alt="Turkish Airlines" loading="lazy"></div>
+            <div class="partner-logo" aria-hidden="true"><img src="assets/images/partners/air arabia.png" alt="" loading="lazy"></div>
+            <div class="partner-logo" aria-hidden="true"><img src="assets/images/partners/asycoda.png" alt="" loading="lazy"></div>
+            <div class="partner-logo" aria-hidden="true"><img src="assets/images/partners/cmacgm.png" alt="" loading="lazy"></div>
+            <div class="partner-logo" aria-hidden="true"><img src="assets/images/partners/cosco.png" alt="" loading="lazy"></div>
+            <div class="partner-logo" aria-hidden="true"><img src="assets/images/partners/dhl.png" alt="" loading="lazy"></div>
+            <div class="partner-logo" aria-hidden="true"><img src="assets/images/partners/emirates.png" alt="" loading="lazy"></div>
+            <div class="partner-logo" aria-hidden="true"><img src="assets/images/partners/etihad.png" alt="" loading="lazy"></div>
+            <div class="partner-logo" aria-hidden="true"><img src="assets/images/partners/evergreen.png" alt="" loading="lazy"></div>
+            <div class="partner-logo" aria-hidden="true"><img src="assets/images/partners/fly dubai.png" alt="" loading="lazy"></div>
+            <div class="partner-logo" aria-hidden="true"><img src="assets/images/partners/hapag-liod.png" alt="" loading="lazy"></div>
+            <div class="partner-logo" aria-hidden="true"><img src="assets/images/partners/hmm.png" alt="" loading="lazy"></div>
+            <div class="partner-logo" aria-hidden="true"><img src="assets/images/partners/maersk.png" alt="" loading="lazy"></div>
+            <div class="partner-logo" aria-hidden="true"><img src="assets/images/partners/msc.png" alt="" loading="lazy"></div>
+            <div class="partner-logo" aria-hidden="true"><img src="assets/images/partners/one.png" alt="" loading="lazy"></div>
+            <div class="partner-logo" aria-hidden="true"><img src="assets/images/partners/pegasus.png" alt="" loading="lazy"></div>
+            <div class="partner-logo" aria-hidden="true"><img src="assets/images/partners/qatar.png" alt="" loading="lazy"></div>
+            <div class="partner-logo" aria-hidden="true"><img src="assets/images/partners/royal jordan.png" alt="" loading="lazy"></div>
+            <div class="partner-logo" aria-hidden="true"><img src="assets/images/partners/silkway.png" alt="" loading="lazy"></div>
+            <div class="partner-logo" aria-hidden="true"><img src="assets/images/partners/turkish airlines.png" alt="" loading="lazy"></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- SECTION 6: Call to Action -->
+      <section class="home-section home-cta" aria-labelledby="cta-title">
+        <div class="container-nexa">
+          <div class="cta-premium" data-animate="fade-up">
+            <div class="cta-premium-content">
+              <span class="section-badge section-badge--light">Ready to Ship</span>
+              <h2 id="cta-title">Partner with NEXA and experience logistics redefined.</h2>
+              <p>Contact us to optimize your supply chain with reliable, transparent, and efficient logistics solutions tailored to your business.</p>
+              <a class="btn-nexa btn-nexa--accent btn-nexa--lg" href="quote.html">Request Quote <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
             </div>
           </div>
         </div>
       </section>
     </main>
 
-    <footer class="site-footer">
+    <footer class="site-footer site-footer--premium">
       <div class="container-nexa">
-        <div class="row g-4">
-          <div class="col-lg-5">
-            <img class="footer-logo" src="assets/images/nexa-logo.jpeg" alt="NEXA Logistics logo" width="120" height="40">
-            <p>NEXA Logistics & Transport is based in Erbil, Iraq, delivering beyond borders through reliable freight forwarding and supply chain solutions.</p>
+        <div class="row g-5 footer-grid">
+          <div class="col-lg-4">
+            <img class="footer-logo" src="assets/images/nexa-logo.jpeg" alt="NEXA Logistics logo" width="140" height="48">
+            <p class="footer-about">NEXA Logistics &amp; Transport is based in Erbil, Iraq, delivering beyond borders through reliable freight forwarding and supply chain solutions.</p>
+            <div class="footer-social" aria-label="Social media links">
+              <a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in" aria-hidden="true"></i></a>
+              <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f" aria-hidden="true"></i></a>
+              <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram" aria-hidden="true"></i></a>
+              <a href="#" aria-label="X (Twitter)"><i class="fa-brands fa-x-twitter" aria-hidden="true"></i></a>
+            </div>
           </div>
           <div class="col-6 col-lg-2">
             <div class="footer-title">Company</div>
-            <div class="footer-links"><a href="about.html">About</a><a href="services.html">Services</a><a href="partners.html">Partners</a><a href="gallery.html">Gallery</a></div>
+            <div class="footer-links">
+              <a href="about.html">About Us</a>
+              <a href="partners.html">Partners</a>
+              <a href="gallery.html">Gallery</a>
+              <a href="contact.html">Contact</a>
+            </div>
           </div>
           <div class="col-6 col-lg-2">
-            <div class="footer-title">Support</div>
-            <div class="footer-links"><a href="contact.html">Contact</a><a href="quote.html">Request Quote</a><a href="services.html">Freight</a><a href="services.html">Customs</a></div>
+            <div class="footer-title">Services</div>
+            <div class="footer-links">
+              <a href="services.html">Freight Forwarding</a>
+              <a href="services.html">Customs Brokerage</a>
+              <a href="services.html">Warehousing</a>
+              <a href="services.html">Door to Door</a>
+            </div>
           </div>
-          <div class="col-lg-3">
-            <div class="footer-title">Contact</div>
-            <p>Address: Erbil, Kurdistan Region, Iraq<br>Email: info@nexalogistics.com<br>Phone: +000 000 000 000</p>
+          <div class="col-lg-4">
+            <div class="footer-title">Quick Links</div>
+            <div class="footer-links footer-links--inline">
+              <a href="quote.html">Request Quote</a>
+              <a href="tracking.html">Track Shipment</a>
+              <a href="faq.html">FAQ</a>
+            </div>
+            <div class="footer-title mt-4">Contact</div>
+            <p class="footer-contact">Erbil, Kurdistan Region, Iraq<br><a href="mailto:info@nexalogistics.com">info@nexalogistics.com</a><br><a href="tel:+000000000000">+000 000 000 000</a></p>
+            <form class="footer-newsletter" data-static-form aria-label="Newsletter subscription">
+              <label class="visually-hidden" for="newsletter-email">Email address</label>
+              <input class="footer-newsletter-input" id="newsletter-email" type="email" placeholder="Your email address" required>
+              <button class="footer-newsletter-btn" type="submit" aria-label="Subscribe"><i class="fa-solid fa-paper-plane" aria-hidden="true"></i></button>
+              <p class="footer-form-note" data-form-note></p>
+            </form>
           </div>
         </div>
-        <div class="footer-bottom">&copy; 2026 NEXA Logistics. All rights reserved.</div>
+        <div class="footer-bottom">
+          <span>&copy; 2026 NEXA Logistics. All rights reserved.</span>
+          <button class="back-to-top" type="button" data-back-to-top aria-label="Back to top">
+            <i class="fa-solid fa-arrow-up" aria-hidden="true"></i>
+          </button>
+        </div>
       </div>
     </footer>
   </div>

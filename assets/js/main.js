@@ -16,7 +16,7 @@ document.querySelectorAll("[data-animate]").forEach((element) => {
         observer.unobserve(entry.target);
       }
     });
-  }, { threshold: 0.18 });
+  }, { threshold: 0.15, rootMargin: "0px 0px -40px 0px" });
 
   observer.observe(element);
 });
@@ -33,7 +33,7 @@ if (counters.length) {
       const element = entry.target;
       const target = Number(element.dataset.count || "0");
       const suffix = element.dataset.suffix || "";
-      const duration = 1200;
+      const duration = 1400;
       const start = performance.now();
 
       const tick = (now) => {
@@ -46,9 +46,24 @@ if (counters.length) {
       requestAnimationFrame(tick);
       counterObserver.unobserve(element);
     });
-  }, { threshold: 0.45 });
+  }, { threshold: 0.4 });
 
   counters.forEach((counter) => counterObserver.observe(counter));
+}
+
+const backToTop = document.querySelector("[data-back-to-top]");
+
+if (backToTop) {
+  const toggleBackToTop = () => {
+    backToTop.classList.toggle("is-visible", window.scrollY > 500);
+  };
+
+  window.addEventListener("scroll", toggleBackToTop, { passive: true });
+  toggleBackToTop();
+
+  backToTop.addEventListener("click", () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  });
 }
 
 document.querySelectorAll("form[data-static-form]").forEach((form) => {
@@ -56,7 +71,7 @@ document.querySelectorAll("form[data-static-form]").forEach((form) => {
     event.preventDefault();
     const note = form.querySelector("[data-form-note]");
     if (note) {
-      note.textContent = "Thank you. This static form is ready to connect to your preferred email or CRM workflow.";
+      note.textContent = "Thank you for subscribing. We'll keep you updated on NEXA logistics insights.";
     }
     form.reset();
   });

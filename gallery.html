@@ -3,30 +3,1032 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>NEXA Logistics Gallery | Freight, Warehousing & Cargo Operations</title>
-  <meta name="description" content="View NEXA Logistics gallery highlights across freight forwarding, warehousing, transport, and cargo handling operations.">
+  <title>Inside NEXA Operations | Premium Global Logistics Portfolio</title>
+  <meta name="description" content="Explore NEXA's high-performance logistics network, freight operations, smart warehousing, and global transportation capabilities through live operational highlights.">
   <link rel="icon" href="assets/images/nexa-logo.jpeg">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap-grid.min.css">
   <link rel="stylesheet" href="assets/css/styles.css">
+  
+  <!-- Scoped Page Enhancements supporting the Premium Redesign System without changing global CSS files -->
+  <style>
+    :root {
+      --nexa-primary: #1E3470;
+      --nexa-accent: #B11F2A;
+      --nexa-dark: #0F1A36;
+      --nexa-light: #F8F9FC;
+      --nexa-radius: 24px;
+      --nexa-transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+      --nexa-shadow: 0 15px 35px rgba(30, 52, 112, 0.08);
+      --nexa-shadow-hover: 0 25px 50px rgba(30, 52, 112, 0.15);
+    }
+
+    /* Page Hero Overlap Repair & Optimization */
+    .nexa-hero-premium {
+      position: relative;
+      background: linear-gradient(rgba(15, 26, 54, 0.85), rgba(15, 26, 54, 0.92)), url('https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=1920&q=80') center/cover no-repeat;
+      padding: 140px 0 100px 0;
+      color: #ffffff;
+      overflow: hidden;
+    }
+    .nexa-hero-premium::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 40px;
+      background: linear-gradient(to top, var(--nexa-light), transparent);
+    }
+    .nexa-hero-premium .breadcrumb-text {
+      color: rgba(255, 255, 255, 0.6);
+      font-size: 0.875rem;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      margin-bottom: 15px;
+    }
+    .nexa-hero-premium h1 {
+      font-size: clamp(2.5rem, 5vw, 4rem);
+      font-weight: 800;
+      line-height: 1.1;
+      color: #ffffff;
+      margin-bottom: 20px;
+    }
+    .nexa-hero-premium p.lead {
+      color: rgba(255, 255, 255, 0.85);
+      max-width: 700px;
+      font-size: 1.2rem;
+      line-height: 1.6;
+    }
+    
+    /* Global Component Tokens & Component Buttons */
+    .btn-nexa-pl {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 14px 32px;
+      border-radius: 50px;
+      font-weight: 600;
+      font-size: 0.95rem;
+      transition: var(--nexa-transition);
+      text-decoration: none;
+      border: 2px solid transparent;
+    }
+    .btn-nexa-pl.btn-primary-nexa {
+      background-color: var(--nexa-accent);
+      color: #ffffff;
+    }
+    .btn-nexa-pl.btn-primary-nexa:hover {
+      background-color: #91161F;
+      transform: translateY(-3px);
+      box-shadow: 0 10px 20px rgba(177, 31, 42, 0.3);
+    }
+    .btn-nexa-pl.btn-outline-nexa {
+      border-color: rgba(255, 255, 255, 0.3);
+      color: #ffffff;
+      background: transparent;
+    }
+    .btn-nexa-pl.btn-outline-nexa:hover {
+      border-color: #ffffff;
+      background: rgba(255, 255, 255, 0.1);
+      transform: translateY(-3px);
+    }
+    .btn-nexa-pl.btn-outline-dark {
+      border-color: var(--nexa-primary);
+      color: var(--nexa-primary);
+      background: transparent;
+    }
+    .btn-nexa-pl.btn-outline-dark:hover {
+      background: var(--nexa-primary);
+      color: #ffffff;
+      transform: translateY(-3px);
+    }
+
+    /* Interactive Operational Navigation Filters */
+    .filter-wrapper {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 10px;
+      margin-bottom: 50px;
+    }
+    .filter-btn {
+      background: #ffffff;
+      border: 1px solid rgba(30, 52, 112, 0.12);
+      color: var(--nexa-primary);
+      padding: 10px 24px;
+      border-radius: 50px;
+      font-weight: 500;
+      font-size: 0.9rem;
+      cursor: pointer;
+      transition: var(--nexa-transition);
+    }
+    .filter-btn:hover, .filter-btn.active {
+      background: var(--nexa-primary);
+      color: #ffffff;
+      border-color: var(--nexa-primary);
+      box-shadow: 0 8px 16px rgba(30, 52, 112, 0.15);
+    }
+
+    /* Premium Grid Masonry Architecture */
+    .portfolio-grid {
+      transition: var(--nexa-transition);
+    }
+    .portfolio-item {
+      transition: all 0.5s cubic-bezier(0.25, 1, 0.5, 1);
+      display: block;
+    }
+    .portfolio-item.hidden {
+      opacity: 0;
+      transform: scale(0.8) translateY(30px);
+      position: absolute;
+      visibility: hidden;
+      pointer-events: none;
+      width: 0;
+      height: 0;
+      padding: 0 !important;
+      margin: 0 !important;
+    }
+
+    /* High-End Operations Display Unit Cards */
+    .nexa-ops-card {
+      position: relative;
+      background: #ffffff;
+      border-radius: var(--nexa-radius);
+      overflow: hidden;
+      box-shadow: var(--nexa-shadow);
+      transition: var(--nexa-transition);
+      height: 100%;
+      border: 1px solid rgba(30, 52, 112, 0.04);
+      cursor: pointer;
+    }
+    .nexa-ops-card .img-container {
+      position: relative;
+      width: 100%;
+      padding-top: 75%; /* 4:3 Aspect Ratio */
+      overflow: hidden;
+      background-color: var(--nexa-dark);
+    }
+    .nexa-ops-card img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+    }
+    .nexa-ops-card:hover img {
+      transform: scale(1.08);
+    }
+    .nexa-ops-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: linear-gradient(to top, rgba(15, 26, 54, 0.95) 0%, rgba(30, 52, 112, 0.4) 60%, transparent 100%);
+      opacity: 0;
+      transition: var(--nexa-transition);
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding: 30px;
+    }
+    .nexa-ops-card:hover .nexa-ops-overlay {
+      opacity: 1;
+    }
+    .nexa-badge {
+      align-self: flex-start;
+      background: var(--nexa-accent);
+      color: #ffffff;
+      padding: 4px 14px;
+      border-radius: 50px;
+      font-size: 0.75rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 12px;
+      transform: translateY(15px);
+      transition: var(--nexa-transition);
+      transition-delay: 0.05s;
+    }
+    .nexa-ops-title {
+      color: #ffffff;
+      font-size: 1.25rem;
+      font-weight: 700;
+      margin: 0 0 6px 0;
+      transform: translateY(15px);
+      transition: var(--nexa-transition);
+      transition-delay: 0.1s;
+    }
+    .nexa-ops-loc {
+      color: rgba(255, 255, 255, 0.75);
+      font-size: 0.875rem;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      transform: translateY(15px);
+      transition: var(--nexa-transition);
+      transition-delay: 0.15s;
+    }
+    .nexa-ops-card:hover .nexa-badge,
+    .nexa-ops-card:hover .nexa-ops-title,
+    .nexa-ops-card:hover .nexa-ops-loc {
+      transform: translateY(0);
+    }
+    .nexa-view-icon {
+      position: absolute;
+      top: 24px;
+      right: 24px;
+      width: 44px;
+      height: 44px;
+      background: #ffffff;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--nexa-primary);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      opacity: 0;
+      transform: scale(0.6);
+      transition: var(--nexa-transition);
+      transition-delay: 0.2s;
+    }
+    .nexa-ops-card:hover .nexa-view-icon {
+      opacity: 1;
+      transform: scale(1);
+    }
+
+    /* Featured Strategic Case Cards */
+    .project-card-premium {
+      background: #ffffff;
+      border-radius: var(--nexa-radius);
+      overflow: hidden;
+      box-shadow: var(--nexa-shadow);
+      transition: var(--nexa-transition);
+      border: 1px solid rgba(30, 52, 112, 0.05);
+      height: 100%;
+    }
+    .project-card-premium:hover {
+      transform: translateY(-8px);
+      box-shadow: var(--nexa-shadow-hover);
+    }
+    .project-img-wrapper {
+      position: relative;
+      padding-top: 60%;
+      overflow: hidden;
+    }
+    .project-img-wrapper img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .project-content {
+      padding: 35px;
+    }
+    .project-type {
+      color: var(--nexa-accent);
+      font-weight: 700;
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      margin-bottom: 10px;
+    }
+    .project-title {
+      color: var(--nexa-primary);
+      font-size: 1.5rem;
+      font-weight: 700;
+      margin-bottom: 15px;
+    }
+    .project-desc {
+      color: #526078;
+      font-size: 0.95rem;
+      line-height: 1.6;
+      margin-bottom: 25px;
+    }
+    .project-results-box {
+      background: var(--nexa-light);
+      border-left: 4px solid var(--nexa-primary);
+      padding: 15px 20px;
+      border-radius: 0 12px 12px 0;
+    }
+    .project-results-label {
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      color: #7A8AA4;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+    }
+    .project-results-value {
+      color: var(--nexa-primary);
+      font-weight: 700;
+      font-size: 1.1rem;
+      margin-top: 2px;
+    }
+
+    /* Chronological Supply Chain Process Module */
+    .timeline-container {
+      position: relative;
+      padding: 40px 0;
+    }
+    .timeline-line {
+      position: absolute;
+      top: 135px;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background: rgba(30, 52, 112, 0.08);
+      z-index: 1;
+    }
+    .timeline-step-node {
+      position: relative;
+      z-index: 2;
+      text-align: center;
+    }
+    .timeline-visual-holder {
+      width: 190px;
+      height: 190px;
+      border-radius: var(--nexa-radius);
+      overflow: hidden;
+      margin: 0 auto 20px auto;
+      border: 6px solid #ffffff;
+      box-shadow: var(--nexa-shadow);
+      transition: var(--nexa-transition);
+      position: relative;
+    }
+    .timeline-step-node:hover .timeline-visual-holder {
+      transform: translateY(-10px);
+      box-shadow: var(--nexa-shadow-hover);
+      border-color: var(--nexa-primary);
+    }
+    .timeline-visual-holder img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .timeline-badge-num {
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      background: var(--nexa-primary);
+      color: #ffffff;
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.8rem;
+      font-weight: 700;
+      z-index: 3;
+    }
+    .timeline-step-node h4 {
+      color: var(--nexa-primary);
+      font-weight: 700;
+      font-size: 1.2rem;
+      margin-bottom: 6px;
+    }
+    .timeline-step-node p {
+      color: #6C7A93;
+      font-size: 0.85rem;
+      padding: 0 10px;
+      line-height: 1.4;
+    }
+
+    /* Cinema Video Unit Stage */
+    .nexa-video-stage {
+      position: relative;
+      border-radius: var(--nexa-radius);
+      overflow: hidden;
+      box-shadow: var(--nexa-shadow-hover);
+      background: linear-gradient(rgba(15, 26, 54, 0.4), rgba(15, 26, 54, 0.7)), url('https://images.unsplash.com/photo-1578575437130-527eed3abbec?auto=format&fit=crop&w=1920&q=80') center/cover no-repeat;
+      padding: 160px 0;
+      text-align: center;
+    }
+    .nexa-video-btn {
+      width: 90px;
+      height: 90px;
+      background: #ffffff;
+      border-radius: 50%;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+      transition: var(--nexa-transition);
+      margin-bottom: 25px;
+      border: none;
+      outline: none;
+    }
+    .nexa-video-btn svg {
+      fill: var(--nexa-accent);
+      transition: var(--nexa-transition);
+      margin-left: 4px;
+    }
+    .nexa-video-stage:hover .nexa-video-btn {
+      transform: scale(1.1);
+      background: var(--nexa-accent);
+    }
+    .nexa-video-stage:hover .nexa-video-btn svg {
+      fill: #ffffff;
+    }
+    .nexa-video-stage h3 {
+      color: #ffffff;
+      font-size: 2.25rem;
+      font-weight: 800;
+      letter-spacing: 0.5px;
+    }
+
+    /* Structural Segment Wrapper Utilities */
+    .nexa-sec-padding {
+      padding: 100px 0;
+    }
+    .nexa-sec-bg-light {
+      background-color: var(--nexa-light);
+    }
+    .nexa-section-header {
+      margin-bottom: 60px;
+      text-align: center;
+    }
+    .nexa-section-header h2 {
+      font-size: 2.5rem;
+      font-weight: 800;
+      color: var(--nexa-primary);
+      position: relative;
+      margin-bottom: 15px;
+    }
+    .nexa-section-header p {
+      color: #526078;
+      font-size: 1.1rem;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    /* Terminal Action Platform */
+    .nexa-cta-terminal {
+      background: linear-gradient(135deg, #0F1A36 0%, #1E3470 100%);
+      border-radius: var(--nexa-radius);
+      padding: 80px 60px;
+      position: relative;
+      overflow: hidden;
+      box-shadow: var(--nexa-shadow-hover);
+    }
+    .nexa-cta-terminal::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      right: -20%;
+      width: 600px;
+      height: 600px;
+      border-radius: 50%;
+      background: rgba(177, 31, 42, 0.05);
+      pointer-events: none;
+    }
+    .nexa-cta-terminal h2 {
+      color: #ffffff;
+      font-size: 2.8rem;
+      font-weight: 800;
+      margin-bottom: 15px;
+    }
+    .nexa-cta-terminal p {
+      color: rgba(255, 255, 255, 0.85);
+      font-size: 1.2rem;
+      max-width: 600px;
+      margin-bottom: 0;
+      line-height: 1.5;
+    }
+
+    /* Structural Dynamic Lightbox Stage */
+    .nexa-lightbox {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(15, 26, 54, 0.98);
+      z-index: 99999;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.4s ease;
+      padding: 20px;
+    }
+    .nexa-lightbox.active {
+      opacity: 1;
+      pointer-events: auto;
+    }
+    .nexa-lightbox-content {
+      position: relative;
+      max-width: 1100px;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .nexa-lightbox-img {
+      max-height: 75vh;
+      max-width: 100%;
+      object-fit: contain;
+      border-radius: 12px;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+      transform: scale(0.95);
+      transition: transform 0.4s ease;
+    }
+    .nexa-lightbox.active .nexa-lightbox-img {
+      transform: scale(1);
+    }
+    .nexa-lightbox-caption {
+      color: #ffffff;
+      margin-top: 20px;
+      text-align: center;
+      width: 100%;
+    }
+    .nexa-lightbox-caption h4 {
+      font-size: 1.5rem;
+      margin-bottom: 6px;
+      font-weight: 700;
+    }
+    .nexa-lightbox-caption p {
+      color: rgba(255, 255, 255, 0.7);
+      font-size: 0.95rem;
+      margin: 0;
+    }
+    .nexa-lightbox-close {
+      position: absolute;
+      top: -60px;
+      right: 0;
+      background: none;
+      border: none;
+      color: #ffffff;
+      font-size: 2.5rem;
+      cursor: pointer;
+      transition: var(--nexa-transition);
+    }
+    .nexa-lightbox-close:hover {
+      color: var(--nexa-accent);
+      transform: rotate(90deg);
+    }
+
+    /* Responsive Architecture Adjustments */
+    @media (max-width: 991px) {
+      .timeline-line { display: none; }
+      .timeline-step-node { margin-bottom: 40px; }
+      .timeline-visual-holder { width: 100%; max-width: 240px; padding-top: 0; height: 200px; }
+      .nexa-cta-terminal { padding: 50px 30px; text-align: center; }
+      .nexa-cta-terminal h2 { font-size: 2.2rem; }
+      .nexa-cta-terminal p { margin-bottom: 30px; }
+    }
+  </style>
 </head>
 <body>
+  <!-- HEADER LEFT UNTOUCHED ACCORDING TO STRATAGEM RULE -->
   <header class="site-header"><div class="container-nexa nav-wrap"><a class="brand" href="index.html"><img src="assets/images/nexa-logo.jpeg" alt="NEXA Logistics logo"></a><button class="nav-toggle" type="button" data-nav-toggle aria-label="Open navigation"><span></span><span></span><span></span></button><nav class="site-nav" data-site-nav><a href="index.html">Home</a><a href="about.html">About</a><a href="services.html">Services</a><a href="partners.html">Partners</a><a class="active" href="gallery.html">Gallery</a><a href="contact.html">Contact</a></nav><a class="btn-nexa nav-quote" href="quote.html">Request Quote</a></div></header>
+  
   <main>
-    <section class="page-hero"><div class="container-nexa"><div class="breadcrumb-text">Home / Gallery</div><h1>Gallery</h1><p class="lead mt-3">Visual highlights for logistics operations, cargo handling, warehousing, and transport coordination.</p></div></section>
-    <section class="section">
+    <!-- SECTION 1: PAGE HERO SECTION -->
+    <section class="nexa-hero-premium">
       <div class="container-nexa">
+        <div class="breadcrumb-text">Home / Operations Portfolio</div>
+        <h1>Inside NEXA Operations</h1>
+        <p class="lead mt-3">Explore our high-performance logistics network, freight operations, smart warehousing facilities, and end-to-end global transportation capabilities through real operational milestones.</p>
+        <div class="d-flex flex-wrap gap-3 mt-4">
+          <a href="quote.html" class="btn-nexa-pl btn-primary-nexa">Request a Quote</a>
+          <a href="services.html" class="btn-nexa-pl btn-outline-nexa">Explore Services</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 2 & 3: FILTERABLE MASONRY & SYSTEM IMAGES -->
+    <section class="nexa-sec-padding">
+      <div class="container-nexa">
+        <div class="nexa-section-header">
+          <h2>Operational Showcase</h2>
+          <p>Real-time updates and capabilities across our active global deployment hubs.</p>
+        </div>
+
+        <!-- Filter Controls Node -->
+        <div class="filter-wrapper">
+          <button class="filter-btn active" data-filter="all">All Operations</button>
+          <button class="filter-btn" data-filter="air">Air Freight</button>
+          <button class="filter-btn" data-filter="sea">Sea Freight</button>
+          <button class="filter-btn" data-filter="road">Road Transport</button>
+          <button class="filter-btn" data-filter="warehouse">Warehousing</button>
+          <button class="filter-btn" data-filter="customs">Customs</button>
+          <button class="filter-btn" data-filter="projects">Projects</button>
+          <button class="filter-btn" data-filter="team">Team</button>
+        </div>
+
+        <!-- Masonry Grid Flow Matrix -->
+        <div class="row g-4 portfolio-grid">
+          <!-- Item 1: Air Freight -->
+          <div class="col-md-6 col-lg-4 portfolio-item" data-cat="air">
+            <div class="nexa-ops-card" onclick="openLightbox(this)">
+              <div class="img-container">
+                <img src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=800&q=80" alt="Next-Gen Express Air Cargo Loading Sequence" loading="lazy">
+              </div>
+              <div class="nexa-view-icon">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+              </div>
+              <div class="nexa-ops-overlay">
+                <span class="nexa-badge">Air Freight</span>
+                <h3 class="nexa-ops-title">Priority Air Cargo Dispatch</h3>
+                <div class="nexa-ops-loc">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="12" r="3"/></svg>
+                  Hartsfield-Jackson Hub (ATL)
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Item 2: Sea Freight -->
+          <div class="col-md-6 col-lg-4 portfolio-item" data-cat="sea">
+            <div class="nexa-ops-card" onclick="openLightbox(this)">
+              <div class="img-container">
+                <img src="https://images.unsplash.com/photo-1549463595-b44372e32a67?auto=format&fit=crop&w=800&q=80" alt="Intermodal Container Vessel Processing Matrix" loading="lazy">
+              </div>
+              <div class="nexa-view-icon">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+              </div>
+              <div class="nexa-ops-overlay">
+                <span class="nexa-badge">Sea Freight</span>
+                <h3 class="nexa-ops-title">Intermodal Container Optimization</h3>
+                <div class="nexa-ops-loc">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="12" r="3"/></svg>
+                  Port of Rotterdam Terminal 4
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Item 3: Warehousing -->
+          <div class="col-md-6 col-lg-4 portfolio-item" data-cat="warehouse">
+            <div class="nexa-ops-card" onclick="openLightbox(this)">
+              <div class="img-container">
+                <img src="https://images.unsplash.com/photo-1587293852726-70cdb56c2866?auto=format&fit=crop&w=800&q=80" alt="Automated Smart Distribution Fulfillment Center" loading="lazy">
+              </div>
+              <div class="nexa-view-icon">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+              </div>
+              <div class="nexa-ops-overlay">
+                <span class="nexa-badge">Warehousing</span>
+                <h3 class="nexa-ops-title">Intelligent High-Bay Stacking</h3>
+                <div class="nexa-ops-loc">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="12" r="3"/></svg>
+                  NEXA Mega-Hub Frankfurt
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Item 4: Road Transport -->
+          <div class="col-md-6 col-lg-4 portfolio-item" data-cat="road">
+            <div class="nexa-ops-card" onclick="openLightbox(this)">
+              <div class="img-container">
+                <img src="https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?auto=format&fit=crop&w=800&q=80" alt="Cross-Border Fleet Heavy Haul Highway Matrix" loading="lazy">
+              </div>
+              <div class="nexa-view-icon">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+              </div>
+              <div class="nexa-ops-overlay">
+                <span class="nexa-badge">Road Transport</span>
+                <h3 class="nexa-ops-title">Linehaul Fleet Cross-Border Transit</h3>
+                <div class="nexa-ops-loc">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="12" r="3"/></svg>
+                  Trans-European Corridor A
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Item 5: Customs Clearance -->
+          <div class="col-md-6 col-lg-4 portfolio-item" data-cat="customs">
+            <div class="nexa-ops-card" onclick="openLightbox(this)">
+              <div class="img-container">
+                <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=800&q=80" alt="Advanced Electronic Customs Documentation Compliance Process" loading="lazy">
+              </div>
+              <div class="nexa-view-icon">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+              </div>
+              <div class="nexa-ops-overlay">
+                <span class="nexa-badge">Customs</span>
+                <h3 class="nexa-ops-title">Fast-Track Regulatory Compliance</h3>
+                <div class="nexa-ops-loc">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="12" r="3"/></svg>
+                  Global Trade Border Clearance
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Item 6: Special Projects -->
+          <div class="col-md-6 col-lg-4 portfolio-item" data-cat="projects">
+            <div class="nexa-ops-card" onclick="openLightbox(this)">
+              <div class="img-container">
+                <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=800&q=80" alt="High-Capacity Engineering Heavy Lift Cargo Operation" loading="lazy">
+              </div>
+              <div class="nexa-view-icon">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+              </div>
+              <div class="nexa-ops-overlay">
+                <span class="nexa-badge">Projects</span>
+                <h3 class="nexa-ops-title">Oversized Machinery Deployment</h3>
+                <div class="nexa-ops-loc">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="12" r="3"/></svg>
+                  Industrial Sector Logistics Matrix
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Item 7: Team Operations -->
+          <div class="col-md-6 col-lg-4 portfolio-item" data-cat="team">
+            <div class="nexa-ops-card" onclick="openLightbox(this)">
+              <div class="img-container">
+                <img src="https://images.unsplash.com/photo-1606857521015-7f9fcf423740?auto=format&fit=crop&w=800&q=80" alt="Central Control Room Freight Flow Management" loading="lazy">
+              </div>
+              <div class="nexa-view-icon">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+              </div>
+              <div class="nexa-ops-overlay">
+                <span class="nexa-badge">Team</span>
+                <h3 class="nexa-ops-title">Global Control Tower Control</h3>
+                <div class="nexa-ops-loc">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="12" r="3"/></svg>
+                  NEXA Corporate Command Center
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 4: STRATEGIC FEATURED PROJECTS SHOWCASE -->
+    <section class="nexa-sec-padding nexa-sec-bg-light">
+      <div class="container-nexa">
+        <div class="nexa-section-header">
+          <h2>Featured Logistics Operations</h2>
+          <p>An inside look at our specialized high-capacity complex movements around the globe.</p>
+        </div>
+
         <div class="row g-4">
-          <div class="col-md-6 col-lg-4"><figure class="gallery-card" data-animate><div class="gallery-visual"></div><figcaption>Container yard coordination</figcaption></figure></div>
-          <div class="col-md-6 col-lg-4"><figure class="gallery-card" data-animate><div class="gallery-visual"></div><figcaption>Air freight planning</figcaption></figure></div>
-          <div class="col-md-6 col-lg-4"><figure class="gallery-card" data-animate><div class="gallery-visual"></div><figcaption>Warehouse handling</figcaption></figure></div>
-          <div class="col-md-6 col-lg-4"><figure class="gallery-card" data-animate><div class="gallery-visual"></div><figcaption>Road transport dispatch</figcaption></figure></div>
-          <div class="col-md-6 col-lg-4"><figure class="gallery-card" data-animate><div class="gallery-visual"></div><figcaption>Project cargo preparation</figcaption></figure></div>
-          <div class="col-md-6 col-lg-4"><figure class="gallery-card" data-animate><div class="gallery-visual"></div><figcaption>Final-mile delivery support</figcaption></figure></div>
+          <!-- Case 1 -->
+          <div class="col-lg-4">
+            <div class="project-card-premium">
+              <div class="project-img-wrapper">
+                <img src="https://images.unsplash.com/photo-1518241353330-0f7941c2d9b5?auto=format&fit=crop&w=800&q=80" alt="Industrial Equipment Sea Freight Logistics" loading="lazy">
+              </div>
+              <div class="project-content">
+                <span class="project-type">Sea Freight Forwarding</span>
+                <h3 class="project-title">Industrial Equipment</h3>
+                <p class="project-desc">End-to-end multi-modal routing for continuous manufacturing systems, minimizing production downtime through expedited maritime lanes.</p>
+                <div class="project-results-box">
+                  <div class="project-results-label">Operational Output</div>
+                  <div class="project-results-value">Transit time shortened by 14 days</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Case 2 -->
+          <div class="col-lg-4">
+            <div class="project-card-premium">
+              <div class="project-img-wrapper">
+                <img src="https://images.unsplash.com/photo-1542838132-92c53300491e?auto=format&fit=crop&w=800&q=80" alt="Oil & Gas Infrastructure Operations" loading="lazy">
+              </div>
+              <div class="project-content">
+                <span class="project-type">Specialized Heavy Projects</span>
+                <h3 class="project-title">Oil & Gas Supply Chains</h3>
+                <p class="project-desc">Securing heavy infrastructure assets to remote refineries under stringent environmental guidelines, ensuring zero safety incidents.</p>
+                <div class="project-results-box">
+                  <div class="project-results-label">Operational Output</div>
+                  <div class="project-results-value">100% compliant safety score</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Case 3 -->
+          <div class="col-lg-4">
+            <div class="project-card-premium">
+              <div class="project-img-wrapper">
+                <img src="https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?auto=format&fit=crop&w=800&q=80" alt="Humanitarian Cargo Relief Movement" loading="lazy">
+              </div>
+              <div class="project-content">
+                <span class="project-type">Emergency Response Logistics</span>
+                <h3 class="project-title">Humanitarian Relief</h3>
+                <p class="project-desc">Time-critical distribution matrices providing vital food security resources and cold-chain medical support to dynamic global crisis centers.</p>
+                <div class="project-results-box">
+                  <div class="project-results-label">Operational Output</div>
+                  <div class="project-results-value">Deployed in under 36 hours</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 5: OPERATIONAL PROCESS TIMELINE LAYOUT -->
+    <section class="nexa-sec-padding">
+      <div class="container-nexa">
+        <div class="nexa-section-header">
+          <h2>The Logistics Lifecycle</h2>
+          <p>How we ensure absolute visibility and speed from the drafting table to final arrival.</p>
+        </div>
+
+        <div class="timeline-container">
+          <div class="timeline-line"></div>
+          <div class="row">
+            <!-- Phase 1 -->
+            <div class="col-lg-2 col-md-4 col-sm-6 mx-auto">
+              <div class="timeline-step-node">
+                <div class="timeline-visual-holder">
+                  <div class="timeline-badge-num">01</div>
+                  <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=300&q=80" alt="Intelligent Cargo Routings and Route Planning Stage" loading="lazy">
+                </div>
+                <h4>Planning</h4>
+                <p>Route architecture and strategic resource modeling.</p>
+              </div>
+            </div>
+
+            <!-- Phase 2 -->
+            <div class="col-lg-2 col-md-4 col-sm-6 mx-auto">
+              <div class="timeline-step-node">
+                <div class="timeline-visual-holder">
+                  <div class="timeline-badge-num">02</div>
+                  <img src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=300&q=80" alt="Secure First-Mile Site Freight Collection Sequence" loading="lazy">
+                </div>
+                <h4>Pickup</h4>
+                <p>Secure first-mile sorting and terminal validation.</p>
+              </div>
+            </div>
+
+            <!-- Phase 3 -->
+            <div class="col-lg-2 col-md-4 col-sm-6 mx-auto">
+              <div class="timeline-step-node">
+                <div class="timeline-visual-holder">
+                  <div class="timeline-badge-num">03</div>
+                  <img src="https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?auto=format&fit=crop&w=300&q=80" alt="Intermodal Core Transit Pipeline Matrix" loading="lazy">
+                </div>
+                <h4>Transit</h4>
+                <p>Real-time tracked intermodal cargo velocity.</p>
+              </div>
+            </div>
+
+            <!-- Phase 4 -->
+            <div class="col-lg-2 col-md-4 col-sm-6 mx-auto">
+              <div class="timeline-step-node">
+                <div class="timeline-visual-holder">
+                  <div class="timeline-badge-num">04</div>
+                  <img src="https://images.unsplash.com/photo-1450133064473-71024230f91b?auto=format&fit=crop&w=300&q=80" alt="Customs Inspection Clearance Regulatory Management" loading="lazy">
+                </div>
+                <h4>Customs</h4>
+                <p>Automated fast-track clearance protocols.</p>
+              </div>
+            </div>
+
+            <!-- Phase 5 -->
+            <div class="col-lg-2 col-md-4 col-sm-6 mx-auto">
+              <div class="timeline-step-node">
+                <div class="timeline-visual-holder">
+                  <div class="timeline-badge-num">05</div>
+                  <img src="https://images.unsplash.com/photo-1587293852726-70cdb56c2866?auto=format&fit=crop&w=300&q=80" alt="Final Mile Smart Delivery Execution" loading="lazy">
+                </div>
+                <h4>Delivery</h4>
+                <p>Last-mile tracking and automated verification.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 6: PREMIUM VIDEO PLACEHOLDER SECTION -->
+    <section class="nexa-sec-padding nexa-sec-bg-light">
+      <div class="container-nexa">
+        <div class="nexa-video-stage">
+          <!-- Scalable to standard modal trigger or direct programmatic iframe swapping for future YouTube deployments -->
+          <button class="nexa-video-btn" aria-label="Play Corporate Operational Video" onclick="alert('System Message: Video Engine Streaming Player integration interface placeholder active. Ready to wire into YouTube or Vimeo API structures.')">
+            <svg width="28" height="32" viewBox="0 0 28 32"><path d="M25 13.5L4 1.2C2.5 0.3 0.8 1.4 0.8 3.2v25.6c0 1.8 1.7 2.9 3.2 2L25 18.5c1.3-.7 1.3-2.7 0-3z"/></svg>
+          </button>
+          <h3>Watch NEXA in Action</h3>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 7: FINAL CTA TERMINAL -->
+    <section class="nexa-sec-padding">
+      <div class="container-nexa">
+        <div class="nexa-cta-terminal">
+          <div class="row align-items-center">
+            <div class="col-xl-8 col-lg-7">
+              <h2>Ready to Move Your Cargo?</h2>
+              <p>Our dedicated operations specialists are active worldwide to streamline your supply chain network right now.</p>
+            </div>
+            <div class="col-xl-4 col-lg-5 text-lg-end mt-4 mt-lg-0">
+              <div class="d-flex flex-wrap gap-3 justify-content-lg-end">
+                <a href="quote.html" class="btn-nexa-pl btn-primary-nexa">Request a Quote</a>
+                <a href="contact.html" class="btn-nexa-pl btn-outline-nexa">Contact Us</a>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </section>
   </main>
+
+  <!-- REUSABLE INTEGRATED DEEP ENGINE LIGHTBOX STRUCTURE -->
+  <div id="nexaLightboxEngine" class="nexa-lightbox" onclick="closeLightbox()">
+    <div class="nexa-lightbox-content" onclick="event.stopPropagation()">
+      <button class="nexa-lightbox-close" onclick="closeLightbox()">&times;</button>
+      <img id="lightboxTargetImg" class="nexa-lightbox-img" src="" alt="Active View Stage">
+      <div class="nexa-lightbox-caption">
+        <h4 id="lightboxTargetTitle"></h4>
+        <p id="lightboxTargetMeta"></p>
+      </div>
+    </div>
+  </div>
+
+  <!-- FOOTER LEFT UNTOUCHED ACCORDING TO STRATAGEM RULE -->
   <footer class="site-footer"><div class="container-nexa"><div class="row g-4"><div class="col-lg-6"><img class="footer-logo" src="assets/images/nexa-logo.jpeg" alt="NEXA Logistics logo"><p>Replace gallery placeholders with approved company operation photos when available.</p></div><div class="col-lg-3"><div class="footer-title">Pages</div><div class="footer-links"><a href="about.html">About</a><a href="services.html">Services</a><a href="contact.html">Contact</a></div></div><div class="col-lg-3"><div class="footer-title">Contact</div><p>info@nexalogistics.com<br>+000 000 000 000</p></div></div><div class="footer-bottom">(c) 2026 NEXA Logistics. All rights reserved.</div></div></footer>
+  
   <script src="assets/js/main.js"></script>
+
+  <!-- HIGH-PERFORMANCE JS ENGINE FOR ANIMATED FILTERING & LIGHTBOX STAGINGS -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      // 1. Dynamic Filtering System
+      const filterButtons = document.querySelectorAll('.filter-btn');
+      const portfolioItems = document.querySelectorAll('.portfolio-item');
+
+      filterButtons.forEach(button => {
+        button.addEventListener('click', () => {
+          // Reset status indicators
+          filterButtons.forEach(btn => btn.classList.remove('active'));
+          button.classList.add('active');
+
+          const filterRule = button.getAttribute('data-filter');
+
+          portfolioItems.forEach(item => {
+            const targetCat = item.getAttribute('data-cat');
+            
+            if (filterRule === 'all' || targetCat === filterRule) {
+              item.classList.remove('hidden');
+              // Soft re-entry styling flow orchestration
+              setTimeout(() => {
+                item.style.opacity = '1';
+                item.style.transform = 'scale(1) translateY(0)';
+              }, 50);
+            } else {
+              item.style.opacity = '0';
+              item.style.transform = 'scale(0.8) translateY(30px)';
+              // Terminate visibility safely inside rendering threads
+              setTimeout(() => {
+                if(item.style.opacity === '0') {
+                  item.classList.add('hidden');
+                }
+              }, 400);
+            }
+          });
+        });
+      });
+    });
+
+    // 2. Lightbox Engine Controls
+    const lbEngine = document.getElementById('nexaLightboxEngine');
+    const lbImg = document.getElementById('lightboxTargetImg');
+    const lbTitle = document.getElementById('lightboxTargetTitle');
+    const lbMeta = document.getElementById('lightboxTargetMeta');
+
+    function openLightbox(cardNode) {
+      const originImg = cardNode.querySelector('img');
+      const cardTitle = cardNode.querySelector('.nexa-ops-title').innerText;
+      const cardLoc = cardNode.querySelector('.nexa-ops-loc').innerText;
+      
+      lbImg.src = originImg.src;
+      lbImg.alt = originImg.alt;
+      lbTitle.innerText = cardTitle;
+      lbMeta.innerText = cardLoc;
+      
+      lbEngine.classList.add('active');
+      document.body.style.overflow = 'hidden'; // Freeze primary baseline window viewport scroll
+    }
+
+    function closeLightbox() {
+      lbEngine.classList.remove('active');
+      document.body.style.overflow = ''; // Unfreeze viewport scrolling thread mapping
+    }
+
+    // Support escape key binding actions
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') closeLightbox();
+    });
+  </script>
 </body>
 </html>

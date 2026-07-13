@@ -7,46 +7,941 @@
   <meta name="description" content="Request a freight quote from NEXA Logistics for customs brokerage, air freight, sea freight, land freight, special cargo, warehousing, local transportation, or door-to-door delivery.">
   <link rel="icon" href="assets/images/nexa-logo.jpeg">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap-grid.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
   <link rel="stylesheet" href="assets/css/styles.css">
+
+  <style>
+    /* ==========================================================================
+       QUOTE CONSULTATION HUB DESIGN SYSTEM EXPANSION (Inline Override)
+       ========================================================================== */
+    :root {
+      --nexa-primary: #1E3470;
+      --nexa-accent: #B11F2A;
+      --nexa-dark-navy: #0F1E43;
+      --nexa-light-bg: #F8FAFC;
+      --nexa-white: #FFFFFF;
+      --nexa-gray-text: #475569;
+      --nexa-border: #E2E8F0;
+      --nexa-radius: 24px;
+      --nexa-shadow: 0 10px 30px -10px rgba(30, 52, 112, 0.08);
+      --nexa-shadow-hover: 0 20px 40px -15px rgba(30, 52, 112, 0.15);
+      --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    /* Section Control & Layout Spacing */
+    .bg-light-premium {
+      background-color: var(--nexa-light-bg);
+      padding: 100px 0;
+    }
+    .section-padding-premium {
+      padding: 100px 0;
+    }
+    .section-kicker {
+      color: var(--nexa-accent);
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      font-size: 0.85rem;
+      display: block;
+      margin-bottom: 12px;
+    }
+    .section-title {
+      font-size: 2.5rem;
+      color: var(--nexa-primary);
+      font-weight: 700;
+      letter-spacing: -0.02em;
+    }
+
+    /* Premium Page Hero */
+    .quote-hero {
+      position: relative;
+      background: url('https://images.unsplash.com/photo-1578575437130-527eed3abbec?auto=format&fit=crop&q=80&w=1920') no-repeat center center/cover;
+      padding: 150px 0 110px 0;
+      color: var(--nexa-white);
+      overflow: hidden;
+    }
+    .quote-hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, rgba(15, 30, 67, 0.96) 0%, rgba(30, 52, 112, 0.88) 100%);
+      z-index: 1;
+    }
+    .quote-hero .container-nexa {
+      position: relative;
+      z-index: 2;
+    }
+    .quote-hero h1 {
+      font-size: 3.5rem;
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      line-height: 1.15;
+      color: var(--nexa-white);
+    }
+    .quote-hero .lead {
+      font-size: 1.25rem;
+      color: #CBD5E1;
+      max-width: 780px;
+      line-height: 1.6;
+    }
+
+    /* Unified Button Architecture */
+    .btn-nexa-primary {
+      background-color: var(--nexa-accent);
+      color: var(--nexa-white);
+      padding: 16px 36px;
+      border-radius: 50px;
+      font-weight: 600;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      transition: var(--transition-smooth);
+      border: 2px solid transparent;
+      cursor: pointer;
+    }
+    .btn-nexa-primary:hover {
+      background-color: #90161F;
+      transform: translateY(-2px);
+      box-shadow: 0 10px 20px rgba(177, 31, 42, 0.3);
+    }
+    .btn-nexa-secondary {
+      background-color: transparent;
+      color: var(--nexa-white);
+      padding: 16px 36px;
+      border-radius: 50px;
+      font-weight: 600;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      transition: var(--transition-smooth);
+      border: 2px solid rgba(255, 255, 255, 0.3);
+    }
+    .btn-nexa-secondary:hover {
+      background-color: rgba(255, 255, 255, 0.1);
+      border-color: var(--nexa-white);
+      transform: translateY(-2px);
+    }
+
+    /* SECTION 2: Trust Bar Layout */
+    .trust-bar-wrapper {
+      background: var(--nexa-white);
+      border-radius: var(--nexa-radius);
+      box-shadow: var(--nexa-shadow);
+      padding: 30px 40px;
+      margin-top: -50px;
+      position: relative;
+      z-index: 10;
+      border: 1px solid var(--nexa-border);
+    }
+    .trust-metric-item {
+      text-align: center;
+      padding: 10px;
+    }
+    .trust-metric-number {
+      font-size: 2rem;
+      font-weight: 800;
+      color: var(--nexa-primary);
+      display: block;
+      margin-bottom: 4px;
+    }
+    .trust-metric-label {
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: var(--nexa-gray-text);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    /* SECTION 3: Grouped Consultation Form */
+    .quote-form-panel {
+      background: var(--nexa-white);
+      border-radius: var(--nexa-radius);
+      box-shadow: var(--nexa-shadow-hover);
+      border: 1px solid var(--nexa-border);
+      padding: 45px;
+    }
+    .form-group-section {
+      margin-bottom: 40px;
+      padding-bottom: 30px;
+      border-bottom: 1px solid var(--nexa-border);
+    }
+    .form-group-section:last-of-type {
+      border-bottom: none;
+      margin-bottom: 20px;
+      padding-bottom: 0;
+    }
+    .form-section-title {
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: var(--nexa-primary);
+      margin-bottom: 24px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .form-section-title i {
+      color: var(--nexa-accent);
+    }
+    .form-group label {
+      display: block;
+      font-weight: 600;
+      font-size: 0.95rem;
+      color: var(--nexa-dark-navy);
+      margin-bottom: 8px;
+    }
+    .form-control {
+      width: 100%;
+      padding: 14px 18px;
+      border-radius: 12px;
+      border: 1px solid var(--nexa-border);
+      font-size: 1rem;
+      color: var(--nexa-dark-navy);
+      background-color: var(--nexa-light-bg);
+      transition: var(--transition-smooth);
+      box-sizing: border-box;
+    }
+    .form-control:focus {
+      outline: none;
+      border-color: var(--nexa-primary);
+      background-color: var(--nexa-white);
+      box-shadow: 0 0 0 4px rgba(30, 52, 112, 0.08);
+    }
+    .checkbox-card-wrapper {
+      background: var(--nexa-light-bg);
+      border: 1px solid var(--nexa-border);
+      border-radius: 12px;
+      padding: 16px 20px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      cursor: pointer;
+      transition: var(--transition-smooth);
+      height: 100%;
+      box-sizing: border-box;
+    }
+    .checkbox-card-wrapper:hover {
+      border-color: var(--nexa-primary);
+      background: var(--nexa-white);
+    }
+    .checkbox-card-wrapper input[type="checkbox"] {
+      width: 18px;
+      height: 18px;
+      accent-color: var(--nexa-primary);
+      cursor: pointer;
+    }
+    .checkbox-card-wrapper label {
+      margin-bottom: 0;
+      cursor: pointer;
+      font-weight: 600;
+    }
+
+    /* SECTION 4: Five-Step Journey Timeline */
+    .timeline-container {
+      position: relative;
+      margin-top: 50px;
+    }
+    .timeline-line {
+      position: absolute;
+      top: 30px;
+      left: 0;
+      width: 100%;
+      height: 4px;
+      background: var(--nexa-border);
+      z-index: 1;
+      display: block;
+    }
+    @media (max-width: 991px) {
+      .timeline-line {
+        display: none;
+      }
+    }
+    .timeline-node {
+      position: relative;
+      z-index: 2;
+      text-align: center;
+    }
+    .timeline-icon-sphere {
+      width: 64px;
+      height: 64px;
+      background: var(--nexa-white);
+      border: 4px solid var(--nexa-border);
+      color: var(--nexa-primary);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 20px auto;
+      font-size: 1.5rem;
+      font-weight: 700;
+      box-shadow: var(--nexa-shadow);
+      transition: var(--transition-smooth);
+    }
+    .timeline-node:hover .timeline-icon-sphere {
+      border-color: var(--nexa-accent);
+      color: var(--nexa-white);
+      background-color: var(--nexa-primary);
+      transform: scale(1.1);
+    }
+    .timeline-node h4 {
+      font-size: 1.15rem;
+      color: var(--nexa-primary);
+      font-weight: 700;
+      margin-bottom: 8px;
+    }
+    .timeline-node p {
+      font-size: 0.9rem;
+      color: var(--nexa-gray-text);
+      line-height: 1.5;
+      padding: 0 10px;
+    }
+
+    /* SECTION 5: Premium Value Feature Cards */
+    .feature-card-nexa {
+      background: var(--nexa-white);
+      border: 1px solid var(--nexa-border);
+      border-radius: var(--nexa-radius);
+      padding: 35px;
+      box-shadow: var(--nexa-shadow);
+      transition: var(--transition-smooth);
+      height: 100%;
+    }
+    .feature-card-nexa:hover {
+      transform: translateY(-5px);
+      box-shadow: var(--nexa-shadow-hover);
+      border-color: rgba(30, 52, 112, 0.15);
+    }
+    .feature-icon-box {
+      width: 54px;
+      height: 54px;
+      background: rgba(30, 52, 112, 0.06);
+      color: var(--nexa-primary);
+      border-radius: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.5rem;
+      margin-bottom: 24px;
+      transition: var(--transition-smooth);
+    }
+    .feature-card-nexa:hover .feature-icon-box {
+      background: var(--nexa-accent);
+      color: var(--nexa-white);
+    }
+    .feature-card-nexa h3 {
+      font-size: 1.3rem;
+      color: var(--nexa-primary);
+      font-weight: 700;
+      margin-bottom: 12px;
+    }
+    .feature-card-nexa p {
+      font-size: 0.95rem;
+      color: var(--nexa-gray-text);
+      line-height: 1.6;
+      margin: 0;
+    }
+
+    /* SECTION 6: Dedicated Mini Accordion System */
+    .mini-accordion-container {
+      max-width: 800px;
+      margin: 40px auto 0 auto;
+    }
+    .accordion-item-nexa {
+      background: var(--nexa-white);
+      border-radius: 16px !important;
+      margin-bottom: 12px;
+      border: 1px solid var(--nexa-border);
+      box-shadow: var(--nexa-shadow);
+      overflow: hidden;
+      transition: var(--transition-smooth);
+    }
+    .accordion-trigger {
+      width: 100%;
+      padding: 22px 28px;
+      background: none;
+      border: none;
+      text-align: left;
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--nexa-primary);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      cursor: pointer;
+    }
+    .accordion-trigger i {
+      font-size: 1.1rem;
+      color: var(--nexa-accent);
+      transition: transform 0.3s ease;
+    }
+    .accordion-trigger.active i {
+      transform: rotate(180deg);
+    }
+    .accordion-panel {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    .accordion-content {
+      padding: 0 28px 22px 28px;
+      color: var(--nexa-gray-text);
+      line-height: 1.6;
+      font-size: 0.95rem;
+    }
+
+    /* SECTION 7: Premium Final Support Pipeline */
+    .assistance-cta-section {
+      background: linear-gradient(135deg, var(--nexa-dark-navy) 0%, var(--nexa-primary) 100%);
+      padding: 85px 0;
+      color: var(--nexa-white);
+    }
+    .assistance-cta-section .section-title {
+      color: var(--nexa-white);
+    }
+    .btn-cta-link {
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      color: var(--nexa-white);
+      padding: 16px 28px;
+      border-radius: 14px;
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      font-weight: 600;
+      transition: var(--transition-smooth);
+      text-align: left;
+    }
+    .btn-cta-link:hover {
+      background: var(--nexa-white);
+      color: var(--nexa-primary);
+      transform: translateY(-3px);
+      box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+    }
+    .btn-cta-link i {
+      font-size: 1.6rem;
+      color: var(--nexa-accent);
+    }
+    .btn-cta-link:hover i {
+      color: var(--nexa-primary);
+    }
+    .btn-cta-link span blockquote {
+      margin: 0;
+      font-size: 0.8rem;
+      color: rgba(255, 255, 255, 0.5);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+    .btn-cta-link:hover span blockquote {
+      color: var(--nexa-gray-text);
+    }
+  </style>
 </head>
 <body>
+
+  <!-- ==========================================
+       SITE HEADER (UNMODIFIED)
+       ========================================== -->
   <header class="site-header"><div class="container-nexa nav-wrap"><a class="brand" href="index.html"><img src="assets/images/nexa-logo.jpeg" alt="NEXA Logistics logo"></a><button class="nav-toggle" type="button" data-nav-toggle aria-label="Open navigation"><span></span><span></span><span></span></button><nav class="site-nav" data-site-nav><a href="index.html">Home</a><a href="about.html">About</a><a href="services.html">Services</a><a href="partners.html">Partners</a><a href="gallery.html">Gallery</a><a href="contact.html">Contact</a></nav><a class="btn-nexa nav-quote active" href="quote.html">Request Quote</a></div></header>
+
   <main>
-    <section class="page-hero"><div class="container-nexa"><div class="breadcrumb-text">Home / Request Quote</div><h1>Request a Quote</h1><p class="lead mt-3">Send your shipment details and NEXA Logistics will prepare a practical freight plan.</p></div></section>
-    <section class="section mist">
+    
+    <!-- ==========================================
+         SECTION 1: PAGE HERO
+         ========================================== -->
+    <section class="quote-hero">
       <div class="container-nexa">
-        <div class="row g-4">
-          <div class="col-lg-4">
-            <div class="contact-card" data-animate>
-              <span class="section-kicker">What to include</span>
-              <h2>Useful shipment details.</h2>
-              <p class="mt-3">Cargo type, weight, dimensions, origin, destination, required delivery date, Incoterms, documents, and any special handling or customs needs.</p>
-            </div>
-          </div>
-          <div class="col-lg-8">
-            <div class="quote-panel" data-animate>
-              <form data-static-form>
-                <div class="row g-3">
-                  <div class="col-md-6 form-group"><label for="company">Company</label><input class="form-control" id="company" name="company" required></div>
-                  <div class="col-md-6 form-group"><label for="contact">Contact Name</label><input class="form-control" id="contact" name="contact" required></div>
-                  <div class="col-md-6 form-group"><label for="email">Email</label><input class="form-control" id="email" type="email" name="email" required></div>
-                  <div class="col-md-6 form-group"><label for="phone">Phone</label><input class="form-control" id="phone" name="phone"></div>
-                  <div class="col-md-6 form-group"><label for="origin">Origin</label><input class="form-control" id="origin" name="origin" required></div>
-                  <div class="col-md-6 form-group"><label for="destination">Destination</label><input class="form-control" id="destination" name="destination" required></div>
-                  <div class="col-md-6 form-group"><label for="mode">Preferred Service</label><select class="form-control" id="mode" name="mode"><option>Customs Brokerage</option><option>Air Freight</option><option>Sea Freight</option><option>Land Freight</option><option>Special & Perishable Cargo</option><option>Local Transportation</option><option>Warehousing</option><option>Door to Door</option></select></div>
-                  <div class="col-md-6 form-group"><label for="ready">Cargo Ready Date</label><input class="form-control" id="ready" type="date" name="ready"></div>
-                  <div class="col-12 form-group"><label for="details">Cargo Details</label><textarea class="form-control" id="details" name="details" placeholder="Commodity, weight, dimensions, quantity, packing, Incoterms, and special notes." required></textarea></div>
-                </div>
-                <button class="btn-nexa" type="submit">Submit Quote Request</button>
-                <p data-form-note></p>
-              </form>
+        <div class="row">
+          <div class="col-lg-9">
+            <div class="breadcrumb-text" style="color: #93C5FD; font-weight: 600; margin-bottom: 12px;">Home / Commercial Consultation</div>
+            <h1>Request Your Logistics Solution</h1>
+            <p class="lead mt-3">
+              Provide your transit parameters and our logistics architects will engineer a secure, cost-optimized shipping framework tailored precisely to your operational targets.
+            </p>
+            <div class="mt-4 d-flex flex-wrap gap-3">
+              <a href="#quoteIntakeForm" class="btn-nexa-primary">
+                <span>Begin Request</span><i class="bi bi-arrow-down-circle"></i>
+              </a>
+              <a href="contact.html" class="btn-nexa-secondary">
+                <span>Talk to an Expert</span><i class="bi bi-telephone-outbound"></i>
+              </a>
             </div>
           </div>
         </div>
       </div>
     </section>
+
+    <!-- ==========================================
+         SECTION 2: TRUST INDICATORS BAR
+         ========================================== -->
+    <section class="container-nexa" style="padding: 0 15px;">
+      <div class="trust-bar-wrapper">
+        <div class="row g-4 justify-content-center">
+          <div class="col-6 col-md-4 col-lg-2-4 trust-metric-item">
+            <span class="trust-metric-number">10+ Years</span>
+            <span class="trust-metric-label">Proven Competence</span>
+          </div>
+          <div class="col-6 col-md-4 col-lg-2-4 trust-metric-item">
+            <span class="trust-metric-number">50+ Hubs</span>
+            <span class="trust-metric-label">Countries Served</span>
+          </div>
+          <div class="col-6 col-md-4 col-lg-2-4 trust-metric-item">
+            <span class="trust-metric-number">9,000+</span>
+            <span class="trust-metric-label">Secured Shipments</span>
+          </div>
+          <div class="col-6 col-md-4 col-lg-2-4 trust-metric-item">
+            <span class="trust-metric-number">20+ Global</span>
+            <span class="trust-metric-label">Strategic Partners</span>
+          </div>
+          <div class="col-6 col-md-4 col-lg-2-4 trust-metric-item">
+            <span class="trust-metric-number">&lt; 60 Min</span>
+            <span class="trust-metric-label">Fast Response</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================
+         SECTION 3: STRATIFIED CONSULTATION INTAKE FORM
+         ========================================== -->
+    <section id="quoteIntakeForm" class="bg-light-premium">
+      <div class="container-nexa">
+        <div class="row justify-content-center">
+          <div class="col-xl-10">
+            
+            <div class="quote-form-panel">
+              <div class="text-center mb-5">
+                <span class="section-kicker">Digital Intake Portal</span>
+                <h2 style="color: var(--nexa-primary); font-weight: 700; font-size: 2rem;">Consolidated Cargo Intake Form</h2>
+                <p style="color: var(--nexa-gray-text); margin-top: 8px;">Complete the parameters below to establish your secure routing file.</p>
+              </div>
+
+              <form data-static-form>
+                
+                <!-- Group 1: Stakeholder Identification -->
+                <div class="form-group-section">
+                  <h3 class="form-section-title">
+                    <i class="bi bi-building"></i>
+                    <span>1. Stakeholder Identification</span>
+                  </h3>
+                  <div class="row g-3">
+                    <div class="col-md-6 form-group">
+                      <label for="company">Company Entity Name</label>
+                      <input class="form-control" id="company" name="company" placeholder="e.g., Nexa Industries Ltd" required>
+                    </div>
+                    <div class="col-md-6 form-group">
+                      <label for="contact">Contact Authorized Name</label>
+                      <input class="form-control" id="contact" name="contact" placeholder="e.g., John Doe" required>
+                    </div>
+                    <div class="col-md-6 form-group">
+                      <label for="email">Corporate Communications Email</label>
+                      <input class="form-control" id="email" type="email" name="email" placeholder="e.g., logistics@company.com" required>
+                    </div>
+                    <div class="col-md-6 form-group">
+                      <label for="phone">Direct Contact Hotline</label>
+                      <input class="form-control" id="phone" name="phone" placeholder="e.g., +1 (555) 000-0000">
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Group 2: Routing Framework -->
+                <div class="form-group-section">
+                  <h3 class="form-section-title">
+                    <i class="bi bi-geo-alt"></i>
+                    <span>2. Routing Framework &amp; Service Model</span>
+                  </h3>
+                  <div class="row g-3">
+                    <div class="col-md-6 form-group">
+                      <label for="origin">Point of Origin (City/Port/Country)</label>
+                      <input class="form-control" id="origin" name="origin" placeholder="e.g., Shanghai Port, China" required>
+                    </div>
+                    <div class="col-md-6 form-group">
+                      <label for="destination">Final Destination (City/Port/Country)</label>
+                      <input class="form-control" id="destination" name="destination" placeholder="e.g., Stuttgart, Germany" required>
+                    </div>
+                    <div class="col-md-6 form-group">
+                      <label for="mode">Preferred Service Model</label>
+                      <select class="form-control" id="mode" name="mode">
+                        <option>Customs Brokerage</option>
+                        <option>Air Freight</option>
+                        <option>Sea Freight</option>
+                        <option>Land Freight</option>
+                        <option>Special &amp; Perishable Cargo</option>
+                        <option>Local Transportation</option>
+                        <option>Warehousing</option>
+                        <option>Door to Door</option>
+                      </select>
+                    </div>
+                    <div class="col-md-6 form-group">
+                      <label for="ready">Target Cargo Availability Date</label>
+                      <input class="form-control" id="ready" type="date" name="ready">
+                    </div>
+                    <div class="col-md-6 form-group">
+                      <label for="shipment_type">Shipment Configuration Type</label>
+                      <select class="form-control" id="shipment_type" name="shipment_type">
+                        <option value="">Select Configuration...</option>
+                        <option>FCL (Full Container Load)</option>
+                        <option>LCL (Less than Container Load)</option>
+                        <option>Palletized Freight</option>
+                        <option>Loose / Breakbulk</option>
+                        <option>Oversized / Project Cargo</option>
+                      </select>
+                    </div>
+                    <div class="col-md-6 form-group">
+                      <label for="incoterms">Governing Incoterms Framework</label>
+                      <select class="form-control" id="incoterms" name="incoterms">
+                        <option value="">Select Incoterm...</option>
+                        <option>EXW (Ex Works)</option>
+                        <option>FOB (Free On Board)</option>
+                        <option>CIF (Cost, Insurance &amp; Freight)</option>
+                        <option>DAP (Delivered At Place)</option>
+                        <option>DDP (Delivered Duty Paid)</option>
+                      </select>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Group 3: Cargo Metrics & Physical Specifications -->
+                <div class="form-group-section">
+                  <h3 class="form-section-title">
+                    <i class="bi bi-box-seam"></i>
+                    <span>3. Cargo Metrics &amp; Physical Specifications</span>
+                  </h3>
+                  <div class="row g-3">
+                    <div class="col-md-3 form-group">
+                      <label for="cargo_weight">Total Gross Weight (kg)</label>
+                      <input class="form-control" id="cargo_weight" name="cargo_weight" type="number" step="any" placeholder="e.g., 4500">
+                    </div>
+                    <div class="col-md-3 form-group">
+                      <label for="cargo_volume">Total Volume (CBM)</label>
+                      <input class="form-control" id="cargo_volume" name="cargo_volume" type="number" step="any" placeholder="e.g., 12.5">
+                    </div>
+                    <div class="col-md-3 form-group">
+                      <label for="packages_count">Number of Packages</label>
+                      <input class="form-control" id="packages_count" name="packages_count" type="number" placeholder="e.g., 6">
+                    </div>
+                    <div class="col-md-3 form-group">
+                      <label for="cargo_value">Declared Cargo Value (USD)</label>
+                      <input class="form-control" id="cargo_value" name="cargo_value" type="number" placeholder="e.g., 75000">
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Group 4: Handling Attributes & Security Protocols -->
+                <div class="form-group-section">
+                  <h3 class="form-section-title">
+                    <i class="bi bi-shield-check"></i>
+                    <span>4. Handling Attributes &amp; Security Protocols</span>
+                  </h3>
+                  <div class="row g-3">
+                    <div class="col-md-4">
+                      <div class="checkbox-card-wrapper">
+                        <input type="checkbox" id="insurance" name="insurance">
+                        <label for="insurance">All-Risk Cargo Insurance</label>
+                      </div>
+                    </div>
+                    <div class="col-md-4">
+                      <div class="checkbox-card-wrapper">
+                        <input type="checkbox" id="dangerous_goods" name="dangerous_goods">
+                        <label for="dangerous_goods">Hazardous / Dangerous Goods</label>
+                      </div>
+                    </div>
+                    <div class="col-md-4">
+                      <div class="checkbox-card-wrapper">
+                        <input type="checkbox" id="temp_controlled" name="temp_controlled">
+                        <label for="temp_controlled">Temperature Controlled Environment</label>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Group 5: Operational Mandates -->
+                <div class="form-group-section">
+                  <h3 class="form-section-title">
+                    <i class="bi bi-journal-text"></i>
+                    <span>5. Detailed Cargo Narrative &amp; Special Directives</span>
+                  </h3>
+                  <div class="row g-3">
+                    <div class="col-12 form-group">
+                      <label for="details">Detailed Cargo &amp; Service Mandate Description</label>
+                      <textarea class="form-control" id="details" name="details" rows="4" placeholder="Detail the commodity properties, dimensional stackability adjustments, handling protocols, border clearance priorities, and explicit operational guidelines here..." required></textarea>
+                    </div>
+                    <div class="col-12 form-group">
+                      <label for="special_instructions">Special Instructions / Constraints</label>
+                      <textarea class="form-control" id="special_instructions" name="special_instructions" rows="2" placeholder="List any site delivery constraints, specific storage parameters, lift-gate requirements, or immediate timeline factors..."></textarea>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="text-center mt-4">
+                  <button class="btn-nexa-primary" type="submit" style="font-size: 1.1rem; padding: 18px 50px;">
+                    <span>Submit Consultation Intake</span><i class="bi bi-send-check"></i>
+                  </button>
+                  <p data-form-note class="mt-3" style="font-size: 0.9rem; color: var(--nexa-gray-text);"></p>
+                </div>
+              </form>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================
+         SECTION 4: OPERATIONAL WORKFLOW TIMELINE
+         ========================================== -->
+    <section class="section-padding-premium bg-white">
+      <div class="container-nexa">
+        <div class="text-center mb-5">
+          <span class="section-kicker">Strategic Integration</span>
+          <h2 class="section-title">Operational Consultation Roadmap</h2>
+          <p style="color: var(--nexa-gray-text); margin-top: 10px; max-width: 600px; margin-left: auto; margin-right: auto;">
+            Our process ensures complete visibility from initial structural intake through final project fulfillment.
+          </p>
+        </div>
+
+        <div class="timeline-container">
+          <div class="timeline-line"></div>
+          <div class="row g-4">
+            
+            <div class="col-md-6 col-lg-2-4 timeline-node">
+              <div class="timeline-icon-sphere">1</div>
+              <h4>Submit Request</h4>
+              <p>Your physical parameters enter our technical routing database instantly.</p>
+            </div>
+
+            <div class="col-md-6 col-lg-2-4 timeline-node">
+              <div class="timeline-icon-sphere">2</div>
+              <h4>Shipment Review</h4>
+              <p>Compliance directors analyze classification codes and border regulations.</p>
+            </div>
+
+            <div class="col-md-6 col-lg-2-4 timeline-node">
+              <div class="timeline-icon-sphere">3</div>
+              <h4>Route Planning</h4>
+              <p>Network engineers optimize lanes to secure competitive pricing profiles.</p>
+            </div>
+
+            <div class="col-md-6 col-lg-2-4 timeline-node">
+              <div class="timeline-icon-sphere">4</div>
+              <h4>Receive Quotation</h4>
+              <p>You review an itemized freight framework with guaranteed cost transparency.</p>
+            </div>
+
+            <div class="col-md-6 col-lg-2-4 timeline-node">
+              <div class="timeline-icon-sphere">5</div>
+              <h4>Cargo Movement</h4>
+              <p>Supply chain operations launch with continuous milestone monitoring support.</p>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================
+         SECTION 5: CORPORATE ADVANTAGES (FEATURE CARDS)
+         ========================================== -->
+    <section class="section-padding-premium bg-light-premium">
+      <div class="container-nexa">
+        <div class="text-center mb-5">
+          <span class="section-kicker">Operational Edge</span>
+          <h2 class="section-title">Why Enterprise Leaders Partner with NEXA</h2>
+          <p style="color: var(--nexa-gray-text); margin-top: 10px; max-width: 620px; margin-left: auto; margin-right: auto;">
+            We combine institutional compliance and strategic asset deployment to deliver complete supply chain reliability.
+          </p>
+        </div>
+
+        <div class="row g-4">
+          
+          <div class="col-md-6 col-lg-4">
+            <div class="feature-card-nexa">
+              <div class="feature-icon-box"><i class="bi bi-lightning-charge"></i></div>
+              <h3>Guaranteed Rapid Response</h3>
+              <p>Lane valuations and baseline spot queries are structured and delivered within 60 minutes, keeping your operations moving forward without delay.</p>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-lg-4">
+            <div class="feature-card-nexa">
+              <div class="feature-icon-box"><i class="bi bi-tags"></i></div>
+              <h3>Transparent Competitive Pricing</h3>
+              <p>Our direct relationships with maritime carriers and air fleets allow us to provide clear, competitive pricing structures without hidden destination markups.</p>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-lg-4">
+            <div class="feature-card-nexa">
+              <div class="feature-icon-box"><i class="bi bi-people"></i></div>
+              <h3>Experienced Logistics Specialists</h3>
+              <p>Your supply chain is managed by dedicated cargo engineers who specialize in heavy machinery navigation, global compliance, and complex multi-modal transfers.</p>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-lg-4">
+            <div class="feature-card-nexa">
+              <div class="feature-icon-box"><i class="bi bi-globe-americas"></i></div>
+              <h3>Global Logistics Network</h3>
+              <p>With coverage extending across major international transit hubs, we provide seamless door-to-door delivery for your cargo across challenging global borders.</p>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-lg-4">
+            <div class="feature-card-nexa">
+              <div class="feature-icon-box"><i class="bi bi-shield-lock"></i></div>
+              <h3>Advanced Customs Brokerage</h3>
+              <p>Our in-house brokers manage complex tariff structures and border documentation, ensuring smooth international clearance and preventing port storage fees.</p>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-lg-4">
+            <div class="feature-card-nexa">
+              <div class="feature-icon-box"><i class="bi bi-boxes"></i></div>
+              <h3>End-to-End Managed Solutions</h3>
+              <p>From initial inventory pickup and secure warehouse consolidation to final factory-floor integration, we manage every segment of your logistical pipeline.</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================
+         SECTION 6: CONSULTATION MICRO-FAQ
+         ========================================== -->
+    <section class="section-padding-premium bg-white">
+      <div class="container-nexa">
+        <div class="text-center mb-4">
+          <span class="section-kicker">Information Desk</span>
+          <h2 class="section-title">Quotation Inquiry FAQ</h2>
+          <p style="color: var(--nexa-gray-text); margin-top: 8px;">Quick insights concerning our commercial assessment pipeline.</p>
+        </div>
+
+        <div class="mini-accordion-container">
+          
+          <div class="accordion-item-nexa">
+            <button class="accordion-trigger" type="button">
+              <span>Are there administrative charges associated with standard freight quotations?</span>
+              <i class="bi bi-chevron-down"></i>
+            </button>
+            <div class="accordion-panel">
+              <div class="accordion-content">
+                <p>No. All multi-modal logistics layout configurations, land corridor studies, and initial regulatory reviews are provided entirely free of charge as part of our corporate consultation process.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="accordion-item-nexa">
+            <button class="accordion-trigger" type="button">
+              <span>How long do itemized freight spot quotations remain legally binding?</span>
+              <i class="bi bi-chevron-down"></i>
+            </button>
+            <div class="accordion-panel">
+              <div class="accordion-content">
+                <p>Due to fluctuating ocean bunker values and seasonal air carrier capacity adjustments, standard spot calculations remain valid for 14 calendar days from formal issuance. Project-specific contract rates can be locked down for longer periods by request.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="accordion-item-nexa">
+            <button class="accordion-trigger" type="button">
+              <span>What information is needed to quickly process custom project quotes?</span>
+              <i class="bi bi-chevron-down"></i>
+            </button>
+            <div class="accordion-panel">
+              <div class="accordion-content">
+                <p>Providing accurate gross weights, total dimensions, precise border origin/destination addresses, and clear Incoterms parameters enables our compliance engineers to build your custom transit options much faster.</p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================
+         SECTION 7: PREMIUM COMMUNICATIONS HOTLINE
+         ========================================== -->
+    <section class="assistance-cta-section">
+      <div class="container-nexa">
+        <div class="row align-items-center justify-content-between">
+          <div class="col-lg-6 mb-4 mb-lg-0">
+            <span class="section-kicker" style="color: #F87171;">Immediate Operations Response</span>
+            <h2 class="section-title mb-3">Need Immediate Assistance?</h2>
+            <p class="lead text-white-50" style="font-size: 1.15rem; margin: 0;">
+              If your supply chain experiences sudden deviations, port delays, or urgent routing shifts, skip the digital form and connect directly with our active tracking office now.
+            </p>
+          </div>
+          <div class="col-lg-6">
+            <div class="row g-3 justify-content-lg-end">
+              <div class="col-sm-6 col-md-4 col-lg-6">
+                <a href="tel:+000000000000" class="btn-cta-link">
+                  <i class="bi bi-telephone-fill"></i>
+                  <span>
+                    <blockquote>Voice Hotline</blockquote>
+                    <strong>Call Operations</strong>
+                  </span>
+                </a>
+              </div>
+              <div class="col-sm-6 col-md-4 col-lg-6">
+                <a href="https://wa.me/#" class="btn-cta-link" target="_blank" rel="noopener">
+                  <i class="bi bi-whatsapp"></i>
+                  <span>
+                    <blockquote>Instant Chat</blockquote>
+                    <strong>WhatsApp Desk</strong>
+                  </span>
+                </a>
+              </div>
+              <div class="col-sm-6 col-md-4 col-lg-6">
+                <a href="mailto:info@nexalogistics.com" class="btn-cta-link">
+                  <i class="bi bi-envelope-open-fill"></i>
+                  <span>
+                    <blockquote>Direct Email</blockquote>
+                    <strong>Corporate Intake</strong>
+                  </span>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
   </main>
+
+  <!-- ==========================================
+       SITE FOOTER (UNMODIFIED)
+       ========================================== -->
   <footer class="site-footer"><div class="container-nexa"><div class="row g-4"><div class="col-lg-6"><img class="footer-logo" src="assets/images/nexa-logo.jpeg" alt="NEXA Logistics logo"><p>Quote forms are static and ready to connect to email, CRM, or a form endpoint.</p></div><div class="col-lg-3"><div class="footer-title">Services</div><div class="footer-links"><a href="services.html">Customs Brokerage</a><a href="services.html">Freight Forwarding</a><a href="services.html">Door to Door</a></div></div><div class="col-lg-3"><div class="footer-title">Contact</div><p>info@nexalogistics.com<br>+000 000 000 000</p></div></div><div class="footer-bottom">(c) 2026 NEXA Logistics. All rights reserved.</div></div></footer>
+
+  <!-- ==========================================
+       MICRO-INTERACTIVE JAVASCRIPT ANIMATION ENGINE
+       ========================================== -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const accordionTriggers = document.querySelectorAll('.accordion-trigger');
+
+      accordionTriggers.forEach(trigger => {
+        trigger.addEventListener('click', function() {
+          const panel = this.nextElementSibling;
+          
+          if (this.classList.contains('active')) {
+            this.classList.remove('active');
+            panel.style.maxHeight = null;
+          } else {
+            accordionTriggers.forEach(other => {
+              other.classList.remove('active');
+              other.nextElementSibling.style.maxHeight = null;
+            });
+            
+            this.classList.add('active');
+            panel.style.maxHeight = panel.scrollHeight + "px";
+          }
+        });
+      });
+    });
+  </script>
   <script src="assets/js/main.js"></script>
 </body>
 </html>

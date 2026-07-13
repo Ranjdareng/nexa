@@ -1,0 +1,150 @@
+﻿/* ======================================================
+   NEXA Logistics - Hero & Presentation Modules
+   ====================================================== */
+
+.hero {
+  position: relative;
+  min-height: calc(100vh - 82px);
+  display: flex;
+  align-items: center;
+  color: var(--white);
+  background-image: linear-gradient(90deg, rgba(var(--primary-dark-rgb), 0.95) 0%, rgba(var(--primary-dark-rgb), 0.82) 37%, rgba(var(--primary-dark-rgb), 0.2) 78%), url("../images/hero-logistics.png");
+  background-position: center;
+  background-size: cover;
+}
+
+.hero::after {
+  content: "";
+  position: absolute;
+  inset: auto 0 0;
+  height: 120px;
+  background: linear-gradient(0deg, rgba(var(--primary-dark-rgb), 0.36), transparent);
+  pointer-events: none;
+}
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(var(--primary-dark-rgb),.75);
+}
+
+.hero .container {
+  position: relative;
+  z-index: 2;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1;
+  padding: 86px 0 116px;
+}
+
+.hero-small {
+  color: var(--accent);
+  font-weight: 600;
+  letter-spacing: 3px;
+}
+
+.hero h1 {
+  color: var(--white);
+  margin: 20px 0;
+}
+
+.hero h1 span { 
+  color: var(--accent); 
+}
+
+.hero p {
+  color: rgba(var(--white-rgb), 0.78);
+  max-width: 650px;
+  margin-top: 20px;
+  font-size: 1.16rem;
+}
+
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin-top: 32px;
+}
+
+.hero-buttons { 
+  margin-top: 40px; 
+}
+
+/* Dashboard Panels & Hero Overlays */
+.hero-card {
+  background: var(--white);
+  border-radius: 20px;
+  padding: 35px;
+  box-shadow: 0 15px 50px rgba(var(--primary-dark-rgb),.2);
+  color: var(--dark);
+}
+
+.hero-card h4 { 
+  margin-bottom: 20px; 
+}
+
+.hero-card ul { 
+  list-style: none; 
+  padding: 0; 
+}
+
+.hero-card li { 
+  margin-bottom: 14px; 
+}
+
+.hero-card i { 
+  color: green; 
+  margin-right: 10px; 
+}
+
+.hero-panel {
+  width: min(100%, 620px);
+  margin-top: 52px;
+  padding: 20px;
+  border: 1px solid rgba(var(--white-rgb), 0.16);
+  border-radius: var(--radius-md);
+  background: rgba(var(--white-rgb), 0.09);
+  backdrop-filter: blur(18px);
+}
+
+.hero-panel-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1px;
+  overflow: hidden;
+  border-radius: var(--radius-sm);
+  background: rgba(var(--white-rgb), 0.13);
+}
+
+.hero-panel-item {
+  padding: 18px;
+  background: rgba(var(--primary-dark-rgb), 0.38);
+}
+
+.hero-panel-item strong {
+  display: block;
+  margin-bottom: 4px;
+  font-size: 1.45rem;
+  line-height: 1;
+}
+
+.hero-panel-item span {
+  display: block;
+  color: rgba(var(--white-rgb), 0.72);
+  font-size: 0.82rem;
+}
+
+/* Subpage Layout Configurations */
+.page-hero {
+  padding: 88px 0 72px;
+  color: var(--white);
+  background: linear-gradient(90deg, rgba(var(--primary-dark-rgb), 0.96), rgba(var(--primary-dark-rgb), 0.7)), url("../images/hero-logistics.png") center / cover;
+}
+
+.breadcrumb-text {
+  margin-bottom: 16px;
+  color: rgba(var(--white-rgb), 0.72);
+  font-weight: 750;
+}

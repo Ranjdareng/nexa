@@ -8,28 +8,600 @@
   <link rel="icon" href="assets/images/nexa-logo.jpeg">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap-grid.min.css">
   <link rel="stylesheet" href="assets/css/styles.css">
+  
+  <!-- Embedded styles to support premium UX/UI upgrades and layout updates -->
+  <style>
+    :root {
+      --nexa-primary: #1E3470;
+      --nexa-accent: #B11F2A;
+      --nexa-dark: #0B132B;
+      --nexa-light: #F4F6FC;
+      --nexa-gray: #64748B;
+      --nexa-radius: 24px;
+      --nexa-shadow: 0 20px 40px rgba(30, 52, 112, 0.06);
+      --nexa-transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    /* Page Hero Enhancements */
+    .premium-hero {
+      position: relative;
+      background: url('https://images.unsplash.com/photo-1578575437130-527eed3abbec?auto=format&fit=crop&q=80&w=1600') no-repeat center center/cover;
+      padding: 180px 0 140px 0;
+      color: #ffffff;
+    }
+    .premium-hero::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: linear-gradient(135deg, rgba(11, 19, 43, 0.95) 0%, rgba(30, 52, 112, 0.85) 100%);
+      z-index: 1;
+    }
+    .premium-hero .container-nexa {
+      position: relative;
+      z-index: 2;
+    }
+    .hero-badge {
+      display: inline-block;
+      background: rgba(177, 31, 42, 0.15);
+      border: 1px solid var(--nexa-accent);
+      color: #ffffff;
+      padding: 6px 16px;
+      border-radius: 50px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      margin-bottom: 24px;
+    }
+    .hero-title {
+      font-size: clamp(2.5rem, 5vw, 4.2rem);
+      font-weight: 800;
+      line-height: 1.15;
+      margin-bottom: 20px;
+    }
+    .hero-desc {
+      font-size: 1.25rem;
+      max-width: 650px;
+      color: rgba(255, 255, 255, 0.85);
+      margin-bottom: 40px;
+      line-height: 1.6;
+    }
+    .hero-btn-group {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+    .btn-premium-primary {
+      background: var(--nexa-accent);
+      color: white;
+      padding: 16px 32px;
+      border-radius: 50px;
+      font-weight: 600;
+      text-decoration: none;
+      transition: var(--nexa-transition);
+      border: 2px solid var(--nexa-accent);
+    }
+    .btn-premium-primary:hover {
+      background: transparent;
+      color: white;
+      transform: translateY(-3px);
+    }
+    .btn-premium-outline {
+      background: transparent;
+      color: white;
+      padding: 16px 32px;
+      border-radius: 50px;
+      font-weight: 600;
+      text-decoration: none;
+      transition: var(--nexa-transition);
+      border: 2px solid rgba(255, 255, 255, 0.4);
+    }
+    .btn-premium-outline:hover {
+      border-color: white;
+      background: rgba(255, 255, 255, 0.1);
+      transform: translateY(-3px);
+    }
+
+    /* Category Groupings */
+    .category-section-title {
+      font-size: 1.75rem;
+      font-weight: 800;
+      color: var(--nexa-primary);
+      position: relative;
+      padding-bottom: 12px;
+      margin-bottom: 32px;
+      border-bottom: 2px solid rgba(30, 52, 112, 0.08);
+    }
+    .category-section-title::after {
+      content: '';
+      position: absolute;
+      bottom: -2px; left: 0;
+      width: 60px; height: 2px;
+      background: var(--nexa-accent);
+    }
+
+    /* Solution Cards */
+    .solution-card {
+      background: #ffffff;
+      border-radius: var(--nexa-radius);
+      padding: 36px;
+      height: 100%;
+      box-shadow: var(--nexa-shadow);
+      border: 1px solid rgba(0,0,0,0.02);
+      transition: var(--nexa-transition);
+      display: flex;
+      flex-direction: column;
+    }
+    .solution-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 30px 60px rgba(30, 52, 112, 0.1);
+    }
+    .solution-icon-box {
+      width: 56px;
+      height: 56px;
+      border-radius: 16px;
+      background: rgba(30, 52, 112, 0.05);
+      color: var(--nexa-primary);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 24px;
+      transition: var(--nexa-transition);
+    }
+    .solution-card:hover .solution-icon-box {
+      background: var(--nexa-primary);
+      color: #ffffff;
+    }
+    .benefit-tag {
+      background: var(--nexa-light);
+      color: var(--nexa-primary);
+      padding: 8px 14px;
+      border-radius: 12px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      margin-top: auto;
+      margin-bottom: 16px;
+      display: inline-block;
+    }
+    .learn-more-link {
+      color: var(--nexa-accent);
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 0.9rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      transition: var(--nexa-transition);
+    }
+    .learn-more-link:hover {
+      gap: 12px;
+    }
+
+    /* Process Timeline */
+    .timeline-container {
+      position: relative;
+      padding: 40px 0;
+    }
+    .timeline-line {
+      position: absolute;
+      top: 30px; left: 0; right: 0;
+      height: 2px;
+      background: rgba(30, 52, 112, 0.1);
+      z-index: 1;
+    }
+    .timeline-wrapper {
+      display: flex;
+      justify-content: space-between;
+      position: relative;
+      z-index: 2;
+    }
+    .timeline-step {
+      text-align: center;
+      flex: 1;
+    }
+    .timeline-node {
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      background: #ffffff;
+      border: 3px solid var(--nexa-primary);
+      color: var(--nexa-primary);
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 20px auto;
+      box-shadow: 0 0 0 6px #ffffff;
+      transition: var(--nexa-transition);
+    }
+    .timeline-step:hover .timeline-node {
+      background: var(--nexa-accent);
+      border-color: var(--nexa-accent);
+      color: #ffffff;
+    }
+
+    @media (max-width: 991px) {
+      .timeline-line {
+        left: 30px; top: 0; bottom: 0;
+        width: 2px; height: 100%;
+      }
+      .timeline-wrapper {
+        flex-direction: column;
+        gap: 32px;
+      }
+      .timeline-step {
+        text-align: left;
+        display: flex;
+        gap: 20px;
+        align-items: flex-start;
+      }
+      .timeline-node {
+        margin: 0;
+        flex-shrink: 0;
+      }
+    }
+
+    /* Industry Segment Cards */
+    .industry-card {
+      background: #ffffff;
+      border-radius: var(--nexa-radius);
+      padding: 32px;
+      text-align: center;
+      box-shadow: var(--nexa-shadow);
+      border: 1px solid rgba(0,0,0,0.02);
+      transition: var(--nexa-transition);
+      height: 100%;
+    }
+    .industry-card:hover {
+      background: var(--nexa-primary);
+      color: #ffffff;
+      transform: translateY(-5px);
+    }
+    .industry-card h4 {
+      color: var(--nexa-primary);
+      font-weight: 700;
+      margin: 0;
+      transition: var(--nexa-transition);
+    }
+    .industry-card:hover h4 {
+      color: #ffffff;
+    }
+
+    /* Final CTA Section Styling */
+    .final-cta {
+      background: linear-gradient(135deg, #0B132B 0%, #1E3470 100%);
+      border-radius: var(--nexa-radius);
+      padding: 80px 60px;
+      color: white;
+      position: relative;
+      overflow: hidden;
+    }
+    .final-cta::after {
+      content: '';
+      position: absolute;
+      right: -5%; bottom: -20%;
+      width: 350px; height: 350px;
+      background: rgba(177, 31, 42, 0.08);
+      border-radius: 50%;
+      filter: blur(50px);
+    }
+  </style>
 </head>
 <body>
   <header class="site-header"><div class="container-nexa nav-wrap"><a class="brand" href="index.html"><img src="assets/images/nexa-logo.jpeg" alt="NEXA Logistics logo"></a><button class="nav-toggle" type="button" data-nav-toggle aria-label="Open navigation"><span></span><span></span><span></span></button><nav class="site-nav" data-site-nav><a href="index.html">Home</a><a href="about.html">About</a><a class="active" href="services.html">Services</a><a href="partners.html">Partners</a><a href="gallery.html">Gallery</a><a href="contact.html">Contact</a></nav><a class="btn-nexa nav-quote" href="quote.html">Request Quote</a></div></header>
+  
   <main>
-    <section class="page-hero"><div class="container-nexa"><div class="breadcrumb-text">Home / Services</div><h1>Core Logistics Services</h1><p class="lead mt-3">Comprehensive supply chain services for air, sea, land, customs, special cargo, warehousing, and door-to-door movement.</p></div></section>
-    <section class="section">
+    <!-- SECTION 1: PAGE HERO[cite: 2] -->
+    <section class="premium-hero">
       <div class="container-nexa">
-        <div class="row g-4">
-          <div class="col-md-6 col-lg-4"><article class="service-card" data-animate><div class="icon-mark">CB</div><h3>Customs Brokerage</h3><p>Fast and compliant customs clearance handled by industry experts, including document verification, tariff and duty assessment, customs declarations, cargo release, and final delivery coordination.</p><div class="chip-list"><span class="chip">Documents</span><span class="chip">Declarations</span><span class="chip">Cargo release</span></div></article></div>
-          <div class="col-md-6 col-lg-4"><article class="service-card" data-animate><div class="icon-mark">AF</div><h3>Air Freight Services</h3><p>Fast and reliable air cargo services for time-sensitive shipments worldwide, supported by leading airline partners, global airport access, real-time tracking, and secure handling.</p><div class="chip-list"><span class="chip">Express delivery</span><span class="chip">Global network</span><span class="chip">Secure handling</span></div></article></div>
-          <div class="col-md-6 col-lg-4"><article class="service-card" data-animate><div class="icon-mark">SF</div><h3>Sea Freight Services</h3><p>Affordable ocean shipping for large-volume cargo, including FCL, LCL, refrigerated cargo, out-of-gauge cargo, break bulk, heavy lift, documentation, and port handling.</p><div class="chip-list"><span class="chip">FCL</span><span class="chip">LCL</span><span class="chip">Reefer</span><span class="chip">OOG</span></div></article></div>
-          <div class="col-md-6 col-lg-4"><article class="service-card" data-animate><div class="icon-mark">LF</div><h3>Land Freight Services</h3><p>Reliable regional and cross-border road transportation with FTL, LTL, GPS tracking, flexible scheduling, modern fleet capacity, and door-to-door delivery.</p><div class="chip-list"><span class="chip">FTL</span><span class="chip">LTL</span><span class="chip">Cross-border</span></div></article></div>
-          <div class="col-md-6 col-lg-4"><article class="service-card" data-animate><div class="icon-mark">SP</div><h3>Special & Perishable Cargo</h3><p>Customized logistics for hazardous materials, oversized machinery, industrial project cargo, break bulk, temperature-sensitive cargo, and high-value shipments.</p><div class="chip-list"><span class="chip">DG cargo</span><span class="chip">Heavy haul</span><span class="chip">Project cargo</span></div></article></div>
-          <div class="col-md-6 col-lg-4"><article class="service-card" data-animate><div class="icon-mark">LT</div><h3>Local Transportation</h3><p>Dependable inland freight solutions for parcels, standard freight, heavy cargo, regional distribution, cross-border network movement, and final-mile delivery.</p><div class="chip-list"><span class="chip">Door-to-door</span><span class="chip">Regional</span><span class="chip">Express</span></div></article></div>
-          <div class="col-md-6 col-lg-4"><article class="service-card" data-animate><div class="icon-mark">WH</div><h3>Warehousing & Fulfillment</h3><p>Secure warehousing with monitored facilities, access control, inventory management, reporting, order picking, dispatch, and synchronized outbound logistics.</p><div class="chip-list"><span class="chip">Secure storage</span><span class="chip">Inventory</span><span class="chip">Fulfillment</span></div></article></div>
-          <div class="col-md-6 col-lg-4"><article class="service-card" data-animate><div class="icon-mark">DD</div><h3>Door to Door</h3><p>Seamless pickup and delivery from origin to final destination, combining freight, customs, warehousing, ground support, and real-time shipment updates.</p><div class="chip-list"><span class="chip">Pickup</span><span class="chip">Clearance</span><span class="chip">Delivery</span></div></article></div>
-          <div class="col-md-6 col-lg-4"><article class="service-card" data-animate><div class="icon-mark">RT</div><h3>Real-Time Tracking</h3><p>Shipment visibility through status updates, GPS-enabled transport monitoring, milestone communication, and dedicated account support around the clock.</p><div class="chip-list"><span class="chip">24/7 support</span><span class="chip">Live updates</span></div></article></div>
+        <div class="row">
+          <div class="col-xl-8 col-lg-10">
+            <span class="hero-badge">Solutions Portfolio</span>
+            <h1 class="hero-title">Complete Logistics Solutions</h1>
+            <p class="hero-desc">Reliable air, sea, road and customs solutions tailored to your business operations.</p>
+            <div class="hero-btn-group">
+              <a href="quote.html" class="btn-premium-primary">Request a Quote</a>
+              <a href="contact.html" class="btn-premium-outline">Contact Our Experts</a>
+            </div>
+          </div>
         </div>
       </div>
     </section>
-    <section class="section mist"><div class="container-nexa"><div class="cta-band" data-animate><h2>Need a service plan for your cargo?</h2><p class="lead mt-3">Share shipment details and we will recommend the right mode and route.</p><a class="btn-nexa mt-3" href="quote.html">Request Quote</a></div></div></section>
+
+    <!-- SECTION 2: SERVICE CATEGORIES[cite: 2] -->
+    <section class="section py-5 my-5">
+      <div class="container-nexa">
+        
+        <!-- Category 1: International Freight -->
+        <div class="mb-5">
+          <h3 class="category-section-title">International Freight Systems</h3>
+          <div class="row g-4">
+            <div class="col-lg-4 col-md-6">
+              <div class="solution-card">
+                <div class="solution-icon-box">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg>
+                </div>
+                <h4 style="color: var(--nexa-primary); font-weight:700; margin-bottom:12px;">Air Freight</h4>
+                <p style="color: var(--nexa-gray); font-size:0.95rem; line-height:1.6; margin-bottom:20px;">Expedited airport-to-airport transit networks built for your high-priority payload requirements worldwide.</p>
+                <div class="benefit-tag">Customer Value: Unmatched Speed for Peak Deadlines</div>
+                <a href="contact.html" class="learn-more-link">
+                  <span>Learn More</span>
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+                </a>
+              </div>
+            </div>
+            <div class="col-lg-4 col-md-6">
+              <div class="solution-card">
+                <div class="solution-icon-box">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                </div>
+                <h4 style="color: var(--nexa-primary); font-weight:700; margin-bottom:12px;">Sea Freight</h4>
+                <p style="color: var(--nexa-gray); font-size:0.95rem; line-height:1.6; margin-bottom:20px;">High-capacity FCL and LCL container space routing options executing complex intercontinental maritime movements.</p>
+                <div class="benefit-tag">Customer Value: Optimal Cost Scale for Large Shipments</div>
+                <a href="contact.html" class="learn-more-link">
+                  <span>Learn More</span>
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+                </a>
+              </div>
+            </div>
+            <div class="col-lg-4 col-md-6">
+              <div class="solution-card">
+                <div class="solution-icon-box">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
+                </div>
+                <h4 style="color: var(--nexa-primary); font-weight:700; margin-bottom:12px;">Road Freight</h4>
+                <p style="color: var(--nexa-gray); font-size:0.95rem; line-height:1.6; margin-bottom:20px;">Secure domestic and cross-border overland fleet connectivity delivering safe, localized asset distributions.</p>
+                <div class="benefit-tag">Customer Value: Seamless Intra-Regional Point Transit</div>
+                <a href="contact.html" class="learn-more-link">
+                  <span>Learn More</span>
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Category 2: Customs & Compliance -->
+        <div class="mb-5 pt-4">
+          <h3 class="category-section-title">Customs & Regulatory Compliance</h3>
+          <div class="row g-4">
+            <div class="col-lg-4 col-md-6">
+              <div class="solution-card">
+                <div class="solution-icon-box">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+                </div>
+                <h4 style="color: var(--nexa-primary); font-weight:700; margin-bottom:12px;">Customs Brokerage</h4>
+                <p style="color: var(--nexa-gray); font-size:0.95rem; line-height:1.6; margin-bottom:20px;">Expert processing through international trade ports utilizing pre-vetted legal tariff declaration systems.</p>
+                <div class="benefit-tag">Customer Value: Absolute Security Against Delays</div>
+                <a href="contact.html" class="learn-more-link">
+                  <span>Learn More</span>
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+                </a>
+              </div>
+            </div>
+            <div class="col-lg-4 col-md-6">
+              <div class="solution-card">
+                <div class="solution-icon-box">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"/></svg>
+                </div>
+                <h4 style="color: var(--nexa-primary); font-weight:700; margin-bottom:12px;">Documentation Audit</h4>
+                <p style="color: var(--nexa-gray); font-size:0.95rem; line-height:1.6; margin-bottom:20px;">Comprehensive manifest verification and certification protocols safeguarding paperwork validity across cross-border ports.</p>
+                <div class="benefit-tag">Customer Value: Zero Legal Risk and Full Assurance</div>
+                <a href="contact.html" class="learn-more-link">
+                  <span>Learn More</span>
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+                </a>
+              </div>
+            </div>
+            <div class="col-lg-4 col-md-6">
+              <div class="solution-card">
+                <div class="solution-icon-box">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                </div>
+                <h4 style="color: var(--nexa-primary); font-weight:700; margin-bottom:12px;">Port Clearance Execution</h4>
+                <p style="color: var(--nexa-gray); font-size:0.95rem; line-height:1.6; margin-bottom:20px;">On-site release operations structured to expedite terminal inspections and quickly minimize storage charges.</p>
+                <div class="benefit-tag">Customer Value: Minimized Demurrage Costs</div>
+                <a href="contact.html" class="learn-more-link">
+                  <span>Learn More</span>
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Category 3: Supply Chain Solutions -->
+        <div class="mb-5 pt-4">
+          <h3 class="category-section-title">Supply Chain Management Solutions</h3>
+          <div class="row g-4">
+            <div class="col-lg-4 col-md-6">
+              <div class="solution-card">
+                <div class="solution-icon-box">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg>
+                </div>
+                <h4 style="color: var(--nexa-primary); font-weight:700; margin-bottom:12px;">Smart Warehousing</h4>
+                <p style="color: var(--nexa-gray); font-size:0.95rem; line-height:1.6; margin-bottom:20px;">Secure hub points equipped with climate monitoring systems and flexible safety storage setups.</p>
+                <div class="benefit-tag">Customer Value: Lean, Demand-Responsive Storage</div>
+                <a href="contact.html" class="learn-more-link">
+                  <span>Learn More</span>
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+                </a>
+              </div>
+            </div>
+            <div class="col-lg-4 col-md-6">
+              <div class="solution-card">
+                <div class="solution-icon-box">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+                </div>
+                <h4 style="color: var(--nexa-primary); font-weight:700; margin-bottom:12px;">Door-to-Door Fulfillment</h4>
+                <p style="color: var(--nexa-gray); font-size:0.95rem; line-height:1.6; margin-bottom:20px;">Completely centralized single-vendor setups directing accountability from source loading docks to handovers.</p>
+                <div class="benefit-tag">Customer Value: Reduced Multi-Vendor Complexity</div>
+                <a href="contact.html" class="learn-more-link">
+                  <span>Learn More</span>
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+                </a>
+              </div>
+            </div>
+            <div class="col-lg-4 col-md-6">
+              <div class="solution-card">
+                <div class="solution-icon-box">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+                </div>
+                <h4 style="color: var(--nexa-primary); font-weight:700; margin-bottom:12px;">Real-Time Tracking</h4>
+                <p style="color: var(--nexa-gray); font-size:0.95rem; line-height:1.6; margin-bottom:20px;">Uncompromised visibility mapping live route deviations and precise cargo milestone metrics dynamically.</p>
+                <div class="benefit-tag">Customer Value: Complete Pipeline Predictability</div>
+                <a href="contact.html" class="learn-more-link">
+                  <span>Learn More</span>
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- SECTION 3: OUR PROCESS[cite: 2] -->
+    <section class="section py-5 style-mist" style="background: var(--nexa-light);">
+      <div class="container-nexa py-4">
+        <div class="text-center max-w-xl mx-auto mb-5">
+          <span class="section-kicker" style="color: var(--nexa-accent); font-weight:700; letter-spacing:2px; text-transform:uppercase; font-size:0.85rem;">Operational Framework</span>
+          <h2 class="mt-2" style="color: var(--nexa-primary); font-size: 2.5rem; font-weight:800;">Our Process Timeline</h2>
+        </div>
+        <div class="timeline-container">
+          <div class="timeline-line d-none d-lg-block"></div>
+          <div class="timeline-wrapper">
+            <div class="timeline-step">
+              <div class="timeline-node">01</div>
+              <div>
+                <h5 class="fw-bold mb-1">Quote</h5>
+                <p style="color: var(--nexa-gray); font-size:0.85rem;">Accurate routing parameters matched with clear rates.</p>
+              </div>
+            </div>
+            <div class="timeline-step">
+              <div class="timeline-node">02</div>
+              <div>
+                <h5 class="fw-bold mb-1">Planning</h5>
+                <p style="color: var(--nexa-gray); font-size:0.85rem;">Optimal route mappings paired with asset tracking setup.</p>
+              </div>
+            </div>
+            <div class="timeline-step">
+              <div class="timeline-node">03</div>
+              <div>
+                <h5 class="fw-bold mb-1">Pickup</h5>
+                <p style="color: var(--nexa-gray); font-size:0.85rem;">Verified point retrieval backed by item inspections.</p>
+              </div>
+            </div>
+            <div class="timeline-step">
+              <div class="timeline-node">04</div>
+              <div>
+                <h5 class="fw-bold mb-1">Transportation</h5>
+                <p style="color: var(--nexa-gray); font-size:0.85rem;">High-security transit management along key hubs.</p>
+              </div>
+            </div>
+            <div class="timeline-step">
+              <div class="timeline-node">05</div>
+              <div>
+                <h5 class="fw-bold mb-1">Customs Clearance</h5>
+                <p style="color: var(--nexa-gray); font-size:0.85rem;">Pre-cleared port operations via compliant filing codes.</p>
+              </div>
+            </div>
+            <div class="timeline-step">
+              <div class="timeline-node">06</div>
+              <div>
+                <h5 class="fw-bold mb-1">Final Delivery</h5>
+                <p style="color: var(--nexa-gray); font-size:0.85rem;">Safe last-mile distributions directly inside operations zones.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 4: INDUSTRIES WE SERVE[cite: 2] -->
+    <section class="section py-5 my-5">
+      <div class="container-nexa">
+        <div class="text-center max-w-xl mx-auto mb-5">
+          <span class="section-kicker" style="color: var(--nexa-accent); font-weight:700; letter-spacing:2px; text-transform:uppercase; font-size:0.85rem;">Global Expertise</span>
+          <h2 class="mt-2" style="color: var(--nexa-primary); font-size: 2.5rem; font-weight:800;">Industries We Serve</h2>
+        </div>
+        <div class="row g-4">
+          <div class="col-lg-3 col-md-6"><div class="industry-card"><h4>Oil & Gas</h4></div></div>
+          <div class="col-lg-3 col-md-6"><div class="industry-card"><h4>Construction</h4></div></div>
+          <div class="col-lg-3 col-md-6"><div class="industry-card"><h4>Healthcare</h4></div></div>
+          <div class="col-lg-3 col-md-6"><div class="industry-card"><h4>Retail</h4></div></div>
+          <div class="col-lg-3 col-md-6"><div class="industry-card"><h4>Manufacturing</h4></div></div>
+          <div class="col-lg-3 col-md-6"><div class="industry-card"><h4>Government</h4></div></div>
+          <div class="col-lg-3 col-md-6"><div class="industry-card"><h4>NGOs</h4></div></div>
+          <div class="col-lg-3 col-md-6"><div class="industry-card"><h4>E-commerce</h4></div></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 5: WHY CLIENTS CHOOSE NEXA[cite: 2] -->
+    <section class="section py-5 style-mist" style="background: var(--nexa-light);">
+      <div class="container-nexa py-4">
+        <div class="text-center max-w-xl mx-auto mb-5">
+          <span class="section-kicker" style="color: var(--nexa-accent); font-weight:700; letter-spacing:2px; text-transform:uppercase; font-size:0.85rem;">The NEXA Standard</span>
+          <h2 class="mt-2" style="color: var(--nexa-primary); font-size: 2.5rem; font-weight:800;">Why Clients Choose NEXA</h2>
+        </div>
+        <div class="row g-4">
+          <div class="col-md-4">
+            <div class="industry-card text-start p-4" style="background: #fff; height: 100%;">
+              <h5 class="fw-bold mb-2" style="color: var(--nexa-primary);">Reliable Transit</h5>
+              <p style="color: var(--nexa-gray); font-size:0.9rem; line-height:1.6; margin:0;">Consistent delivery paths using engineered scheduling backups to protect complex enterprise inventory flows.</p>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="industry-card text-start p-4" style="background: #fff; height: 100%;">
+              <h5 class="fw-bold mb-2" style="color: var(--nexa-primary);">Global Partner Network</h5>
+              <p style="color: var(--nexa-gray); font-size:0.9rem; line-height:1.6; margin:0;">Strategic hub allocations matching high-capacity equipment access constraints seamlessly.</p>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="industry-card text-start p-4" style="background: #fff; height: 100%;">
+              <h5 class="fw-bold mb-2" style="color: var(--nexa-primary);">Transparent Communication</h5>
+              <p style="color: var(--nexa-gray); font-size:0.9rem; line-height:1.6; margin:0;">Continuous tracking systems tracking progress with absolute structural cost breakdown parameters.</p>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="industry-card text-start p-4" style="background: #fff; height: 100%;">
+              <h5 class="fw-bold mb-2" style="color: var(--nexa-primary);">Experienced Team</h5>
+              <p style="color: var(--nexa-gray); font-size:0.9rem; line-height:1.6; margin:0;">Logistics design strategists managing multi-modal configurations and complex clearance points smoothly.</p>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="industry-card text-start p-4" style="background: #fff; height: 100%;">
+              <h5 class="fw-bold mb-2" style="color: var(--nexa-primary);">Tailored Logistics Solutions</h5>
+              <p style="color: var(--nexa-gray); font-size:0.9rem; line-height:1.6; margin:0;">Custom trade designs matching unique hazardous cargo limits or fragile hardware frameworks perfectly.</p>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="industry-card text-start p-4" style="background: #fff; height: 100%;">
+              <h5 class="fw-bold mb-2" style="color: var(--nexa-primary);">24/7 Customer Support</h5>
+              <p style="color: var(--nexa-gray); font-size:0.9rem; line-height:1.6; margin:0;">Dedicated support agents answering emergency rerouting requests or scheduling concerns instantly.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 6: FINAL CTA[cite: 2] -->
+    <section class="section py-5 my-5">
+      <div class="container-nexa">
+        <div class="final-cta text-center d-flex flex-column align-items-center justify-content-center">
+          <h2 style="font-size: clamp(2rem, 4vw, 2.8rem); font-weight: 800; margin-bottom: 16px; color: #ffffff;">Let's Build the Right Logistics Solution for Your Business</h2>
+          <p style="font-size: 1.15rem; color: rgba(255, 255, 255, 0.85); max-width: 650px; margin-bottom: 40px; line-height: 1.6;">Our logistics specialists are ready to design the most efficient transportation solution for your cargo.</p>
+          <div class="hero-btn-group justify-content-center">
+            <a href="quote.html" class="btn-premium-primary">Request a Quote</a>
+            <a href="contact.html" class="btn-premium-outline">Contact Us</a>
+          </div>
+        </div>
+      </div>
+    </section>
   </main>
+
   <footer class="site-footer"><div class="container-nexa"><div class="row g-4"><div class="col-lg-6"><img class="footer-logo" src="assets/images/nexa-logo.jpeg" alt="NEXA Logistics logo"><p>Freight forwarding, customs brokerage, special cargo, warehousing, and door-to-door shipment coordination.</p></div><div class="col-lg-3"><div class="footer-title">Company</div><div class="footer-links"><a href="about.html">About</a><a href="partners.html">Partners</a><a href="contact.html">Contact</a></div></div><div class="col-lg-3"><div class="footer-title">Contact</div><p>info@nexalogistics.com<br>+000 000 000 000</p></div></div><div class="footer-bottom">(c) 2026 NEXA Logistics. All rights reserved.</div></div></footer>
   <script src="assets/js/main.js"></script>
 </body>

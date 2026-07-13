@@ -1,11 +1,769 @@
-<!doctype html><html lang="en"><head>
-<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Faq | NEXA Logistics</title>
-<link rel="stylesheet" href="assets/css/style.css">
-<link rel="stylesheet" href="assets/css/responsive.css">
-</head><body>
-<header><div class="wrap"><h2>NEXA Logistics</h2><nav><a href="index.html">Home</a><a href="about.html">About</a><a href="services.html">Services</a><a href="partners.html">Partners</a><a href="gallery.html">Gallery</a><a href="contact.html">Contact</a></nav></div></header>
-<main class='wrap'><h1>FAQ</h1><h3>Which countries do you serve?</h3><p>More than 50 countries.</p></main>
-<footer><p>© 2026 NEXA Logistics | 10 Years • 50 Countries • 9000 Shipments • 97% Satisfaction</p></footer>
-<script src="assets/js/main.js"></script>
-</body></html>
+﻿<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Help Center & FAQ | NEXA Logistics</title>
+  <link rel="icon" href="assets/images/nexa-logo.jpeg">
+  <!-- Bootstrap Grid system for fluid structure and alignment -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap-grid.min.css">
+  <!-- SVG Icon Library CDN used safely for scalable modern interface icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <link rel="stylesheet" href="assets/css/styles.css">
+
+  <style>
+    /* ==========================================================================
+       HELP CENTER PREMIUM DESIGN SYSTEM EXPANSION (Inline Styles Override)
+       ========================================================================== */
+    :root {
+      --nexa-primary: #1E3470;
+      --nexa-accent: #B11F2A;
+      --nexa-dark-navy: #0F1E43;
+      --nexa-light-bg: #F8FAFC;
+      --nexa-white: #FFFFFF;
+      --nexa-gray-text: #475569;
+      --nexa-border: #E2E8F0;
+      --nexa-radius: 24px;
+      --nexa-shadow: 0 10px 30px -10px rgba(30, 52, 112, 0.08);
+      --nexa-shadow-hover: 0 20px 40px -15px rgba(30, 52, 112, 0.15);
+      --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    /* Help Center Premium Hero */
+    .faq-hero {
+      position: relative;
+      background: url('https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&q=80&w=1920') no-repeat center center/cover;
+      padding: 140px 0 100px 0;
+      color: var(--nexa-white);
+      overflow: hidden;
+    }
+    .faq-hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, rgba(15, 30, 67, 0.95) 0%, rgba(30, 52, 112, 0.85) 100%);
+      z-index: 1;
+    }
+    .faq-hero .container-nexa {
+      position: relative;
+      z-index: 2;
+    }
+    .faq-hero h1 {
+      font-size: 3.5rem;
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      line-height: 1.15;
+      color: var(--nexa-white);
+    }
+    .faq-hero .lead {
+      font-size: 1.25rem;
+      color: #CBD5E1;
+      max-width: 750px;
+      line-height: 1.6;
+    }
+
+    /* Shared Premium Button Suites */
+    .btn-nexa-primary {
+      background-color: var(--nexa-accent);
+      color: var(--nexa-white);
+      padding: 16px 32px;
+      border-radius: 50px;
+      font-weight: 600;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      transition: var(--transition-smooth);
+      border: 2px solid transparent;
+    }
+    .btn-nexa-primary:hover {
+      background-color: #90161F;
+      transform: translateY(-2px);
+      box-shadow: 0 10px 20px rgba(177, 31, 42, 0.3);
+    }
+    .btn-nexa-secondary {
+      background-color: transparent;
+      color: var(--nexa-white);
+      padding: 16px 32px;
+      border-radius: 50px;
+      font-weight: 600;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      transition: var(--transition-smooth);
+      border: 2px solid rgba(255, 255, 255, 0.3);
+    }
+    .btn-nexa-secondary:hover {
+      background-color: rgba(255, 255, 255, 0.1);
+      border-color: var(--nexa-white);
+      transform: translateY(-2px);
+    }
+
+    /* Section Control & Structural Spacing */
+    .bg-light-premium {
+      background-color: var(--nexa-light-bg);
+      padding: 80px 0;
+    }
+    .section-kicker {
+      color: var(--nexa-accent);
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      font-size: 0.85rem;
+      display: block;
+      margin-bottom: 12px;
+    }
+    .section-title {
+      font-size: 2.5rem;
+      color: var(--nexa-primary);
+      font-weight: 700;
+      letter-spacing: -0.02em;
+    }
+
+    /* SECTION 2: Instant Search Architecture */
+    .search-container {
+      max-width: 720px;
+      margin: -40px auto 0 auto;
+      position: relative;
+      z-index: 10;
+      padding: 0 15px;
+    }
+    .search-bar-wrapper {
+      position: relative;
+      background: var(--nexa-white);
+      border-radius: 16px;
+      box-shadow: 0 20px 40px rgba(15, 30, 67, 0.1);
+      border: 1px solid var(--nexa-border);
+      display: flex;
+      align-items: center;
+      padding: 6px 12px;
+    }
+    .search-bar-wrapper i {
+      font-size: 1.5rem;
+      color: var(--nexa-primary);
+      margin-left: 12px;
+    }
+    .search-input {
+      width: 100%;
+      border: none;
+      padding: 16px;
+      font-size: 1.15rem;
+      color: var(--nexa-dark-navy);
+      background: transparent;
+    }
+    .search-input:focus {
+      outline: none;
+    }
+
+    /* SECTION 3: Category Filtering Tabs System */
+    .tabs-scroll-container {
+      overflow-x: auto;
+      white-space: nowrap;
+      padding: 20px 0 30px 0;
+      margin-bottom: 20px;
+      -webkit-overflow-scrolling: touch;
+    }
+    .tabs-scroll-container::-webkit-scrollbar {
+      height: 4px;
+    }
+    .tabs-scroll-container::-webkit-scrollbar-thumb {
+      background: var(--nexa-border);
+      border-radius: 10px;
+    }
+    .category-tabs-wrapper {
+      display: inline-flex;
+      gap: 12px;
+      min-width: 100%;
+      justify-content: center;
+      padding: 0 15px;
+    }
+    .category-tab-btn {
+      background: var(--nexa-white);
+      border: 1px solid var(--nexa-border);
+      color: var(--nexa-gray-text);
+      padding: 14px 28px;
+      border-radius: 50px;
+      font-weight: 600;
+      font-size: 0.95rem;
+      cursor: pointer;
+      transition: var(--transition-smooth);
+      box-shadow: var(--nexa-shadow);
+    }
+    .category-tab-btn:hover {
+      border-color: var(--nexa-primary);
+      color: var(--nexa-primary);
+      transform: translateY(-2px);
+    }
+    .category-tab-btn.active {
+      background: var(--nexa-primary);
+      border-color: var(--nexa-primary);
+      color: var(--nexa-white);
+      box-shadow: 0 10px 20px rgba(30, 52, 112, 0.15);
+    }
+
+    /* SECTION 4: Premium Accordion Mechanics */
+    .faq-accordion-container {
+      max-width: 880px;
+      margin: 0 auto;
+    }
+    .accordion-item-nexa {
+      background: var(--nexa-white);
+      border-radius: var(--nexa-radius) !important;
+      margin-bottom: 16px;
+      border: 1px solid var(--nexa-border);
+      box-shadow: var(--nexa-shadow);
+      overflow: hidden;
+      transition: var(--transition-smooth);
+    }
+    .accordion-item-nexa:hover {
+      box-shadow: var(--nexa-shadow-hover);
+      border-color: rgba(30, 52, 112, 0.15);
+    }
+    .accordion-trigger {
+      width: 100%;
+      padding: 26px 30px;
+      background: none;
+      border: none;
+      text-align: left;
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: var(--nexa-primary);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      cursor: pointer;
+      transition: var(--transition-smooth);
+    }
+    .accordion-trigger i {
+      font-size: 1.25rem;
+      color: var(--nexa-accent);
+      transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    .accordion-trigger.active {
+      background-color: rgba(30, 52, 112, 0.01);
+    }
+    .accordion-trigger.active i {
+      transform: rotate(180deg);
+    }
+    .accordion-panel {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    .accordion-content {
+      padding: 0 30px 28px 30px;
+      color: var(--nexa-gray-text);
+      line-height: 1.65;
+      font-size: 1.05rem;
+    }
+    .accordion-content p {
+      margin: 0;
+    }
+    .badge-category {
+      display: inline-block;
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      background: rgba(30, 52, 112, 0.06);
+      color: var(--nexa-primary);
+      padding: 4px 10px;
+      border-radius: 6px;
+      margin-bottom: 12px;
+    }
+    .no-results-message {
+      display: none;
+      text-align: center;
+      padding: 60px 20px;
+      color: var(--nexa-gray-text);
+    }
+    .no-results-message i {
+      font-size: 3rem;
+      color: var(--nexa-border);
+      margin-bottom: 16px;
+      display: block;
+    }
+
+    /* SECTION 5: Contact Support Panel */
+    .support-cta-section {
+      background: linear-gradient(135deg, var(--nexa-dark-navy) 0%, var(--nexa-primary) 100%);
+      padding: 90px 0;
+      color: var(--nexa-white);
+    }
+    .support-cta-section .section-title {
+      color: var(--nexa-white);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ==========================================
+       SITE HEADER (UNMODIFIED)
+       ========================================== -->
+  <header class="site-header"><div class="container-nexa nav-wrap"><a class="brand" href="index.html"><img src="assets/images/nexa-logo.jpeg" alt="NEXA Logistics logo"></a><button class="nav-toggle" type="button" data-nav-toggle aria-label="Open navigation"><span></span><span></span><span></span></button><nav class="site-nav" data-site-nav><a href="index.html">Home</a><a href="about.html">About</a><a href="services.html">Services</a><a href="partners.html">Partners</a><a href="gallery.html">Gallery</a><a class="active" href="contact.html">Contact</a></nav><a class="btn-nexa nav-quote" href="quote.html">Request Quote</a></div></header>
+
+  <main>
+    
+    <!-- ==========================================
+         SECTION 1: PAGE HERO
+         ========================================== -->
+    <section class="faq-hero">
+      <div class="container-nexa">
+        <div class="row">
+          <div class="col-lg-9">
+            <div style="color: #93C5FD; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; font-size: 0.9rem; margin-bottom: 16px;">
+              Knowledge Base &amp; Resource Hub
+            </div>
+            <h1>Frequently Asked Questions</h1>
+            <p class="lead mt-4">
+              Find instant, clear answers about our freight forwarding configurations, global customs clearance pipelines, warehousing systems, secure transportation networks, and integrated logistics management workflows.
+            </p>
+            <div class="mt-5 d-flex flex-wrap gap-3">
+              <a href="quote.html" class="btn-nexa-primary">
+                <span>Request a Quote</span><i class="bi bi-calculator"></i>
+              </a>
+              <a href="contact.html" class="btn-nexa-secondary">
+                <span>Contact Support Team</span><i class="bi bi-chat-text"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================
+         SECTION 2: LIVE TEXT SEARCH ENGINE
+         ========================================== -->
+    <div class="search-container">
+      <div class="search-bar-wrapper">
+        <i class="bi bi-search"></i>
+        <input type="text" id="faqSearchInput" class="search-input" placeholder="Search for a logistics question, keyword, or topic..." aria-label="Search FAQ">
+      </div>
+    </div>
+
+    <!-- ==========================================
+         SECTION 3 & 4: CATEGORY TABS & ACCORDIONS
+         ========================================== -->
+    <section class="bg-light-premium">
+      <div class="container-nexa">
+        
+        <!-- Category Filter Tabs Wrapper -->
+        <div class="tabs-scroll-container">
+          <div class="category-tabs-wrapper" id="faqTabsContainer">
+            <button class="category-tab-btn active" data-filter="all">All Questions</button>
+            <button class="category-tab-btn" data-filter="general">General</button>
+            <button class="category-tab-btn" data-filter="air">Air Freight</button>
+            <button class="category-tab-btn" data-filter="sea">Sea Freight</button>
+            <button class="category-tab-btn" data-filter="road">Road Transport</button>
+            <button class="category-tab-btn" data-filter="customs">Customs</button>
+            <button class="category-tab-btn" data-filter="warehousing">Warehousing</button>
+            <button class="category-tab-btn" data-filter="tracking">Tracking</button>
+            <button class="category-tab-btn" data-filter="payments">Payments</button>
+          </div>
+        </div>
+
+        <!-- 20-Item Premium Specialized Accordion Base Framework -->
+        <div class="faq-accordion-container" id="faqAccordionEngine">
+          
+          <!-- ==================== GENERAL CATEGORY ==================== -->
+          <div class="accordion-item-nexa" data-category="general">
+            <button class="accordion-trigger" type="button">
+              <span>Which countries and international transit corridors do you serve?[cite: 6]</span>
+              <i class="bi bi-chevron-down"></i>
+            </button>
+            <div class="accordion-panel">
+              <div class="accordion-content">
+                <span class="badge-category">General</span>
+                <p>NEXA manages multi-modal freight networks extending across more than 50 countries[cite: 6]. Our core international transit corridors link manufacturing clusters in China, Turkey, Europe, and the Americas directly with key distribution ports across the Middle East.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="accordion-item-nexa" data-category="general">
+            <button class="accordion-trigger" type="button">
+              <span>What is the standard response timeline for pricing inquiries?</span>
+              <i class="bi bi-chevron-down"></i>
+            </button>
+            <div class="accordion-panel">
+              <div class="accordion-content">
+                <span class="badge-category">General</span>
+                <p>Our commercial sales office provides formal itemized spot quotes within 60 minutes for basic lane allocations. Intricate multi-modal project cargo profiles requiring custom routing configurations are delivered within 24 business hours.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="accordion-item-nexa" data-category="general">
+            <button class="accordion-trigger" type="button">
+              <span>Can I request and secure a comprehensive freight quotation online?</span>
+              <i class="bi bi-chevron-down"></i>
+            </button>
+            <div class="accordion-panel">
+              <div class="accordion-content">
+                <span class="badge-category">General</span>
+                <p>Yes. By utilizing our structured digital intake systems or sending details directly to our corporate channels, you can input weight matrices, dimensional parameters, and point-to-point coordinates for immediate analysis.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- ==================== AIR FREIGHT CATEGORY ==================== -->
+          <div class="accordion-item-nexa" data-category="air">
+            <button class="accordion-trigger" type="button">
+              <span>What tier of air freight delivery services do you offer for high-priority shipments?</span>
+              <i class="bi bi-chevron-down"></i>
+            </button>
+            <div class="accordion-panel">
+              <div class="accordion-content">
+                <span class="badge-category">Air Freight</span>
+                <p>We provide standard Air Freight cargo scheduling, priority expedited shipping, and full aircraft charter allocations for oversized, high-value, or time-critical industrial components requiring fast delivery.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="accordion-item-nexa" data-category="air">
+            <button class="accordion-trigger" type="button">
+              <span>How are dimensional weight ratios calculated for air cargo lines?</span>
+              <i class="bi bi-chevron-down"></i>
+            </button>
+            <div class="accordion-panel">
+              <div class="accordion-content">
+                <span class="badge-category">Air Freight</span>
+                <p>Air transport pricing utilizes the standard IATA volumetric computation factor ($Length \times Width \times Height / 6000$ using centimeters per kilogram). Chargeable weight is automatically determined by comparing actual deadweight against volumetric measurements, choosing whichever is greater.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="accordion-item-nexa" data-category="air">
+            <button class="accordion-trigger" type="button">
+              <span>Do you manage temperature-controlled or dangerous goods air shipments?</span>
+              <i class="bi bi-chevron-down"></i>
+            </button>
+            <div class="accordion-panel">
+              <div class="accordion-content">
+                <span class="badge-category">Air Freight</span>
+                <p>Yes. Our specialists are IATA-certified to manage cold-chain healthcare supplies, hazardous chemical compositions, and lithium-ion power cells under strict regulatory compliance and handling frameworks.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- ==================== SEA FREIGHT CATEGORY ==================== -->
+          <div class="accordion-item-nexa" data-category="sea">
+            <button class="accordion-trigger" type="button">
+              <span>What is the functional difference between your FCL and LCL ocean options?</span>
+              <i class="bi bi-chevron-down"></i>
+            </button>
+            <div class="accordion-panel">
+              <div class="accordion-content">
+                <span class="badge-category">Sea Freight</span>
+                <p>Full Container Load (FCL) reserves an entire 20ft or 40ft container exclusively for your cargo, maximizing speed and security. Less than Container Load (LCL) consolidates your freight with other corporate shipments into shared containers, providing an economical solution for lower-volume shipments.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="accordion-item-nexa" data-category="sea">
+            <button class="accordion-trigger" type="button">
+              <span>Which global maritime ports serve as your primary intake terminals?</span>
+              <i class="bi bi-chevron-down"></i>
+            </button>
+            <div class="accordion-panel">
+              <div class="accordion-content">
+                <span class="badge-category">Sea Freight</span>
+                <p>We coordinate transshipments across principal maritime infrastructure nodes, managing incoming paths from Shanghai, Ningbo, Istanbul, and Jebel Ali directly into inland dry ports via protected land corridors.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="accordion-item-nexa" data-category="sea">
+            <button class="accordion-trigger" type="button">
+              <span>Do you coordinate specialized breakbulk transport for non-containerized cargo?</span>
+              <i class="bi bi-chevron-down"></i>
+            </button>
+            <div class="accordion-panel">
+              <div class="accordion-content">
+                <span class="badge-category">Sea Freight</span>
+                <p>Yes. Out-of-gauge (OOG) commercial equipment, heavy industrial infrastructure installations, and large-scale manufacturing assets are managed using flat-racks, open-tops, or dedicated breakbulk maritime vessels.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- ==================== ROAD TRANSPORT CATEGORY ==================== -->
+          <div class="accordion-item-nexa" data-category="road">
+            <button class="accordion-trigger" type="button">
+              <span>What structural configurations make up your overland logistics fleet?</span>
+              <i class="bi bi-chevron-down"></i>
+            </button>
+            <div class="accordion-panel">
+              <div class="accordion-content">
+                <span class="badge-category">Road Transport</span>
+                <p>Our overland fleet matches diverse shipping needs, using curtain-siders, heavy-duty flatbeds, climate-controlled reefers, and multi-axle low-boys engineered to haul complex industrial machinery across regional highways safely.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="accordion-item-nexa" data-category="road">
+            <button class="accordion-trigger" type="button">
+              <span>Can you arrange door-to-door delivery across inland locations?</span>
+              <i class="bi bi-chevron-down"></i>
+            </button>
+            <div class="accordion-panel">
+              <div class="accordion-content">
+                <span class="badge-category">Road Transport</span>
+                <p>Absolutely. We manage the entire transport chain—handling ocean or air intake, customs brokerage clearance, cross-dock transfers, and final long-haul truck routing straight to your designated warehouse or site facility.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- ==================== CUSTOMS CATEGORY ==================== -->
+          <div class="accordion-item-nexa" data-category="customs">
+            <button class="accordion-trigger" type="button">
+              <span>Do you provide complete customs clearance and local brokerage support?</span>
+              <i class="bi bi-chevron-down"></i>
+            </button>
+            <div class="accordion-panel">
+              <div class="accordion-content">
+                <span class="badge-category">Customs</span>
+                <p>Yes. NEXA provides dedicated in-house customs brokerage. Our compliance agents prepare formal customs documentation, determine accurate tariff codes, process tax requirements, and manage border inspections to prevent cargo delays.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="accordion-item-nexa" data-category="customs">
+            <button class="accordion-trigger" type="button">
+              <span>What specific documents are required to initiate international border clearance?</span>
+              <i class="bi bi-chevron-down"></i>
+            </button>
+            <div class="accordion-panel">
+              <div class="accordion-content">
+                <span class="badge-category">Customs</span>
+                <p>Standard regulatory entries require: a detailed Commercial Invoice, an itemized Packing List, a clean Bill of Lading or Air Waybill, a verified Certificate of Origin, and any specialized import permits or regulatory health certifications required by local border authorities.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="accordion-item-nexa" data-category="customs">
+            <button class="accordion-trigger" type="button">
+              <span>How are unexpected tariff disputes or border delays handled?</span>
+              <i class="bi bi-chevron-down"></i>
+            </button>
+            <div class="accordion-panel">
+              <div class="accordion-content">
+                <span class="badge-category">Customs</span>
+                <p>Our compliance specialists maintain direct lines with border terminals. In a classification or documentation dispute, we quickly present supporting paperwork, trade records, and legal precedents to secure clearance and minimize storage fees.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- ==================== WAREHOUSING CATEGORY ==================== -->
+          <div class="accordion-item-nexa" data-category="warehousing">
+            <button class="accordion-trigger" type="button">
+              <span>What security systems protect your commercial warehousing facilities?</span>
+              <i class="bi bi-chevron-down"></i>
+            </button>
+            <div class="accordion-panel">
+              <div class="accordion-content">
+                <span class="badge-category">Warehousing</span>
+                <p>Our logistics hubs feature 24/7 internal and external CCTV surveillance, restricted access control systems, on-site security guards, and advanced fire suppression technology to safeguard all stored commercial inventory.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="accordion-item-nexa" data-category="warehousing">
+            <button class="accordion-trigger" type="button">
+              <span>Do you provide short-term storage or fulfillment options?</span>
+              <i class="bi bi-chevron-down"></i>
+            </button>
+            <div class="accordion-panel">
+              <div class="accordion-content">
+                <span class="badge-category">Warehousing</span>
+                <p>Yes. We offer adaptive warehouse layouts suited for short-term overflow, cross-dock distribution, or long-term structural inventory storage, backed by automated stock-tracking workflows.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- ==================== TRACKING CATEGORY ==================== -->
+          <div class="accordion-item-nexa" data-category="tracking">
+            <button class="accordion-trigger" type="button">
+              <span>How can I monitor the location and transit status of my active shipment?</span>
+              <i class="bi bi-chevron-down"></i>
+            </button>
+            <div class="accordion-panel">
+              <div class="accordion-content">
+                <span class="badge-category">Tracking</span>
+                <p>Every shipment is assigned a distinct tracking number. Our digital updates display major milestone reports, customs clearance status, and estimated delivery schedules through our system network.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="accordion-item-nexa" data-category="tracking">
+            <button class="accordion-trigger" type="button">
+              <span>Why is an update sometimes delayed while a shipment is in transit?</span>
+              <i class="bi bi-chevron-down"></i>
+            </button>
+            <div class="accordion-panel">
+              <div class="accordion-content">
+                <span class="badge-category">Tracking</span>
+                <p>Delays in monitoring updates usually occur during cross-border transfers or ocean voyages when long-range positioning systems update only at major checkpoints or terminal arrivals. Your account coordinator can provide real-time updates directly whenever needed.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- ==================== PAYMENTS CATEGORY ==================== -->
+          <div class="accordion-item-nexa" data-category="payments">
+            <button class="accordion-trigger" type="button">
+              <span>What payment terms and settlement methods do you accept?</span>
+              <i class="bi bi-chevron-down"></i>
+            </button>
+            <div class="accordion-panel">
+              <div class="accordion-content">
+                <span class="badge-category">Payments</span>
+                <p>We process standard corporate bank wire transfers, electronic funds transfers (EFT), and verified letters of credit. Established commercial accounts with regular shipping volumes can apply for flexible 30-day credit lines following a standard financial review.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="accordion-item-nexa" data-category="payments">
+            <button class="accordion-trigger" type="button">
+              <span>Are local port charges and customs duties included in your standard quotes?</span>
+              <i class="bi bi-chevron-down"></i>
+            </button>
+            <div class="accordion-panel">
+              <div class="accordion-content">
+                <span class="badge-category">Payments</span>
+                <p>Unless clearly specified as a comprehensive DDP (Delivered Duty Paid) contract, standard freight quotations exclude variable local port storage fees, terminal handling costs, and official government customs duties, which are itemized separately during final clearance processing.</p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- No Results Visual Indicator State -->
+        <div class="no-results-message" id="faqNoResults">
+          <i class="bi bi-file-earmark-text-fill"></i>
+          <h4>No matching logistics questions found</h4>
+          <p>Try modifying your search text or select a different category tab above.</p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ==========================================
+         SECTION 5: PREMIUM FINAL SUPPORT CTA
+         ========================================== -->
+    <section class="support-cta-section text-center">
+      <div class="container-nexa">
+        <div class="row justify-content-center">
+          <div class="col-lg-9">
+            <span class="section-kicker" style="color: #F87171;">Direct Access Channels</span>
+            <h2 class="section-title mb-4">Still Need Help?</h2>
+            <p class="lead text-white-50 mx-auto mb-5" style="max-width: 680px; font-size: 1.2rem;">
+              If your supply chain requirements involve specialized handling, unique routing, or complex compliance profiles, our senior logistics coordinators are ready to assist you directly.
+            </p>
+            <div class="d-flex flex-wrap justify-content-center gap-3">
+              <a href="contact.html" class="btn-nexa-primary">
+                <span>Connect With Support</span><i class="bi bi-chat-left-dots-fill"></i>
+              </a>
+              <a href="quote.html" class="btn-nexa-secondary">
+                <span>Request Custom Quote</span><i class="bi bi-arrow-up-right-circle"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ==========================================
+       SITE FOOTER (UNMODIFIED)
+       ========================================== -->
+  <footer><p>© 2026 NEXA Logistics | 10 Years • 50 Countries • 9000 Shipments • 97% Satisfaction</p></footer>
+
+  <!-- ==========================================
+       HELP CENTER INTERACTIVE JAVASCRIPT ENGINE
+       ========================================== -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      // DOM Selectors
+      const searchInput = document.getElementById('faqSearchInput');
+      const tabButtons = document.querySelectorAll('.category-tab-btn');
+      const accordionItems = document.querySelectorAll('.accordion-item-nexa');
+      const noResults = document.getElementById('faqNoResults');
+      const triggers = document.querySelectorAll('.accordion-trigger');
+
+      let currentFilter = 'all';
+      let currentSearchQuery = '';
+
+      // 1. Accordion Toggle Mechanism
+      triggers.forEach(trigger => {
+        trigger.addEventListener('click', function() {
+          const panel = this.nextElementSibling;
+          
+          if (this.classList.contains('active')) {
+            this.classList.remove('active');
+            panel.style.maxHeight = null;
+          } else {
+            // Close other currently open panels safely
+            triggers.forEach(other => {
+              other.classList.remove('active');
+              other.nextElementSibling.style.maxHeight = null;
+            });
+            
+            this.classList.add('active');
+            panel.style.maxHeight = panel.scrollHeight + "px";
+          }
+        });
+      });
+
+      // 2. Multi-Filter Coordination Logic (Search + Category Tabs)
+      function filterFAQEngine() {
+        let visibleCount = 0;
+
+        accordionItems.forEach(item => {
+          const category = item.getAttribute('data-category');
+          const questionText = item.querySelector('.accordion-trigger span').textContent.toLowerCase();
+          const answerText = item.querySelector('.accordion-content p').textContent.toLowerCase();
+          
+          const matchesTab = (currentFilter === 'all' || category === currentFilter);
+          const matchesSearch = (questionText.includes(currentSearchQuery) || answerText.includes(currentSearchQuery));
+
+          if (matchesTab && matchesSearch) {
+            item.style.display = 'block';
+            visibleCount++;
+          } else {
+            item.style.display = 'none';
+            // Collapse panel if hidden to avoid structural breakdown
+            const trigger = item.querySelector('.accordion-trigger');
+            const panel = item.querySelector('.accordion-panel');
+            trigger.classList.remove('active');
+            panel.style.maxHeight = null;
+          }
+        });
+
+        // Toggle Empty Search Result Visibility
+        if (visibleCount === 0) {
+          noResults.style.display = 'block';
+        } else {
+          noResults.style.display = 'none';
+        }
+      }
+
+      // 3. Search Bar Event Listener
+      searchInput.addEventListener('input', function(e) {
+        currentSearchQuery = e.target.value.toLowerCase().trim();
+        filterFAQEngine();
+      });
+
+      // 4. Tab Category Click Event Listener
+      tabButtons.forEach(button => {
+        button.addEventListener('click', function() {
+          tabButtons.forEach(btn => btn.classList.remove('active'));
+          this.classList.add('active');
+          
+          currentFilter = this.getAttribute('data-filter');
+          filterFAQEngine();
+        });
+      });
+    });
+  </script>
+  <script src="assets/js/main.js"></script>
+</body>
+</html>

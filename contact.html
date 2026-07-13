@@ -3,47 +3,856 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Contact NEXA Logistics | Freight Support & Inquiries</title>
-  <meta name="description" content="Contact NEXA Logistics & Transport in Erbil, Iraq for freight forwarding, customs brokerage, warehousing, land transportation, special cargo, and shipment support.">
+  <title>Contact NEXA Logistics | Premium Global Logistics Solutions</title>
+  <meta name="description" content="Get in touch with NEXA Logistics for freight forwarding, customs clearance, warehousing, and worldwide supply chain management. Reach our specialists today.">
   <link rel="icon" href="assets/images/nexa-logo.jpeg">
+  <!-- Bootstrap Grid system linked below -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap-grid.min.css">
+  <!-- SVG Icon Library CDN used safely for scalable modern icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
   <link rel="stylesheet" href="assets/css/styles.css">
+
+  <style>
+    /* ==========================================================================
+       PREMIUM DESIGN SYSTEM EXPANSION (Inline to preserve file architecture)
+       ========================================================================== */
+    :root {
+      --nexa-primary: #1E3470;
+      --nexa-accent: #B11F2A;
+      --nexa-dark-navy: #0F1E43;
+      --nexa-light-bg: #F8FAFC;
+      --nexa-white: #FFFFFF;
+      --nexa-gray-text: #475569;
+      --nexa-border: #E2E8F0;
+      --nexa-radius: 24px;
+      --nexa-shadow: 0 10px 30px -10px rgba(30, 52, 112, 0.08);
+      --nexa-shadow-hover: 0 20px 40px -15px rgba(30, 52, 112, 0.15);
+      --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    /* Page Hero Overhaul */
+    .premium-hero {
+      position: relative;
+      background: url('https://images.unsplash.com/photo-1578575437130-527eed3abbec?auto=format&fit=crop&q=80&w=1920') no-repeat center center/cover;
+      padding: 140px 0 100px 0;
+      color: var(--nexa-white);
+      overflow: hidden;
+    }
+    .premium-hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, rgba(15, 30, 67, 0.95) 0%, rgba(30, 52, 112, 0.85) 100%);
+      z-index: 1;
+    }
+    .premium-hero .container-nexa {
+      position: relative;
+      z-index: 2;
+    }
+    .premium-hero h1 {
+      font-size: 3.5rem;
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      line-height: 1.15;
+      color: var(--nexa-white);
+    }
+    .premium-hero .lead {
+      font-size: 1.25rem;
+      color: #CBD5E1;
+      max-width: 700px;
+      line-height: 1.6;
+    }
+
+    /* Button Suite */
+    .btn-nexa-primary {
+      background-color: var(--nexa-accent);
+      color: var(--nexa-white);
+      padding: 16px 32px;
+      border-radius: 50px;
+      font-weight: 600;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      transition: var(--transition-smooth);
+      border: 2px solid transparent;
+    }
+    .btn-nexa-primary:hover {
+      background-color: #90161F;
+      transform: translateY(-2px);
+      box-shadow: 0 10px 20px rgba(177, 31, 42, 0.3);
+    }
+    .btn-nexa-secondary {
+      background-color: transparent;
+      color: var(--nexa-white);
+      padding: 16px 32px;
+      border-radius: 50px;
+      font-weight: 600;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      transition: var(--transition-smooth);
+      border: 2px solid rgba(255, 255, 255, 0.3);
+    }
+    .btn-nexa-secondary:hover {
+      background-color: rgba(255, 255, 255, 0.1);
+      border-color: var(--nexa-white);
+      transform: translateY(-2px);
+    }
+
+    /* Utility Sections */
+    .bg-light-premium {
+      background-color: var(--nexa-light-bg);
+      padding: 100px 0;
+    }
+    .bg-white-premium {
+      background-color: var(--nexa-white);
+      padding: 100px 0;
+    }
+    .section-header {
+      margin-bottom: 60px;
+    }
+    .section-kicker {
+      color: var(--nexa-accent);
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      font-size: 0.85rem;
+      display: block;
+      margin-bottom: 12px;
+    }
+    .section-title {
+      font-size: 2.5rem;
+      color: var(--nexa-primary);
+      font-weight: 700;
+      letter-spacing: -0.02em;
+    }
+
+    /* Premium Information Cards */
+    .info-card-wrapper {
+      background: var(--nexa-white);
+      border-radius: var(--nexa-radius);
+      padding: 40px 32px;
+      box-shadow: var(--nexa-shadow);
+      transition: var(--transition-smooth);
+      border: 1px solid var(--nexa-border);
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+    }
+    .info-card-wrapper:hover {
+      transform: translateY(-8px);
+      box-shadow: var(--nexa-shadow-hover);
+      border-color: rgba(30, 52, 112, 0.15);
+    }
+    .info-card-icon {
+      width: 64px;
+      height: 64px;
+      background: rgba(30, 52, 112, 0.05);
+      border-radius: 16px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.75rem;
+      color: var(--nexa-primary);
+      margin-bottom: 24px;
+      transition: var(--transition-smooth);
+    }
+    .info-card-wrapper:hover .info-card-icon {
+      background: var(--nexa-primary);
+      color: var(--nexa-white);
+    }
+    .info-card-title {
+      font-size: 1.35rem;
+      color: var(--nexa-primary);
+      font-weight: 700;
+      margin-bottom: 12px;
+    }
+    .info-card-detail {
+      font-size: 1.15rem;
+      font-weight: 600;
+      color: #1E293B;
+      margin-bottom: 8px;
+      text-decoration: none;
+    }
+    .info-card-desc {
+      font-size: 0.95rem;
+      color: var(--nexa-gray-text);
+      line-height: 1.5;
+      margin-top: auto;
+    }
+
+    /* Floating Labels Form Upgrade */
+    .premium-form-panel {
+      background: var(--nexa-white);
+      border-radius: var(--nexa-radius);
+      padding: 50px;
+      box-shadow: var(--nexa-shadow-hover);
+      border: 1px solid var(--nexa-border);
+    }
+    .form-floating {
+      position: relative;
+      margin-bottom: 20px;
+    }
+    .form-floating .form-control,
+    .form-floating .form-select {
+      width: 100%;
+      height: 60px;
+      padding: 24px 16px 8px 16px;
+      font-size: 1rem;
+      border: 1px solid var(--nexa-border);
+      border-radius: 12px;
+      background-color: var(--nexa-light-bg);
+      color: var(--nexa-primary);
+      transition: var(--transition-smooth);
+      box-sizing: border-box;
+    }
+    .form-floating textarea.form-control {
+      height: 140px;
+      resize: none;
+    }
+    .form-floating .form-control:focus,
+    .form-floating .form-select:focus {
+      outline: none;
+      border-color: var(--nexa-primary);
+      background-color: var(--nexa-white);
+      box-shadow: 0 0 0 4px rgba(30, 52, 112, 0.1);
+    }
+    .form-floating label {
+      position: absolute;
+      top: 0;
+      left: 0;
+      padding: 18px 16px;
+      pointer-events: none;
+      transition: var(--transition-smooth);
+      transform-origin: 0 0;
+      color: #64748B;
+    }
+    .form-floating .form-control:focus ~ label,
+    .form-floating .form-control:not(:placeholder-shown) ~ label,
+    .form-floating .form-select:focus ~ label,
+    .form-floating .form-select:not([value=""]):valid ~ label {
+      transform: scale(0.75) translateY(-10px) translateX(6px);
+      color: var(--nexa-primary);
+      font-weight: 600;
+    }
+    .btn-submit-premium {
+      width: 100%;
+      background: var(--nexa-primary);
+      color: var(--nexa-white);
+      border: none;
+      padding: 18px;
+      border-radius: 12px;
+      font-weight: 600;
+      font-size: 1.1rem;
+      cursor: pointer;
+      transition: var(--transition-smooth);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+    }
+    .btn-submit-premium:hover {
+      background: var(--nexa-dark-navy);
+      transform: translateY(-2px);
+      box-shadow: 0 10px 20px rgba(15, 30, 67, 0.2);
+    }
+
+    /* Premium Feature Cards (Why Contact) */
+    .feature-card {
+      background: var(--nexa-white);
+      border-radius: var(--nexa-radius);
+      padding: 32px;
+      box-shadow: var(--nexa-shadow);
+      border: 1px solid var(--nexa-border);
+      transition: var(--transition-smooth);
+      height: 100%;
+    }
+    .feature-card:hover {
+      transform: translateY(-6px);
+      box-shadow: var(--nexa-shadow-hover);
+      border-color: rgba(177, 31, 42, 0.2);
+    }
+    .feature-icon {
+      font-size: 2rem;
+      color: var(--nexa-accent);
+      margin-bottom: 20px;
+      display: inline-block;
+    }
+    .feature-card h3 {
+      font-size: 1.25rem;
+      color: var(--nexa-primary);
+      font-weight: 700;
+      margin-bottom: 12px;
+    }
+    .feature-card p {
+      font-size: 0.95rem;
+      color: var(--nexa-gray-text);
+      line-height: 1.6;
+      margin: 0;
+    }
+
+    /* Split Location Section */
+    .location-panel {
+      background: var(--nexa-primary);
+      color: var(--nexa-white);
+      border-radius: var(--nexa-radius);
+      padding: 48px;
+      height: 100%;
+    }
+    .map-container {
+      border-radius: var(--nexa-radius);
+      overflow: hidden;
+      box-shadow: var(--nexa-shadow);
+      height: 100%;
+      min-height: 400px;
+      border: 1px solid var(--nexa-border);
+    }
+    .location-item {
+      display: flex;
+      gap: 16px;
+      margin-bottom: 28px;
+    }
+    .location-item:last-child {
+      margin-bottom: 0;
+    }
+    .location-item i {
+      font-size: 1.5rem;
+      color: #93C5FD;
+      margin-top: 2px;
+    }
+    .location-item h4 {
+      font-size: 1.1rem;
+      font-weight: 700;
+      margin: 0 0 6px 0;
+    }
+    .location-item p {
+      color: #E2E8F0;
+      margin: 0;
+      font-size: 0.95rem;
+      line-height: 1.5;
+    }
+
+    /* Accordion System (FAQ) */
+    .premium-accordion {
+      max-width: 850px;
+      margin: 0 auto;
+    }
+    .accordion-item-nexa {
+      background: var(--nexa-white);
+      border-radius: 16px !important;
+      margin-bottom: 16px;
+      border: 1px solid var(--nexa-border);
+      box-shadow: var(--nexa-shadow);
+      overflow: hidden;
+      transition: var(--transition-smooth);
+    }
+    .accordion-trigger {
+      width: 100%;
+      padding: 24px;
+      background: none;
+      border: none;
+      text-align: left;
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: var(--nexa-primary);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      cursor: pointer;
+      transition: var(--transition-smooth);
+    }
+    .accordion-trigger::after {
+      content: '\f282';
+      font-family: 'bootstrap-icons';
+      font-size: 1.25rem;
+      transition: transform 0.3s ease;
+      color: var(--nexa-accent);
+    }
+    .accordion-trigger.active {
+      background-color: rgba(30, 52, 112, 0.02);
+    }
+    .accordion-trigger.active::after {
+      transform: rotate(180deg);
+    }
+    .accordion-panel {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    .accordion-content {
+      padding: 0 24px 24px 24px;
+      color: var(--nexa-gray-text);
+      line-height: 1.6;
+      font-size: 1rem;
+    }
+
+    /* Final CTA */
+    .final-cta-section {
+      background: linear-gradient(135deg, var(--nexa-dark-navy) 0%, var(--nexa-primary) 100%);
+      padding: 100px 0;
+      color: var(--nexa-white);
+      position: relative;
+    }
+    .final-cta-section .section-title {
+      color: var(--nexa-white);
+    }
+  </style>
 </head>
 <body>
+
+  <!-- ==========================================
+       SITE HEADER (UNMODIFIED)
+       ========================================== -->
   <header class="site-header"><div class="container-nexa nav-wrap"><a class="brand" href="index.html"><img src="assets/images/nexa-logo.jpeg" alt="NEXA Logistics logo"></a><button class="nav-toggle" type="button" data-nav-toggle aria-label="Open navigation"><span></span><span></span><span></span></button><nav class="site-nav" data-site-nav><a href="index.html">Home</a><a href="about.html">About</a><a href="services.html">Services</a><a href="partners.html">Partners</a><a href="gallery.html">Gallery</a><a class="active" href="contact.html">Contact</a></nav><a class="btn-nexa nav-quote" href="quote.html">Request Quote</a></div></header>
+
   <main>
-    <section class="page-hero"><div class="container-nexa"><div class="breadcrumb-text">Home / Contact</div><h1>Contact NEXA Logistics</h1><p class="lead mt-3">Reach our Erbil-based team for shipment support, freight inquiries, customs brokerage, and partnership opportunities.</p></div></section>
-    <section class="section">
+    
+    <!-- ==========================================
+         SECTION 1: PAGE HERO
+         ========================================== -->
+    <section class="premium-hero">
       <div class="container-nexa">
-        <div class="row g-4">
-          <div class="col-lg-5">
-            <div class="contact-card" data-animate>
-              <span class="section-kicker">Contact details</span>
-              <h2>Let's move your cargo with clarity.</h2>
-              <p class="mt-3">Address: Erbil, Kurdistan Region, Iraq</p>
-              <p>Email: info@nexalogistics.com<br>Phone: +000 000 000 000<br>Hours: Sunday to Thursday, 9:00 AM to 6:00 PM</p>
+        <div class="row align-items-center">
+          <div class="col-lg-8">
+            <div style="color: #93C5FD; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; font-size: 0.9rem; margin-bottom: 16px;">
+              Global Logistics Infrastructure
             </div>
-          </div>
-          <div class="col-lg-7">
-            <div class="quote-panel" data-animate>
-              <form data-static-form>
-                <div class="row g-3">
-                  <div class="col-md-6 form-group"><label for="name">Name</label><input class="form-control" id="name" name="name" required></div>
-                  <div class="col-md-6 form-group"><label for="email">Email</label><input class="form-control" id="email" type="email" name="email" required></div>
-                  <div class="col-md-6 form-group"><label for="phone">Phone</label><input class="form-control" id="phone" name="phone"></div>
-                  <div class="col-md-6 form-group"><label for="subject">Subject</label><input class="form-control" id="subject" name="subject"></div>
-                  <div class="col-12 form-group"><label for="message">Message</label><textarea class="form-control" id="message" name="message" required></textarea></div>
-                </div>
-                <button class="btn-nexa" type="submit">Send Message</button>
-                <p data-form-note></p>
-              </form>
+            <h1>Let's Move Your Business Forward</h1>
+            <p class="lead mt-4">
+              Whether you require complex freight forwarding, rapid customs clearance, secure warehousing, or precision end-to-end supply chain management solutions, our dedicated logistics specialists are mobilized to execute your operations flawlessly.
+            </p>
+            <div class="mt-5 d-flex flex-wrap gap-3">
+              <a href="#contact-form-section" class="btn-nexa-primary">
+                <span>Request a Quote</span><i class="bi bi-arrow-right"></i>
+              </a>
+              <a href="tel:+000000000000" class="btn-nexa-secondary">
+                <i class="bi bi-telephone-fill"></i><span>Call Us Directly</span>
+              </a>
             </div>
           </div>
         </div>
       </div>
     </section>
+
+    <!-- ==========================================
+         SECTION 2: CONTACT INFORMATION CARDS
+         ========================================== -->
+    <section class="bg-light-premium">
+      <div class="container-nexa">
+        <div class="section-header text-center">
+          <span class="section-kicker">Immediate Assistance</span>
+          <h2 class="section-title">Direct Channels of Communication</h2>
+        </div>
+        
+        <div class="row g-4">
+          <!-- Card 1: Office -->
+          <div class="col-md-6 col-lg-4">
+            <div class="info-card-wrapper">
+              <div class="info-card-icon"><i class="bi bi-geo-alt-fill"></i></div>
+              <h3 class="info-card-title">Global Headquarters</h3>
+              <div class="info-card-detail">Erbil, Iraq</div>
+              <p class="info-card-desc">Centrally positioned to coordinate intra-regional and trans-continental distribution networks seamlessly.</p>
+            </div>
+          </div>
+          <!-- Card 2: Phone -->
+          <div class="col-md-6 col-lg-4">
+            <div class="info-card-wrapper">
+              <div class="info-card-icon"><i class="bi bi-telephone-outbound-fill"></i></div>
+              <h3 class="info-card-title">Commercial Operations</h3>
+              <a href="tel:+000000000000" class="info-card-detail">+000 000 000 000</a>
+              <p class="info-card-desc">Connect with senior logistics personnel immediately for routing optimizations and urgent updates.</p>
+            </div>
+          </div>
+          <!-- Card 3: Email -->
+          <div class="col-md-6 col-lg-4">
+            <div class="info-card-wrapper">
+              <div class="info-card-icon"><i class="bi bi-envelope-open-fill"></i></div>
+              <h3 class="info-card-title">Electronic Inquiries</h3>
+              <a href="mailto:info@nexalogistics.com" class="info-card-detail">info@nexalogistics.com</a>
+              <p class="info-card-desc">Submit complete manifests and RFP documentation for comprehensive multi-modal pricing assessments.</p>
+            </div>
+          </div>
+          <!-- Card 4: Business Hours -->
+          <div class="col-md-6 col-lg-4">
+            <div class="info-card-wrapper">
+              <div class="info-card-icon"><i class="bi bi-clock-fill"></i></div>
+              <h3 class="info-card-title">Operational Hours</h3>
+              <div class="info-card-detail">Sun — Thu | 09:00 - 18:00</div>
+              <p class="info-card-desc">Active operations panel maintaining continuous contact with border terminals and dry port clearance facilities.</p>
+            </div>
+          </div>
+          <!-- Card 5: Service Area -->
+          <div class="col-md-6 col-lg-4">
+            <div class="info-card-wrapper">
+              <div class="info-card-icon"><i class="bi bi-globe-americas"></i></div>
+              <h3 class="info-card-title">Service Coverage</h3>
+              <div class="info-card-detail">Global Multi-Modal Network</div>
+              <p class="info-card-desc">Full-scale operational footprint managing cargo distributions smoothly across international corridors and domestic highways.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================
+         SECTION 3: PREMIUM CONTACT & DEPLOYMENT FORM
+         ========================================== -->
+    <section id="contact-form-section" class="bg-white-premium">
+      <div class="container-nexa">
+        <div class="row justify-content-center">
+          <div class="col-xl-10">
+            <div class="premium-form-panel">
+              <div class="text-center mb-5">
+                <span class="section-kicker">Secure Intake Framework</span>
+                <h2 class="section-title">Initiate Your Logistics Assessment</h2>
+                <p class="mt-2 text-muted">Provide your shipment specifications below. An enterprise account director will analyze and follow up within 60 minutes.</p>
+              </div>
+
+              <form data-static-form class="needs-validation" novalidate>
+                <div class="row">
+                  <!-- Full Name -->
+                  <div class="col-md-6">
+                    <div class="form-floating">
+                      <input type="text" class="form-control" id="fullName" placeholder=" " required>
+                      <label for="fullName">Full Name</label>
+                    </div>
+                  </div>
+                  <!-- Company Name -->
+                  <div class="col-md-6">
+                    <div class="form-floating">
+                      <input type="text" class="form-control" id="companyName" placeholder=" ">
+                      <label for="companyName">Company Name (Optional)</label>
+                    </div>
+                  </div>
+                  <!-- Email Address -->
+                  <div class="col-md-6">
+                    <div class="form-floating">
+                      <input type="email" class="form-control" id="emailAddress" placeholder=" " required>
+                      <label for="emailAddress">Corporate Email Address</label>
+                    </div>
+                  </div>
+                  <!-- Phone Number -->
+                  <div class="col-md-6">
+                    <div class="form-floating">
+                      <input type="tel" class="form-control" id="phoneNumber" placeholder=" " required>
+                      <label for="phoneNumber">Direct Phone Number</label>
+                    </div>
+                  </div>
+                  <!-- Country -->
+                  <div class="col-md-4">
+                    <div class="form-floating">
+                      <input type="text" class="form-control" id="country" placeholder=" " required>
+                      <label for="country">Country of Origin/Destination</label>
+                    </div>
+                  </div>
+                  <!-- Shipment Type -->
+                  <div class="col-md-4">
+                    <div class="form-floating">
+                      <select class="form-select" id="shipmentType" required>
+                        <option value="" selected disabled></option>
+                        <option value="fcl">Full Container Load (FCL)</option>
+                        <option value="lcl">Less than Container Load (LCL)</option>
+                        <option value="air">Air Freight Cargo</option>
+                        <option value="overland">Overland Trucking</option>
+                        <option value="special">Oversized / Dangerous Goods</option>
+                      </select>
+                      <label for="shipmentType">Shipment Type</label>
+                    </div>
+                  </div>
+                  <!-- Service Required -->
+                  <div class="col-md-4">
+                    <div class="form-floating">
+                      <select class="form-select" id="serviceRequired" required>
+                        <option value="" selected disabled></option>
+                        <option value="forwarding">End-to-End Freight Forwarding</option>
+                        <option value="customs">Customs Clearance & Brokerage</option>
+                        <option value="warehousing">Warehousing & Fulfillment</option>
+                        <option value="integrated">Complete Supply Chain Solution</option>
+                      </select>
+                      <label for="serviceRequired">Service Required</label>
+                    </div>
+                  </div>
+                  <!-- Preferred Contact Method -->
+                  <div class="col-12">
+                    <div class="form-floating">
+                      <select class="form-select" id="contactMethod" required>
+                        <option value="" selected disabled></option>
+                        <option value="email">Email Address</option>
+                        <option value="phone">Direct Phone Call</option>
+                        <option value="whatsapp">WhatsApp Business Channel</option>
+                      </select>
+                      <label for="contactMethod">Preferred Contact Method</label>
+                    </div>
+                  </div>
+                  <!-- Message Requirements -->
+                  <div class="col-12">
+                    <div class="form-floating">
+                      <textarea class="form-control" id="formMessage" placeholder=" " required></textarea>
+                      <label for="formMessage">Detail Cargo Specifications, Deadlines, and Special Instructions</label>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="text-center mt-4">
+                  <button type="submit" class="btn-submit-premium">
+                    <span>Transmit Routing Request</span><i class="bi bi-shield-check"></i>
+                  </button>
+                  <p data-form-note class="text-muted small mt-3">By transmitting data, you authorize NEXA to initiate secure communications regarding corporate freight profiles.</p>
+                </div>
+              </form>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================
+         SECTION 4: WHY CONTACT NEXA (BENEFITS)
+         ========================================== -->
+    <section class="bg-light-premium">
+      <div class="container-nexa">
+        <div class="section-header text-center">
+          <span class="section-kicker">Operational Commitments</span>
+          <h2 class="section-title">The Value of Partnering with NEXA</h2>
+        </div>
+
+        <div class="row g-4">
+          <!-- 1. Fast Response -->
+          <div class="col-md-6 col-lg-4">
+            <div class="feature-card">
+              <i class="bi bi-lightning-charge-fill feature-icon"></i>
+              <h3>60-Minute Response Guarantee</h3>
+              <p>Supply chain delays are costly. Our priority response team acts swiftly on quotes and incoming manifests to keep your schedule intact.</p>
+            </div>
+          </div>
+          <!-- 2. Experienced Team -->
+          <div class="col-md-6 col-lg-4">
+            <div class="feature-card">
+              <i class="bi bi-person-workspace feature-icon"></i>
+              <h3>Veteran Customs & Logistics Staff</h3>
+              <p>Our managers possess years of cross-border experience to skillfully navigate regulatory compliance, tariff assignments, and paperwork.</p>
+            </div>
+          </div>
+          <!-- 3. Global Network -->
+          <div class="col-md-6 col-lg-4">
+            <div class="feature-card">
+              <i class="bi bi-diagram-3-fill feature-icon"></i>
+              <h3>Strategic Worldwide Corridors</h3>
+              <p>Through global agency networks, we connect local commerce directly with key manufacturing hubs in Asia, Europe, and the Americas.</p>
+            </div>
+          </div>
+          <!-- 4. Customized Solutions -->
+          <div class="col-md-6 col-lg-4">
+            <div class="feature-card">
+              <i class="bi bi-sliders feature-icon"></i>
+              <h3>Tailored Supply Chain Routing</h3>
+              <p>We reject rigid models. We structure bespoke logistics routes that adjust speed and budget allocations to perfectly fit your business goals.</p>
+            </div>
+          </div>
+          <!-- 5. Transparent Communication -->
+          <div class="col-md-6 col-lg-4">
+            <div class="feature-card">
+              <i class="bi bi-eye-fill feature-icon"></i>
+              <h3>Transparent Cost Tracking</h3>
+              <p>Eliminate hidden fees. We provide comprehensive, itemized cost matrices and simple freight visibility, ensuring full budget control.</p>
+            </div>
+          </div>
+          <!-- 6. 24/7 Support -->
+          <div class="col-md-6 col-lg-4">
+            <div class="feature-card">
+              <i class="bi bi-headset feature-icon"></i>
+              <h3>Round-the-Clock Fleet Support</h3>
+              <p>Supply chains operate non-stop. Our round-the-clock support desk provides ongoing security and location updates until delivery is complete.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================
+         SECTION 5: OUR LOCATION & REGIONAL CORE
+         ========================================== -->
+    <section class="bg-white-premium">
+      <div class="container-nexa">
+        <div class="row g-4 align-items-stretch">
+          <div class="col-lg-5">
+            <div class="location-panel">
+              <span class="section-kicker" style="color: #93C5FD;">Operational Base</span>
+              <h2 class="text-white mb-4" style="font-size: 2.2rem; font-weight: 700; letter-spacing: -0.02em;">NEXA Command Center</h2>
+              <p class="mb-5" style="color: #CBD5E1; line-height: 1.6;">Our strategic central office handles logistics across complex regional borders and connects key supply lines directly to local distribution networks.</p>
+              
+              <div class="location-item">
+                <i class="bi bi-geo-alt"></i>
+                <div>
+                  <h4>Office Address</h4>
+                  <p>Erbil, Kurdistan Region, Iraq</p>
+                </div>
+              </div>
+
+              <div class="location-item">
+                <i class="bi bi-calendar3"></i>
+                <div>
+                  <h4>Business Schedule</h4>
+                  <p>Sunday — Thursday | 09:00 AM – 06:00 PM</p>
+                </div>
+              </div>
+
+              <div class="location-item">
+                <i class="bi bi-shield-shaded"></i>
+                <div>
+                  <h4>Service &amp; Secure Coverage</h4>
+                  <p>Comprehensive customs processing and cross-docking coverage across all regional transport routes.</p>
+                </div>
+              </div>
+
+              <div class="location-item">
+                <i class="bi bi-p-circle"></i>
+                <div>
+                  <h4>Visitor Parking Info</h4>
+                  <p>Dedicated customer parking available on-site with secure entry control for commercial visitors.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-7">
+            <div class="map-container">
+              <!-- Labeled Responsive Google Map Map Frame -->
+              <iframe 
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d103073.41164983361!2d43.931122849896434!3d36.19584347265902!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x400722fe134434a7%3A0x4e8d3fe7da80482b!2sErbil%2C%20Erbil%20Governorate%2C%20Iraq!5e0!3m2!1sen!2s!4v1710000000000!5m2!1sen!2s" 
+                width="100%" 
+                height="100%" 
+                style="border:0; min-height: 450px; display: block;" 
+                allowfullscreen="" 
+                loading="lazy" 
+                referrerpolicy="no-referrer-when-downgrade">
+              </iframe>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================
+         SECTION 6: MODERN INTERACTIVE FAQ
+         ========================================== -->
+    <section class="bg-light-premium">
+      <div class="container-nexa">
+        <div class="section-header text-center">
+          <span class="section-kicker">Knowledge Base</span>
+          <h2 class="section-title">Frequently Answered Logistics Queries</h2>
+        </div>
+
+        <div class="premium-accordion">
+          <!-- Item 1 -->
+          <div class="accordion-item-nexa">
+            <button class="accordion-trigger" type="button">How quickly will I receive a response?</button>
+            <div class="accordion-panel">
+              <div class="accordion-content">
+                Our commercial sales team evaluates all inbound quote inquiries and manifest submissions within 60 minutes during standard operational hours. Complex multi-modal logistics profiles are completed within 24 hours.
+              </div>
+            </div>
+          </div>
+          <!-- Item 2 -->
+          <div class="accordion-item-nexa">
+            <button class="accordion-trigger" type="button">Can I request a quotation online?</button>
+            <div class="accordion-panel">
+              <div class="accordion-content">
+                Yes. Our digital intake framework accepts complete cargo profiles, weight declarations, and routing details directly, streamlining the initial review process.
+              </div>
+            </div>
+          </div>
+          <!-- Item 3 -->
+          <div class="accordion-item-nexa">
+            <button class="accordion-trigger" type="button">Which countries do you serve?</button>
+            <div class="accordion-panel">
+              <div class="accordion-content">
+                NEXA maintains cross-border transport routes spanning China, Turkey, Europe, and the Middle East, seamlessly connecting regional import corridors with worldwide maritime terminals.
+              </div>
+            </div>
+          </div>
+          <!-- Item 4 -->
+          <div class="accordion-item-nexa">
+            <button class="accordion-trigger" type="button">Do you provide customs clearance?</button>
+            <div class="accordion-panel">
+              <div class="accordion-content">
+                Yes. We offer complete customs brokerage services, expertly managing clearance documentation, tariff classification, border inspections, and final tax processing.
+              </div>
+            </div>
+          </div>
+          <!-- Item 5 -->
+          <div class="accordion-item-nexa">
+            <button class="accordion-trigger" type="button">Can you arrange door-to-door delivery?</button>
+            <div class="accordion-panel">
+              <div class="accordion-content">
+                Absolutely. Our integrated network coordinates marine freight, air transit, customs handling, and final overland transport to deliver cargo safely directly to your facility.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================
+         SECTION 7: FINAL HIGH-CONVERSION CTA
+         ========================================== -->
+    <section class="final-cta-section text-center">
+      <div class="container-nexa">
+        <div class="row justify-content-center">
+          <div class="col-lg-9">
+            <span class="section-kicker" style="color: #F87171;">Streamline Your Operation</span>
+            <h2 class="section-title mb-4">Ready to Ship With Full Confidence?</h2>
+            <p class="lead text-white-50 mx-auto mb-5" style="max-width: 650px; font-size: 1.2rem;">
+              Partner with specialized freight experts. We protect your cargo, optimize complex routes, and keep your global supply chain running on time.
+            </p>
+            <div class="d-flex flex-wrap justify-content-center gap-3">
+              <a href="#contact-form-section" class="btn-nexa-primary">
+                <span>Request a Custom Quote</span><i class="bi bi-calculator"></i>
+              </a>
+              <a href="tel:+000000000000" class="btn-nexa-secondary">
+                <i class="bi bi-telephone-forward"></i><span>Call Our Team</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
   </main>
+
+  <!-- ==========================================
+       SITE FOOTER (UNMODIFIED)
+       ========================================== -->
   <footer class="site-footer"><div class="container-nexa"><div class="row g-4"><div class="col-lg-6"><img class="footer-logo" src="assets/images/nexa-logo.jpeg" alt="NEXA Logistics logo"><p>We are ready to coordinate freight, customs brokerage, warehousing, land transport, and special cargo inquiries.</p></div><div class="col-lg-3"><div class="footer-title">Pages</div><div class="footer-links"><a href="about.html">About</a><a href="services.html">Services</a><a href="quote.html">Request Quote</a></div></div><div class="col-lg-3"><div class="footer-title">Contact</div><p>info@nexalogistics.com<br>+000 000 000 000</p></div></div><div class="footer-bottom">(c) 2026 NEXA Logistics. All rights reserved.</div></div></footer>
+
+  <!-- Accordion Animation Logic Setup -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const triggers = document.querySelectorAll('.accordion-trigger');
+      
+      triggers.forEach(trigger => {
+        trigger.addEventListener('click', function() {
+          const panel = this.nextElementSibling;
+          
+          if (this.classList.contains('active')) {
+            this.classList.remove('active');
+            panel.style.maxHeight = null;
+          } else {
+            // Close other items
+            triggers.forEach(otherTrigger => {
+              otherTrigger.classList.remove('active');
+              otherTrigger.nextElementSibling.style.maxHeight = null;
+            });
+            
+            this.classList.add('active');
+            panel.style.maxHeight = panel.scrollHeight + "px";
+          }
+        });
+      });
+    });
+  </script>
   <script src="assets/js/main.js"></script>
 </body>
 </html>
